@@ -29,15 +29,18 @@
         public abstract Vertex GetVertex(int id);
         public abstract List<Vertex> GetAdjacencyVertices(int id);
         public virtual List<Vertex> GetAdjacencyVertices(Vertex vertex) => GetAdjacencyVertices(vertex.ID);
-        public abstract bool AddVertex(int id);
-        public virtual bool AddVertex(Vertex vertex) => AddVertex(vertex.ID);
-        public abstract bool InsertVertex(int id, Edge edge);
-        public virtual bool InsertVertex(Vertex vertex, Edge edge) => InsertVertex(vertex.ID, edge);
+        public virtual bool AddVertex(int id) => AddVertex(new Vertex(id));
+        public abstract bool AddVertex(Vertex vertex);
+        public virtual List<Vertex> AddVertexVertices(List<Vertex> vertexes) => vertexes.Where(vertex => !AddVertex(vertex)).ToList();
+        public virtual bool InsertVertex(int id, Edge edge) => InsertVertex(new Vertex(id), edge);
+        public abstract bool InsertVertex(Vertex vertex, Edge edge);
         public abstract bool RemoveVertex(int id);
         public virtual bool RemoveVertex(Vertex vertex) => RemoveVertex(vertex.ID);
+        public abstract Edge GetEdge(int from, int to);
         public abstract List<Edge> GetAdjacencyEdges(int id);
         public virtual List<Edge> GetAdjacencyEdges(Vertex vertex) => GetAdjacencyEdges(vertex.ID);
         public abstract bool AddEdge(Edge v);
+        public virtual List<Edge> AddVertexEdges(List<Edge> edges) => edges.Where(edge => !AddEdge(edge)).ToList();
         public abstract bool DeleteEdge(Edge v);
         public abstract void Clear();
     }
@@ -51,38 +54,14 @@
         /// </summary>
         private readonly Dictionary<(int From, int To), Edge> _edgesDictionary = [];
 
+
         public override int V => _verticesDictionary.Count;
 
         public override int E => _edgesDictionary.Count;
 
         public override List<Vertex> Vertices => _verticesDictionary.Select(item => new Vertex(item.Value)).ToList();
 
-        public override List<Edge> Edges => GetUniqueEdges();
-
-        private List<Edge> GetUniqueEdges()
-        {
-            List<Edge> uniqueEdges = [];
-            HashSet<string> visitedEdges = [];
-
-            foreach (var vertexId in _adjacencyList.Keys)
-            {
-                var neighbors = _adjacencyList[vertexId];
-                foreach (var neighborId in neighbors)
-                {
-                    // 确保只添加顶点编号较小的边
-                    if (vertexId >= neighborId) continue;
-
-                    var edgeKey = $"{vertexId}-{neighborId}";
-                    if (visitedEdges.Contains(edgeKey)) continue;
-
-                    Edge edge = new(_edgesDictionary[(vertexId, neighborId)]);
-                    uniqueEdges.Add(edge);
-                    visitedEdges.Add(edgeKey);
-                }
-            }
-
-            return uniqueEdges;
-        }
+        public override List<Edge> Edges => _edgesDictionary.Values.ToList();
 
 
         public Graph() { }
@@ -127,47 +106,6 @@
         {
             return left.AreIsomorphic(right);
         }
-
-        //public override bool Equals(object obj)
-        //{
-        //    var isEqual = true;
-        //    if (ReferenceEquals(this, obj))
-        //    {
-        //        ;
-        //    }
-        //    else switch (obj)
-        //    {
-        //        case null:
-        //            isEqual = false;
-        //            break;
-        //        case Graph graph:
-        //        {
-        //            var map = graph;
-        //            if (_verticesDictionary != map._verticesDictionary ||
-        //                _adjacencyList.Count != map._adjacencyList.Count)
-        //            {
-        //                isEqual = false;
-        //                Console.WriteLine($"vertices Dictionary Compare Result: {_verticesDictionary == map._verticesDictionary}\nright map:\n\tE: {map.E}, V: {map.V}");
-        //            }
-        //            else
-        //            {
-        //                for (var i = 0; i < map._adjacencyList.Count; i++)
-        //                {
-        //                    if (map._adjacencyList[i] == _adjacencyList[i]) continue;
-
-        //                    isEqual = false;
-        //                    break;
-        //                }
-        //            }
-
-        //            break;
-        //        }
-        //        default:
-        //            throw new NotImplementedException();
-        //    }
-
-        //    return isEqual;
-        //}
 
         public static bool operator !=(Graph left, Graph right)
         {
@@ -307,61 +245,62 @@
                 throw new ArgumentOutOfRangeException(nameof(id));
             }
 
-            return _adjacencyList[id].Select(vertexId => new Vertex(_verticesDictionary[vertexId])).ToList();
+            return _adjacencyList[id].Select(vertexId => _verticesDictionary[vertexId]).ToList();
         }
 
-        public override bool AddVertex(int id)
+        public override bool AddVertex(Vertex vertex)
         {
             var isAdded = false;
-            if (_verticesDictionary.ContainsKey(id)) return isAdded;
+            if (!_verticesDictionary.TryAdd(vertex.ID, vertex)) return isAdded;
 
-            _verticesDictionary[id] = new Vertex(id);
-            _adjacencyList[id] = [];
+            _adjacencyList[vertex.ID] = [];
 
             isAdded = true;
 
             return isAdded;
         }
 
-        public override bool InsertVertex(int id, Edge edge)
+        public override bool InsertVertex(Vertex vertex, Edge edge)
         {
             var isInserted = false;
-            var hasVertex = _verticesDictionary.ContainsKey(id);
+            var hasVertex = _verticesDictionary.ContainsKey(vertex.ID);
             var hasEdge = JudgeTheExistenceOfEdge(edge);
             if ((hasVertex && hasEdge) | hasVertex | !hasEdge) return isInserted;
 
-            _verticesDictionary[id] = new Vertex(id);
-            _adjacencyList[id] = [edge.From.ID, edge.To.ID];
+            _verticesDictionary[vertex.ID] = vertex;
+            _adjacencyList[vertex.ID] = [edge.From.ID, edge.To.ID];
 
-            ReplaceAdjacencyVertex(edge.From.ID, edge.To.ID, id);
+            ReplaceAdjacencyVertex(edge.From.ID, edge.To.ID, vertex.ID);
             var newEdge = new Edge(edge)
             {
                 To =
                 {
-                    ID = id
+                    ID = vertex.ID
                 }
             };
             AddEdgeToDict(newEdge);
 
-            ReplaceAdjacencyVertex(edge.To.ID, edge.From.ID, id);
+            ReplaceAdjacencyVertex(edge.To.ID, edge.From.ID, vertex.ID);
             var newEdge2 = new Edge(edge)
             {
                 From =
                 {
-                    ID = id
+                    ID = vertex.ID
                 }
             };
             AddEdgeToDict(newEdge2);
+
+            RemoveEdgeFromDict(edge);
 
             isInserted = true;
 
             return isInserted;
         }
 
-        private void ReplaceAdjacencyVertex(int vertex, int vertexToBeReplaced, int replacementVertex)
+        private void ReplaceAdjacencyVertex(int vertexId, int vertexToBeReplaced, int replacementVertex)
         {
-            _adjacencyList[vertex].Remove(vertexToBeReplaced);
-            _adjacencyList[vertex].Add(replacementVertex);
+            _adjacencyList[vertexId].Remove(vertexToBeReplaced);
+            _adjacencyList[vertexId].Add(replacementVertex);
         }
 
         public override bool RemoveVertex(int id)
@@ -383,6 +322,11 @@
             return isDel;
         }
 
+        public override Edge GetEdge(int from, int to)
+        {
+            return _edgesDictionary[from < to  ? (from, to) : (to, from)];
+        }
+
         public override List<Edge> GetAdjacencyEdges(int id)
         {
             if (!_verticesDictionary.ContainsKey(id))
@@ -390,19 +334,19 @@
                 throw new ArgumentOutOfRangeException(nameof(id));
             }
 
-            return _adjacencyList[id].Select(to => new Edge(id, to)).ToList();
+            return _adjacencyList[id].Select(to => _edgesDictionary[id < to ? (id,to) : (to, id)]).ToList();
         }
 
         private bool JudgeTheExistenceOfEdge(Edge e)
         {
-            return _verticesDictionary.ContainsKey(e.From.ID) && _verticesDictionary.ContainsKey(e.To.ID) && _adjacencyList[e.From.ID].Contains(e.To.ID);
+            return _edgesDictionary.ContainsKey(e.From.ID < e.To.ID ? (e.From.ID, e.To.ID) : (e.To.ID, e.From.ID));
         }
 
         public override bool AddEdge(Edge e)
         {
             var isAdded = false;
-            var hasVertex = _verticesDictionary.ContainsKey(e.From.ID) && _verticesDictionary.ContainsKey(e.To.ID);
             var hasEdge = JudgeTheExistenceOfEdge(e);
+            var hasVertex = _verticesDictionary.ContainsKey(e.From.ID) && _verticesDictionary.ContainsKey(e.To.ID);
             if (!hasVertex || hasEdge)
                 return isAdded;
 
@@ -525,7 +469,10 @@
 
     public class UndirectedEdge : Edge
     {
-        public UndirectedEdge(Vertex from, Vertex to, double weight) : base(from.ID < to.ID ? from : to, from.ID < to.ID ? to : from, weight) { }
+        public UndirectedEdge(Vertex from, Vertex to, double weight) : base(from, to, weight)
+        {
+            PartialOrdering();
+        }
 
         public UndirectedEdge(int from, int to, double weight) : base(from, to, weight)
         {

@@ -280,20 +280,14 @@ namespace AGVSystemTest
             }
         }
 
-        //[TestMethod]
-        //public void AllOperation()
-        //{
-        //    ConcreteMap map = new Graph();
-
-        //    // 获取所有边
-        //    List<Edge> edges = map.Edges;
-        //    // 获取所有点
-        //    List<Vertex> vertexes = map.Vertices;
-        //    // 顶点数
-        //    int v = map.V;
-        //    // 顶点数
-        //    int e = map.E;
-        //}
+        [TestMethod]
+        public void AllOperation()
+        {
+            var e = new Edge(3, 1);
+            var e2 = new UndirectedEdge(e);
+            Assert.IsNotNull(e2);
+            Assert.IsTrue(e.From.ID == e2.To.ID && e.To.ID == e2.From.ID);
+        }
     }
 
     public class MapFactory
