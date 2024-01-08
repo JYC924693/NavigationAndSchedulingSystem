@@ -1,5 +1,15 @@
 ﻿namespace AGVSystem.Models
 {
+    public static class MapContext
+    {
+        private static readonly ConcreteMap Map = new Graph();
+
+        public static ConcreteMap GetInstance()
+        {
+            return Map;
+        }
+    }
+
     public interface IMap
     {
         public void BuildMap();
@@ -32,6 +42,7 @@
         public virtual bool AddVertex(int id) => AddVertex(new Vertex(id));
         public abstract bool AddVertex(Vertex vertex);
         public virtual List<Vertex> AddVertexVertices(List<Vertex> vertexes) => vertexes.Where(vertex => !AddVertex(vertex)).ToList();
+        public virtual List<Vertex> AddVertexVertices(List<int> vertexes) => vertexes.Where(vertexId => !AddVertex(vertexId)).Select(vertexId => new Vertex(vertexId)).ToList();
         public virtual bool InsertVertex(int id, Edge edge) => InsertVertex(new Vertex(id), edge);
         public abstract bool InsertVertex(Vertex vertex, Edge edge);
         public abstract bool RemoveVertex(int id);
@@ -62,7 +73,6 @@
         public override List<Vertex> Vertices => _verticesDictionary.Select(item => new Vertex(item.Value)).ToList();
 
         public override List<Edge> Edges => _edgesDictionary.Values.ToList();
-
 
         public Graph() { }
 

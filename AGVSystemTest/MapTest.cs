@@ -287,6 +287,7 @@ namespace AGVSystemTest
             var e2 = new UndirectedEdge(e);
             Assert.IsNotNull(e2);
             Assert.IsTrue(e.From.ID == e2.To.ID && e.To.ID == e2.From.ID);
+
         }
     }
 
