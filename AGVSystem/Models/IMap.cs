@@ -139,8 +139,6 @@
         /// <summary>
         /// 当两个地图所有节点名和边相同即为同一地图
         /// </summary>
-        /// <param name="concreteMap"></param>
-        /// <returns></returns>
         public override bool AreIsomorphic(ConcreteMap concreteMap)
         {
             var map = concreteMap as Graph;
@@ -151,8 +149,8 @@
                 _adjacencyList.Count != map._adjacencyList.Count) return !isEqual;
 
             // 获取图的度数序列
-            var degrees1 = GetDegrees(_adjacencyList);
-            var degrees2 = GetDegrees(map._adjacencyList);
+            var degrees1 = GetDegrees();
+            var degrees2 = map.GetDegrees();
 
             // 对度数序列进行排序
             degrees1.Sort();
@@ -176,9 +174,9 @@
             return isEqual;
         }
 
-        private static List<int> GetDegrees(Dictionary<int, HashSet<int>> graph)
+        private List<int> GetDegrees()
         {
-            return graph.Values.Select(neighbors => neighbors.Count).ToList();
+            return _adjacencyList.Values.Select(neighbors => neighbors.Count).ToList();
         }
 
         public override void BuildMap(List<Vertex> vertices, List<Edge> edges)
@@ -283,20 +281,14 @@
             ReplaceAdjacencyVertex(edge.From.ID, edge.To.ID, vertex.ID);
             var newEdge = new Edge(edge)
             {
-                To =
-                {
-                    ID = vertex.ID
-                }
+                To = vertex
             };
             AddEdgeToDict(newEdge);
 
             ReplaceAdjacencyVertex(edge.To.ID, edge.From.ID, vertex.ID);
             var newEdge2 = new Edge(edge)
             {
-                From =
-                {
-                    ID = vertex.ID
-                }
+                From = vertex
             };
             AddEdgeToDict(newEdge2);
 
