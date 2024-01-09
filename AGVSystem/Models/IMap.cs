@@ -48,6 +48,8 @@
         public abstract bool RemoveVertex(int id);
         public virtual bool RemoveVertex(Vertex vertex) => RemoveVertex(vertex.ID);
         public abstract Edge GetEdge(int from, int to);
+        public virtual bool ContainEdge(int  from, int to, int weight = 1) => ContainEdge(new Edge(from, to, weight));
+        public abstract bool ContainEdge(Edge e);
         public abstract List<Edge> GetAdjacencyEdges(int id);
         public virtual List<Edge> GetAdjacencyEdges(Vertex vertex) => GetAdjacencyEdges(vertex.ID);
         public abstract bool AddEdge(Edge v);
@@ -64,7 +66,6 @@
         /// 边集有序存储，To的数值一定大于等于From
         /// </summary>
         private readonly Dictionary<(int From, int To), Edge> _edgesDictionary = [];
-
 
         public override int V => _verticesDictionary.Count;
 
@@ -272,7 +273,7 @@
         {
             var isInserted = false;
             var hasVertex = _verticesDictionary.ContainsKey(vertex.ID);
-            var hasEdge = JudgeTheExistenceOfEdge(edge);
+            var hasEdge = ContainEdge(edge);
             if ((hasVertex && hasEdge) | hasVertex | !hasEdge) return isInserted;
 
             _verticesDictionary[vertex.ID] = vertex;
@@ -339,7 +340,7 @@
             return _adjacencyList[id].Select(to => _edgesDictionary[id < to ? (id,to) : (to, id)]).ToList();
         }
 
-        private bool JudgeTheExistenceOfEdge(Edge e)
+        public override bool ContainEdge(Edge e)
         {
             return _edgesDictionary.ContainsKey(e.From.ID < e.To.ID ? (e.From.ID, e.To.ID) : (e.To.ID, e.From.ID));
         }
@@ -347,7 +348,7 @@
         public override bool AddEdge(Edge e)
         {
             var isAdded = false;
-            var hasEdge = JudgeTheExistenceOfEdge(e);
+            var hasEdge = ContainEdge(e);
             var hasVertex = _verticesDictionary.ContainsKey(e.From.ID) && _verticesDictionary.ContainsKey(e.To.ID);
             if (!hasVertex || hasEdge)
                 return isAdded;
@@ -365,7 +366,7 @@
         {
             var isDel = false;
 
-            if (!JudgeTheExistenceOfEdge(e)) return isDel;
+            if (!ContainEdge(e)) return isDel;
 
             _adjacencyList[e.From.ID].Remove(e.To.ID);
             _adjacencyList[e.To.ID].Remove(e.From.ID);
