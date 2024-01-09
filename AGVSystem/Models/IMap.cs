@@ -47,8 +47,20 @@
         public abstract bool InsertVertex(Vertex vertex, Edge edge);
         public abstract bool RemoveVertex(int id);
         public virtual bool RemoveVertex(Vertex vertex) => RemoveVertex(vertex.ID);
+        public virtual bool TryGetEdge(in int from, in int to, out Edge edge) => TryGetEdge(from, to, 1, out edge);
+        public virtual bool TryGetEdge(in int from, in int to, in int weight, out Edge edge)
+        {
+            var isExist = ContainEdge(from, to, weight);
+            edge = new Edge(0, 0, 0);
+            if (isExist)
+            {
+                edge = GetEdge(from, to);
+            }
+
+            return isExist;
+        }
         public abstract Edge GetEdge(int from, int to);
-        public virtual bool ContainEdge(int  from, int to, int weight = 1) => ContainEdge(new Edge(from, to, weight));
+        public virtual bool ContainEdge(int from, int to, int weight = 1) => ContainEdge(new Edge(from, to, weight));
         public abstract bool ContainEdge(Edge e);
         public abstract List<Edge> GetAdjacencyEdges(int id);
         public virtual List<Edge> GetAdjacencyEdges(Vertex vertex) => GetAdjacencyEdges(vertex.ID);
@@ -410,6 +422,7 @@
     public class Vertex(int id)
     {
         public int ID { get; set; } = id;
+        public QRCode QR { get; set; }
 
         public Vertex(Vertex v) : this(v.ID)
         {
@@ -496,8 +509,23 @@
         }
     }
 
-    class QRCode
+    public class QRCode
     {
-        int ID { get; set; }
+        public int ID { get; set; }
+        public QRState State { get; set; }
+    }
+
+    public enum QRState
+    {
+        SyntropyLock,
+        SyntropyUnlock,
+        SyntropyLeft,
+        SyntropyForward,
+        SyntropyRight,
+        SubtendLock,
+        SubtendUnlock,
+        SubtendLeft,
+        SubtendForward,
+        SubtendRight,
     }
 }
