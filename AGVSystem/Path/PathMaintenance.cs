@@ -13,13 +13,14 @@ namespace AGVSystem.Path
         {
             ID = other.ID;
             angle = other.angle;
+
             mode = other.mode;
             task = other.task;
         }  
     }
     public class PathMaintenance
     {
-        private static readonly ConcreteMap map = MapContext.GetInstance();
+        private readonly ConcreteMap map = MapContext.GetInstance();
         private readonly List<QRCode> _path = [];
         public PathMaintenance() { }
 
@@ -43,17 +44,6 @@ namespace AGVSystem.Path
         {
             JudgeQRCodesIsPath();
         }
-
-        /// <summary>
-        /// 在图中查询两个二维码之间是否有边 确定两个节点是否是邻接点
-        /// </summary>
-        /// <param name="previous"></param>
-        /// <param name="next"></param>
-        /// <returns></returns>
-        public static bool CheckEdgeBetweenQRs(int previous, int next)
-        {
-            return true;
-        } 
 
         /// <summary>
         /// 判断一串二维码是否能构成一条路径
@@ -102,6 +92,21 @@ namespace AGVSystem.Path
             {
                 return new List<QRCode>();
             }
+        }
+
+        /// <summary>
+        /// 在图中查询两个二维码之间是否有边 确定两个节点是否是邻接点
+        /// </summary>
+        /// <param name="previous"></param>
+        /// <param name="next"></param>
+        /// <returns></returns>
+        public bool CheckEdgeBetweenQRs(int previous, int next)
+        {
+            if (map.ContainEdge(previous, next))
+            {
+                return true;
+            }
+            return false;
         }
 
         /// <summary>
