@@ -1,4 +1,6 @@
-﻿namespace AGVSystem.Models
+﻿using static System.Net.WebRequestMethods;
+
+namespace AGVSystem.Models
 {
     public static class MapContext
     {
@@ -12,6 +14,10 @@
 
     public interface IMap
     {
+        public int V { get; }
+        public int E { get; }
+        public List<Vertex> Vertices { get; }
+        public List<Edge> Edges { get; }
         public void BuildMap();
         public Vertex GetVertex(int id);
         public List<Vertex> GetAdjacencyVertices(int id);
@@ -20,38 +26,129 @@
         public bool RemoveVertex(int id);
         public List<Edge> GetAdjacencyEdges(int id);
         public bool AddEdge(Edge v);
-        public bool DeleteEdge(Edge v);
+        public bool RemoveEdge(Edge v);
         public void Clear();
     }
 
     public abstract class ConcreteMap
     {
+        /// <summary>
+        /// 图的顶点数
+        /// </summary>
         public abstract int V { get; }
+        /// <summary>
+        /// 图的边数
+        /// </summary>
         public abstract int E { get; }
 
+        /// <summary>
+        /// 图的顶点集
+        /// </summary>
         public abstract List<Vertex> Vertices { get; }
+        /// <summary>
+        /// 图的边集
+        /// </summary>
         public abstract List<Edge> Edges { get; }
 
+        /// <summary>
+        /// 判断两个地图是否同构
+        /// </summary>
+        /// <param name="map">需要对比的另一个地图</param>
+        /// <returns>两个图的顶点数相等且每个顶点的入度和出度都相等，则图<see href="https://zh.wikipedia.org/wiki/%E5%9B%BE%E5%90%8C%E6%9E%84">同构</see>，返回<see langword="true"/>；否则返回<see langword="fasle"/></returns>
         public abstract bool AreIsomorphic(ConcreteMap map);
+        /// <summary>
+        /// 通过顶点和边构建一个图
+        /// </summary>
+        /// <param name="vertices">待构建图的顶点集合</param>
+        /// <param name="edges">待构建图的边集合</param>
         public abstract void BuildMap(List<Vertex> vertices, List<Edge> edges);
-        public virtual void BuildMap(List<Vertex> vertices) => BuildMap(vertices, []);
+        /// <summary>
+        /// 通过顶点构建一个零图（无边的图）
+        /// </summary>
+        /// <param name="vertices">待构建图的顶点集合</param>
+        public void BuildMap(List<Vertex> vertices) => BuildMap(vertices, []);
+        /// <summary>
+        /// 通过顶点构建一个连通图（两点都是连通的图）
+        /// </summary>
+        /// <param name="edges">待构建图的边集合</param>
         public abstract void BuildMap(List<Edge> edges);
+        /// <summary>
+        /// 获取指定ID的节点数据，点不存在则抛出异常<see cref="ArgumentOutOfRangeException"/>
+        /// </summary>
+        /// <param name="id">待获取节点的ID</param>
+        /// <returns>对应ID的顶点</returns>
+        /// <exception cref="ArgumentOutOfRangeException">当点不在图中时抛出异常</exception>
         public abstract Vertex GetVertex(int id);
-        public abstract List<Vertex> GetAdjacencyVertices(int id);
-        public virtual List<Vertex> GetAdjacencyVertices(Vertex vertex) => GetAdjacencyVertices(vertex.ID);
-        public virtual bool AddVertex(int id) => AddVertex(new Vertex(id));
-        public abstract bool AddVertex(Vertex vertex);
-        public virtual List<Vertex> AddVertexVertices(List<Vertex> vertexes) => vertexes.Where(vertex => !AddVertex(vertex)).ToList();
-        public virtual List<Vertex> AddVertexVertices(List<int> vertexes) => vertexes.Where(vertexId => !AddVertex(vertexId)).Select(vertexId => new Vertex(vertexId)).ToList();
-        public virtual bool InsertVertex(int id, Edge edge) => InsertVertex(new Vertex(id), edge);
+        /// <param name="id">顶点ID</param>
+        /// <inheritdoc cref="ContainVertex(Vertex)"/>
+        public bool ContainVertex(int id) => ContainVertex(new Vertex(id));
+        /// <summary>
+        /// 判断此顶点是否在图中
+        /// </summary>
+        /// <param name="v">顶点</param>
+        /// <returns>当顶点在图中，则返回<see langword="true"/>；否则返回<see langword="false"/></returns>
+        public abstract bool ContainVertex(Vertex v);
+        /// <param name="id">待获取邻接点集合的ID</param>
+        /// <inheritdoc cref="GetAdjacencyVertices(Vertex)"/>
+        public List<Vertex> GetAdjacencyVertices(int id) => GetAdjacencyVertices(new Vertex(id));
+        /// <summary>
+        /// 获取指定顶点的邻接点集合
+        /// </summary>
+        /// <param name="vertex">待获取邻接点集合的顶点</param>
+        /// <returns>对应顶点的邻接点集合</returns>
+        public abstract List<Vertex> GetAdjacencyVertices(Vertex vertex);
+        /// <param name="id">顶点ID</param>
+        /// <inheritdoc cref="AddVertex(Vertex)"/>
+        public bool AddVertex(int id) => AddVertex(new Vertex(id));
+        /// <summary>
+        /// 添加顶点
+        /// </summary>
+        /// <param name="vertex">顶点</param>
+        /// <returns>图中不存在该点则添加成功，返回<see langword="true"/>；否则返回<see langword="false"/></returns>
+        public bool AddVertex(Vertex vertex) => AddVertices([vertex]).Count == 0;
+        /// <summary>
+        /// 添加顶点集合
+        /// </summary>
+        /// <param name="vertexes">顶点集合</param>
+        /// <returns>图中不存在该点则添加成功，返回添加失败的点集</returns>
+        public abstract List<Vertex> AddVertices(List<Vertex> vertexes);
+        /// <param name="vertexes">顶点ID集合</param>
+        /// <inheritdoc cref="AddVertices(System.Collections.Generic.List{AGVSystem.Models.Vertex})"/>
+        public List<Vertex> AddVertices(List<int> vertexes) => AddVertices(vertexes.Select(id => new Vertex(id)).ToList());
+        public bool InsertVertex(int id, Edge edge) => InsertVertex(new Vertex(id), edge);
         public abstract bool InsertVertex(Vertex vertex, Edge edge);
-        public abstract bool RemoveVertex(int id);
-        public virtual bool RemoveVertex(Vertex vertex) => RemoveVertex(vertex.ID);
-        public virtual bool TryGetEdge(in int from, in int to, out Edge edge) => TryGetEdge(from, to, 1, out edge);
-        public virtual bool TryGetEdge(in int from, in int to, in int weight, out Edge edge)
+        /// <param name="id">待移除顶点ID</param>
+        /// <inheritdoc cref="RemoveVertex(Vertex)"/>
+        public bool RemoveVertex(int id) => RemoveVertex(new Vertex(id));
+        /// <summary>
+        /// 将该顶点及其相邻边移除
+        /// </summary>
+        /// <param name="vertex">待移除顶点</param>
+        /// <returns>图中存在该点则移除成功，返回<see langword="true"/>；否则为<see langword="false"/></returns>
+        public bool RemoveVertex(Vertex vertex) => RemoveVertices([vertex]).Count == 0;
+        /// <summary>
+        /// 移除顶点的集合及其相邻边的集合
+        /// </summary>
+        /// <param name="vertexes">待移除顶点集合</param>
+        /// <returns>当图中不存在该点则该点移除失败，返回移除失败的点集</returns>
+        public abstract List<Vertex> RemoveVertices(List<Vertex> vertexes);
+        /// <param name="from">边的起始点ID</param>
+        /// <param name="to">边的终点ID</param>
+        /// <param name="edge">获取的边</param>
+        /// <inheritdoc cref="TryGetEdge(in int, in int, in double, out Edge?)"/>
+        public bool TryGetEdge(in int from, in int to, out Edge? edge) => TryGetEdge(from, to, 1, out edge);
+        /// <summary>
+        /// 尝试获取一条边，存在则将边赋值给参数<paramref name="edge"/>，不存在则<paramref name="edge"/>为<see langword="null"/>
+        /// </summary>
+        /// <param name="from">边的起始点ID</param>
+        /// <param name="to">边的终点ID</param>
+        /// <param name="weight">权重</param>
+        /// <param name="edge">获取的边</param>
+        /// <returns>存在边时返回<see langword="true"/>；否则返回<see langword="false"/></returns>
+        public bool TryGetEdge(in int from, in int to, in double weight, out Edge? edge)
         {
             var isExist = ContainEdge(from, to, weight);
-            edge = new Edge(0, 0, 0);
+            edge = null;
             if (isExist)
             {
                 edge = GetEdge(from, to);
@@ -59,15 +156,87 @@
 
             return isExist;
         }
-        public abstract Edge GetEdge(int from, int to);
-        public virtual bool ContainEdge(int from, int to, int weight = 1) => ContainEdge(new Edge(from, to, weight));
+        /// <summary>
+        /// 获取一条边
+        /// </summary>
+        /// <param name="from">边的起始点ID</param>
+        /// <param name="to">边的终点ID</param>
+        /// <param name="weight">边的权重， 默认为1</param>
+        /// <returns>返回对应的边</returns>
+        public abstract Edge GetEdge(int from, int to, double weight = 1);
+        /// <param name="from">边的起始点ID</param>
+        /// <param name="to">边的终点ID</param>
+        /// <param name="weight">边的权重， 默认为1</param>
+        /// <inheritdoc cref="ContainEdge(Edge)"/>
+        public bool ContainEdge(int from, int to, double weight = 1) => ContainEdge(new Edge(from, to, weight));
+        /// <summary>
+        /// 判断一条边是否存在图里
+        /// </summary>
+        /// <param name="e">需要判断的边</param>
+        /// <returns>图中存在边则返回<see langword="true"/>；否则返回<see langword="false"/></returns>
         public abstract bool ContainEdge(Edge e);
-        public abstract List<Edge> GetAdjacencyEdges(int id);
-        public virtual List<Edge> GetAdjacencyEdges(Vertex vertex) => GetAdjacencyEdges(vertex.ID);
-        public abstract bool AddEdge(Edge v);
-        public virtual List<Edge> AddVertexEdges(List<Edge> edges) => edges.Where(edge => !AddEdge(edge)).ToList();
-        public abstract bool DeleteEdge(Edge v);
+        /// <summary>
+        /// 获取指定点的邻接边集
+        /// </summary>
+        /// <param name="id">指定点的ID</param>
+        /// <returns>返回图中边含有该点的所有边</returns>
+        public List<Edge> GetAdjacencyEdges(int id) => GetAdjacencyEdges(new Vertex(id));
+        /// <summary>
+        /// 获取指定点的邻接边集
+        /// </summary>
+        /// <param name="vertex">指定点</param>
+        /// <returns>返回图中边含有该点的所有边</returns>
+        public abstract List<Edge> GetAdjacencyEdges(Vertex vertex);
+        /// <param name="from">边的起始点ID</param>
+        /// <param name="to">边的终点ID</param>
+        /// <param name="weight">边的权重， 默认为1</param>
+        /// <inheritdoc cref="AddEdge(Edge)"/>
+        public bool AddEdge(int from, int to, double weight = 1) => AddEdge(new Edge(from, to, weight));
+        /// <summary>
+        /// 向图中存在的点添加边
+        /// </summary>
+        /// <param name="e">待添加的边</param>
+        /// <returns>图中存在边的两个点，不存在该边则添加成功，返回<see langword="true"/>；否则返回<see langword="false"/></returns>
+        public bool AddEdge(Edge e) => AddEdges([e]).Count == 0;
+        /// <summary>
+        /// 向图中存在的点添加边集
+        /// </summary>
+        /// <param name="edges">待添加的边集</param>
+        /// <returns>存在边的两个点，不存在该边则添加成功，返回的是未添加成功的边集</returns>
+        public abstract List<Edge> AddEdges(List<Edge> edges);
+        /// <param name="from">边的起始点ID</param>
+        /// <param name="to">边的终点ID</param>
+        /// <param name="weight">边的权重， 默认为1</param>
+        /// <inheritdoc cref="RemoveEdge(Edge)"/>
+        public bool RemoveEdge(int from, int to, double weight = 1) => RemoveEdge(new Edge(from, to, weight));
+        /// <summary>
+        /// 移除指定边
+        /// </summary>
+        /// <param name="e">待移除的边</param>
+        /// <returns>边存在则删除成功，返回<see langword="true"/>；否则返回<see langword="false"/></returns>
+        public bool RemoveEdge(Edge e) => RemoveEdges([e]).Count == 0;
+        /// <summary>
+        /// 移除指定的边集
+        /// </summary>
+        /// <param name="edges">待移除的边集</param>
+        /// <returns>删除存在的边，返回的是未成功删除的边集</returns>
+        public abstract List<Edge> RemoveEdges(List<Edge> edges);
+        /// <summary>
+        /// 清空图的节点和边
+        /// </summary>
         public abstract void Clear();
+        /// <summary>
+        /// 获取指定节点的入度或出度
+        /// </summary>
+        /// <param name="id">节点ID</param>
+        /// <param name="isInDegree">出入度，<see langword="true"/>为入度，<see langword="false"/>为出度</param>
+        /// <returns>该节点的入度或出度</returns>
+        public abstract int GetDegree(int id, bool isInDegree = true);
+        /// <summary>
+        /// 获取图中每个顶点的出入度
+        /// </summary>
+        /// <returns>每个顶点出入度的集合</returns>
+        public abstract Dictionary<int, (int InDegree, int OutDegree)> GetAllDegrees();
     }
 
     public class Graph : ConcreteMap
@@ -108,6 +277,7 @@
             {
                 _edgesDictionary[edgeIndex] = new Edge(edge);
             }
+            
         }
 
         public Graph(List<Vertex> vertices) : this()
@@ -132,7 +302,7 @@
 
         public static bool operator !=(Graph left, Graph right)
         {
-            return !(left == right);
+            return !left.AreIsomorphic(right);
         }
 
         public static Graph operator +(Graph left, Vertex right)
@@ -149,9 +319,6 @@
             return map;
         }
 
-        /// <summary>
-        /// 当两个地图所有节点名和边相同即为同一地图
-        /// </summary>
         public override bool AreIsomorphic(ConcreteMap concreteMap)
         {
             var map = concreteMap as Graph;
@@ -189,7 +356,20 @@
 
         private List<int> GetDegrees()
         {
-            return _adjacencyList.Values.Select(neighbors => neighbors.Count).ToList();
+            return _adjacencyList.Values.Select(adjacencices => adjacencices.Count).ToList();
+        }
+
+        public override int GetDegree(int id, bool isInDegree = true)
+        {
+            if (!_verticesDictionary.ContainsKey(id))
+                throw new ArgumentOutOfRangeException(nameof(id));
+
+            return _adjacencyList[id].Count;
+        }
+
+        public override Dictionary<int, (int InDegree, int OutDegree)> GetAllDegrees()
+        {
+            return _adjacencyList.Select(item => (item.Key ,(item.Value.Count, item.Value.Count))).ToDictionary();
         }
 
         public override void BuildMap(List<Vertex> vertices, List<Edge> edges)
@@ -259,26 +439,24 @@
             return vertex;
         }
 
-        public override List<Vertex> GetAdjacencyVertices(int id)
+        public override bool ContainVertex(Vertex v)
         {
-            if (!_verticesDictionary.ContainsKey(id))
-            {
-                throw new ArgumentOutOfRangeException(nameof(id));
-            }
-
-            return _adjacencyList[id].Select(vertexId => _verticesDictionary[vertexId]).ToList();
+            return _verticesDictionary.ContainsKey(v.ID);
         }
 
-        public override bool AddVertex(Vertex vertex)
+        public override List<Vertex> GetAdjacencyVertices(Vertex v)
         {
-            var isAdded = false;
-            if (!_verticesDictionary.TryAdd(vertex.ID, vertex)) return isAdded;
+            if (!_verticesDictionary.ContainsKey(v.ID))
+            {
+                throw new ArgumentOutOfRangeException(nameof(v));
+            }
 
-            _adjacencyList[vertex.ID] = [];
+            return _adjacencyList[v.ID].Select(vertexId => _verticesDictionary[vertexId]).ToList();
+        }
 
-            isAdded = true;
-
-            return isAdded;
+        public override List<Vertex> AddVertices(List<Vertex> vertexes)
+        {
+            return vertexes.Where(vertex => !_verticesDictionary.TryAdd(vertex.ID, vertex)).ToList();
         }
 
         public override bool InsertVertex(Vertex vertex, Edge edge)
@@ -318,32 +496,40 @@
             _adjacencyList[vertexId].Add(replacementVertex);
         }
 
-        public override bool RemoveVertex(int id)
+        public override List<Vertex> RemoveVertices(List<Vertex> vertexes)
         {
-            var isDel = false;
-            if (!_verticesDictionary.ContainsKey(id)) return isDel;
+            var nonexistVertex = new List<Vertex>();
 
-            foreach (var vertexId in _adjacencyList[id])
+            foreach (var vertex in vertexes)
             {
-                _adjacencyList[vertexId].Remove(id);
-                RemoveEdgeFromDict(id, vertexId);
+                var id = vertex.ID;
+                if (!_verticesDictionary.ContainsKey(id))
+                {
+                    nonexistVertex.Add(vertex);
+                    continue;
+                }
+
+                foreach (var adjacencyId in _adjacencyList[id])
+                {
+                    _adjacencyList[adjacencyId].Remove(id);
+                    RemoveEdgeFromDict(id, adjacencyId);
+                }
+
+                _adjacencyList.Remove(id);
+                _verticesDictionary.Remove(id);
             }
 
-            _adjacencyList.Remove(id);
-            _verticesDictionary.Remove(id);
-
-            isDel = true;
-
-            return isDel;
+            return nonexistVertex;
         }
 
-        public override Edge GetEdge(int from, int to)
+        public override Edge GetEdge(int from, int to, double weight)
         {
             return _edgesDictionary[from < to  ? (from, to) : (to, from)];
         }
 
-        public override List<Edge> GetAdjacencyEdges(int id)
+        public override List<Edge> GetAdjacencyEdges(Vertex v)
         {
+            var id = v.ID;
             if (!_verticesDictionary.ContainsKey(id))
             {
                 throw new ArgumentOutOfRangeException(nameof(id));
@@ -357,36 +543,46 @@
             return _edgesDictionary.ContainsKey(e.From.ID < e.To.ID ? (e.From.ID, e.To.ID) : (e.To.ID, e.From.ID));
         }
 
-        public override bool AddEdge(Edge e)
+        public override List<Edge> AddEdges(List<Edge> edges)
         {
-            var isAdded = false;
-            var hasEdge = ContainEdge(e);
-            var hasVertex = _verticesDictionary.ContainsKey(e.From.ID) && _verticesDictionary.ContainsKey(e.To.ID);
-            if (!hasVertex || hasEdge)
-                return isAdded;
+            var existEdges = new List<Edge>();
 
-            _adjacencyList[e.From.ID].Add(e.To.ID);
-            _adjacencyList[e.To.ID].Add(e.From.ID);
-            AddEdgeToDict(e);
+            foreach (var e in edges)
+            {
+                var hasEdge = ContainEdge(e);
+                var hasVertex = _verticesDictionary.ContainsKey(e.From.ID) && _verticesDictionary.ContainsKey(e.To.ID);
+                if (!hasVertex || hasEdge)
+                {
+                    existEdges.Add(e);
+                    continue;
+                }
 
-            isAdded = true;
+                _adjacencyList[e.From.ID].Add(e.To.ID);
+                _adjacencyList[e.To.ID].Add(e.From.ID);
+                AddEdgeToDict(e);
+            }
 
-            return isAdded;
+            return existEdges;
         }
 
-        public override bool DeleteEdge(Edge e)
+        public override List<Edge> RemoveEdges(List<Edge> edges)
         {
-            var isDel = false;
+            var nonExistEdges = new List<Edge>();
 
-            if (!ContainEdge(e)) return isDel;
+            foreach (var e in edges)
+            {
+                if (!ContainEdge(e))
+                {
+                    nonExistEdges.Add(e);
+                    continue;
+                }
 
-            _adjacencyList[e.From.ID].Remove(e.To.ID);
-            _adjacencyList[e.To.ID].Remove(e.From.ID);
-            RemoveEdgeFromDict(e);
+                _adjacencyList[e.From.ID].Remove(e.To.ID);
+                _adjacencyList[e.To.ID].Remove(e.From.ID);
+                RemoveEdgeFromDict(e);
+            }
 
-            isDel = true;
-
-            return isDel;
+            return nonExistEdges;
         }
 
         private void RemoveEdgeFromDict(Edge e)
@@ -419,15 +615,14 @@
 
     //}
 
-    public class Vertex(int id)
+    public class Vertex(int id, QRCode qr)
     {
         public int ID { get; set; } = id;
-        public QRCode QR { get; set; }
+        public QRCode QR { get; set; } = qr;
 
-        public Vertex(Vertex v) : this(v.ID)
-        {
+        public Vertex(Vertex v) : this(v.ID, v.QR) { }
 
-        }
+        public Vertex(int id) : this(id, new QRCode()) { }
 
         public static bool operator ==(Vertex v1, Vertex v2)
         {
@@ -437,6 +632,11 @@
         public static bool operator !=(Vertex v1, Vertex v2)
         {
             return !(v1 == v2);
+        }
+
+        public override string ToString()
+        {
+            return $"{id}:\n\tqr: {qr}";
         }
     }
 
@@ -481,43 +681,38 @@
         {
             (From, To) = (To, From);
         }
-    }
 
-    public class UndirectedEdge : Edge
-    {
-        public UndirectedEdge(Vertex from, Vertex to, double weight) : base(from, to, weight)
+        public override string ToString()
         {
-            PartialOrdering();
-        }
-
-        public UndirectedEdge(int from, int to, double weight) : base(from, to, weight)
-        {
-            PartialOrdering();
-        }
-
-        public UndirectedEdge(Edge e) : base(e)
-        {
-            PartialOrdering();
-        }
-
-        private void PartialOrdering()
-        {
-            if (From.ID > To.ID)
-            {
-                Reverse();
-            }
+            return $"{From.ID} -> {To.ID}: {Weight}";
         }
     }
 
     public class QRCode
     {
-        public int ID { get; set; }
-        public QRState State { get; set; }
+        public QRCode()
+        {
+
+        }
+
+        public QRCode(int id, QRState state)
+        {
+            ID = id;
+            State = state;
+        }
+
+        public int ID { get; set; } = 0;
+        public QRState State { get; set; } = QRState.SyntropyUnlock;
+
+        public override string ToString()
+        {
+            return $"id: {ID}, state: {State}";
+        }
     }
 
     public enum QRState
     {
-        SyntropyLock,
+        SyntropyLock = 0,
         SyntropyUnlock,
         SyntropyLeft,
         SyntropyForward,

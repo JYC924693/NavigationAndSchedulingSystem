@@ -242,14 +242,14 @@ namespace AGVSystemTest
 
             foreach (var edge in subSparseNontrivialMap.Edges)
             {
-                Assert.IsFalse(sparseMap.DeleteEdge(edge), "添加边方法有误！");
+                Assert.IsFalse(sparseMap.RemoveEdge(edge), "添加边方法有误！");
             }
 
             var nontrivialVertexesMap = MapFactory.CreateMap(MapFactory.SubNontrivialZero1_WithDifferentEdgesGraph,
                 MapFactory.Type.NontrivialGraph);
             foreach (var edge in nontrivialVertexesMap.Edges)
             {
-                Assert.IsFalse(sparseMap.DeleteEdge(edge), "添加边方法有误！");
+                Assert.IsFalse(sparseMap.RemoveEdge(edge), "添加边方法有误！");
             }
 
             var subSparseNontrivialMap2 =
@@ -257,7 +257,7 @@ namespace AGVSystemTest
             var subSparseZeroMap = MapFactory.CreateMap(MapFactory.Sparse1_ZeroGraph1, MapFactory.Type.ZeroGraph);
             foreach (var edge in subSparseNontrivialMap2.Edges)
             {
-                sparseMap.DeleteEdge(edge);
+                sparseMap.RemoveEdge(edge);
             }
             Assert.IsTrue(subSparseZeroMap.AreIsomorphic(sparseMap), "添加边方法有误！");
         }
