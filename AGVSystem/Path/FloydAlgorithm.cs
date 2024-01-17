@@ -4,7 +4,7 @@ namespace AGVSystem.Path
 {
     public class FloydAlgorithm
     {
-        private static int INF = int.MaxValue;
+        private static readonly int Inf = int.MaxValue;
 
         private List<List<double>> _distance = []; //最短路径距离矩阵
         private List<List<int>> _path = []; //最近邻矩阵
@@ -49,7 +49,7 @@ namespace AGVSystem.Path
                 List<int> path_row = new List<int>(vertices_nums);
                 for (int j = 0;j< vertices_nums; j++)
                 {
-                    _distance[i][j] = INF;
+                    _distance[i][j] = Inf;
                     _path[i][j] = -1;
                 }
             }
@@ -81,7 +81,7 @@ namespace AGVSystem.Path
                 {
                     for (int j = 0; j < vertices_nums; ++j)
                     {
-                        if (_distance[i][k] != INF && _distance[k][j] != INF &&
+                        if (_distance[i][k] != Inf && _distance[k][j] != Inf &&
                             _distance[i][k] + _distance[k][j] < _distance[i][j])
                         {
                             _distance[i][j] = _distance[i][k] + _distance[k][j];
@@ -170,8 +170,8 @@ namespace AGVSystem.Path
             {
                 for (int j = 0; j < vertices; ++j)
                 {
-                    if (matrix[i, j] == INF)
-                        Console.Write("INF\t");
+                    if (matrix[i, j] == Inf)
+                        Console.Write("Inf\t");
                     else
                         Console.Write($"{matrix[i, j]}\t");
                 }
