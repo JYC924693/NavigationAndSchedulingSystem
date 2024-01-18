@@ -1,0 +1,328 @@
+### YamlMime:ManagedReference
+items:
+- uid: AGVSystem.Models.QRState
+  commentId: T:AGVSystem.Models.QRState
+  id: QRState
+  parent: AGVSystem.Models
+  children:
+  - AGVSystem.Models.QRState.SubtendForward
+  - AGVSystem.Models.QRState.SubtendLeft
+  - AGVSystem.Models.QRState.SubtendLock
+  - AGVSystem.Models.QRState.SubtendRight
+  - AGVSystem.Models.QRState.SubtendUnlock
+  - AGVSystem.Models.QRState.SyntropyForward
+  - AGVSystem.Models.QRState.SyntropyLeft
+  - AGVSystem.Models.QRState.SyntropyLock
+  - AGVSystem.Models.QRState.SyntropyRight
+  - AGVSystem.Models.QRState.SyntropyUnlock
+  langs:
+  - csharp
+  - vb
+  name: QRState
+  nameWithType: QRState
+  fullName: AGVSystem.Models.QRState
+  type: Enum
+  source:
+    remote:
+      path: AGVSystem/Models/IMap.cs
+      branch: mapMaintenance
+      repo: https://github.com/JYC924693/NavigationAndSchedulingSystem.git
+    id: QRState
+    path: ../AGVSystem/Models/IMap.cs
+    startLine: 712
+  assemblies:
+  - AGVSystem
+  namespace: AGVSystem.Models
+  syntax:
+    content: public enum QRState
+    content.vb: Public Enum QRState
+- uid: AGVSystem.Models.QRState.SyntropyLock
+  commentId: F:AGVSystem.Models.QRState.SyntropyLock
+  id: SyntropyLock
+  parent: AGVSystem.Models.QRState
+  langs:
+  - csharp
+  - vb
+  name: SyntropyLock
+  nameWithType: QRState.SyntropyLock
+  fullName: AGVSystem.Models.QRState.SyntropyLock
+  type: Field
+  source:
+    remote:
+      path: AGVSystem/Models/IMap.cs
+      branch: mapMaintenance
+      repo: https://github.com/JYC924693/NavigationAndSchedulingSystem.git
+    id: SyntropyLock
+    path: ../AGVSystem/Models/IMap.cs
+    startLine: 714
+  assemblies:
+  - AGVSystem
+  namespace: AGVSystem.Models
+  syntax:
+    content: SyntropyLock = 0
+    return:
+      type: AGVSystem.Models.QRState
+- uid: AGVSystem.Models.QRState.SyntropyUnlock
+  commentId: F:AGVSystem.Models.QRState.SyntropyUnlock
+  id: SyntropyUnlock
+  parent: AGVSystem.Models.QRState
+  langs:
+  - csharp
+  - vb
+  name: SyntropyUnlock
+  nameWithType: QRState.SyntropyUnlock
+  fullName: AGVSystem.Models.QRState.SyntropyUnlock
+  type: Field
+  source:
+    remote:
+      path: AGVSystem/Models/IMap.cs
+      branch: mapMaintenance
+      repo: https://github.com/JYC924693/NavigationAndSchedulingSystem.git
+    id: SyntropyUnlock
+    path: ../AGVSystem/Models/IMap.cs
+    startLine: 715
+  assemblies:
+  - AGVSystem
+  namespace: AGVSystem.Models
+  syntax:
+    content: SyntropyUnlock = 1
+    return:
+      type: AGVSystem.Models.QRState
+- uid: AGVSystem.Models.QRState.SyntropyLeft
+  commentId: F:AGVSystem.Models.QRState.SyntropyLeft
+  id: SyntropyLeft
+  parent: AGVSystem.Models.QRState
+  langs:
+  - csharp
+  - vb
+  name: SyntropyLeft
+  nameWithType: QRState.SyntropyLeft
+  fullName: AGVSystem.Models.QRState.SyntropyLeft
+  type: Field
+  source:
+    remote:
+      path: AGVSystem/Models/IMap.cs
+      branch: mapMaintenance
+      repo: https://github.com/JYC924693/NavigationAndSchedulingSystem.git
+    id: SyntropyLeft
+    path: ../AGVSystem/Models/IMap.cs
+    startLine: 716
+  assemblies:
+  - AGVSystem
+  namespace: AGVSystem.Models
+  syntax:
+    content: SyntropyLeft = 2
+    return:
+      type: AGVSystem.Models.QRState
+- uid: AGVSystem.Models.QRState.SyntropyForward
+  commentId: F:AGVSystem.Models.QRState.SyntropyForward
+  id: SyntropyForward
+  parent: AGVSystem.Models.QRState
+  langs:
+  - csharp
+  - vb
+  name: SyntropyForward
+  nameWithType: QRState.SyntropyForward
+  fullName: AGVSystem.Models.QRState.SyntropyForward
+  type: Field
+  source:
+    remote:
+      path: AGVSystem/Models/IMap.cs
+      branch: mapMaintenance
+      repo: https://github.com/JYC924693/NavigationAndSchedulingSystem.git
+    id: SyntropyForward
+    path: ../AGVSystem/Models/IMap.cs
+    startLine: 717
+  assemblies:
+  - AGVSystem
+  namespace: AGVSystem.Models
+  syntax:
+    content: SyntropyForward = 3
+    return:
+      type: AGVSystem.Models.QRState
+- uid: AGVSystem.Models.QRState.SyntropyRight
+  commentId: F:AGVSystem.Models.QRState.SyntropyRight
+  id: SyntropyRight
+  parent: AGVSystem.Models.QRState
+  langs:
+  - csharp
+  - vb
+  name: SyntropyRight
+  nameWithType: QRState.SyntropyRight
+  fullName: AGVSystem.Models.QRState.SyntropyRight
+  type: Field
+  source:
+    remote:
+      path: AGVSystem/Models/IMap.cs
+      branch: mapMaintenance
+      repo: https://github.com/JYC924693/NavigationAndSchedulingSystem.git
+    id: SyntropyRight
+    path: ../AGVSystem/Models/IMap.cs
+    startLine: 718
+  assemblies:
+  - AGVSystem
+  namespace: AGVSystem.Models
+  syntax:
+    content: SyntropyRight = 4
+    return:
+      type: AGVSystem.Models.QRState
+- uid: AGVSystem.Models.QRState.SubtendLock
+  commentId: F:AGVSystem.Models.QRState.SubtendLock
+  id: SubtendLock
+  parent: AGVSystem.Models.QRState
+  langs:
+  - csharp
+  - vb
+  name: SubtendLock
+  nameWithType: QRState.SubtendLock
+  fullName: AGVSystem.Models.QRState.SubtendLock
+  type: Field
+  source:
+    remote:
+      path: AGVSystem/Models/IMap.cs
+      branch: mapMaintenance
+      repo: https://github.com/JYC924693/NavigationAndSchedulingSystem.git
+    id: SubtendLock
+    path: ../AGVSystem/Models/IMap.cs
+    startLine: 719
+  assemblies:
+  - AGVSystem
+  namespace: AGVSystem.Models
+  syntax:
+    content: SubtendLock = 5
+    return:
+      type: AGVSystem.Models.QRState
+- uid: AGVSystem.Models.QRState.SubtendUnlock
+  commentId: F:AGVSystem.Models.QRState.SubtendUnlock
+  id: SubtendUnlock
+  parent: AGVSystem.Models.QRState
+  langs:
+  - csharp
+  - vb
+  name: SubtendUnlock
+  nameWithType: QRState.SubtendUnlock
+  fullName: AGVSystem.Models.QRState.SubtendUnlock
+  type: Field
+  source:
+    remote:
+      path: AGVSystem/Models/IMap.cs
+      branch: mapMaintenance
+      repo: https://github.com/JYC924693/NavigationAndSchedulingSystem.git
+    id: SubtendUnlock
+    path: ../AGVSystem/Models/IMap.cs
+    startLine: 720
+  assemblies:
+  - AGVSystem
+  namespace: AGVSystem.Models
+  syntax:
+    content: SubtendUnlock = 6
+    return:
+      type: AGVSystem.Models.QRState
+- uid: AGVSystem.Models.QRState.SubtendLeft
+  commentId: F:AGVSystem.Models.QRState.SubtendLeft
+  id: SubtendLeft
+  parent: AGVSystem.Models.QRState
+  langs:
+  - csharp
+  - vb
+  name: SubtendLeft
+  nameWithType: QRState.SubtendLeft
+  fullName: AGVSystem.Models.QRState.SubtendLeft
+  type: Field
+  source:
+    remote:
+      path: AGVSystem/Models/IMap.cs
+      branch: mapMaintenance
+      repo: https://github.com/JYC924693/NavigationAndSchedulingSystem.git
+    id: SubtendLeft
+    path: ../AGVSystem/Models/IMap.cs
+    startLine: 721
+  assemblies:
+  - AGVSystem
+  namespace: AGVSystem.Models
+  syntax:
+    content: SubtendLeft = 7
+    return:
+      type: AGVSystem.Models.QRState
+- uid: AGVSystem.Models.QRState.SubtendForward
+  commentId: F:AGVSystem.Models.QRState.SubtendForward
+  id: SubtendForward
+  parent: AGVSystem.Models.QRState
+  langs:
+  - csharp
+  - vb
+  name: SubtendForward
+  nameWithType: QRState.SubtendForward
+  fullName: AGVSystem.Models.QRState.SubtendForward
+  type: Field
+  source:
+    remote:
+      path: AGVSystem/Models/IMap.cs
+      branch: mapMaintenance
+      repo: https://github.com/JYC924693/NavigationAndSchedulingSystem.git
+    id: SubtendForward
+    path: ../AGVSystem/Models/IMap.cs
+    startLine: 722
+  assemblies:
+  - AGVSystem
+  namespace: AGVSystem.Models
+  syntax:
+    content: SubtendForward = 8
+    return:
+      type: AGVSystem.Models.QRState
+- uid: AGVSystem.Models.QRState.SubtendRight
+  commentId: F:AGVSystem.Models.QRState.SubtendRight
+  id: SubtendRight
+  parent: AGVSystem.Models.QRState
+  langs:
+  - csharp
+  - vb
+  name: SubtendRight
+  nameWithType: QRState.SubtendRight
+  fullName: AGVSystem.Models.QRState.SubtendRight
+  type: Field
+  source:
+    remote:
+      path: AGVSystem/Models/IMap.cs
+      branch: mapMaintenance
+      repo: https://github.com/JYC924693/NavigationAndSchedulingSystem.git
+    id: SubtendRight
+    path: ../AGVSystem/Models/IMap.cs
+    startLine: 723
+  assemblies:
+  - AGVSystem
+  namespace: AGVSystem.Models
+  syntax:
+    content: SubtendRight = 9
+    return:
+      type: AGVSystem.Models.QRState
+references:
+- uid: AGVSystem.Models
+  commentId: N:AGVSystem.Models
+  href: AGVSystem.html
+  name: AGVSystem.Models
+  nameWithType: AGVSystem.Models
+  fullName: AGVSystem.Models
+  spec.csharp:
+  - uid: AGVSystem
+    name: AGVSystem
+    href: AGVSystem.html
+  - name: .
+  - uid: AGVSystem.Models
+    name: Models
+    href: AGVSystem.Models.html
+  spec.vb:
+  - uid: AGVSystem
+    name: AGVSystem
+    href: AGVSystem.html
+  - name: .
+  - uid: AGVSystem.Models
+    name: Models
+    href: AGVSystem.Models.html
+- uid: AGVSystem.Models.QRState
+  commentId: T:AGVSystem.Models.QRState
+  parent: AGVSystem.Models
+  href: AGVSystem.Models.QRState.html
+  name: QRState
+  nameWithType: QRState
+  fullName: AGVSystem.Models.QRState

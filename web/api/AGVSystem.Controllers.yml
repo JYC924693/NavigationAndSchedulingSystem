@@ -1,0 +1,23 @@
+### YamlMime:ManagedReference
+items:
+- uid: AGVSystem.Controllers
+  commentId: N:AGVSystem.Controllers
+  id: AGVSystem.Controllers
+  children:
+  - AGVSystem.Controllers.WeatherForecastController
+  langs:
+  - csharp
+  - vb
+  name: AGVSystem.Controllers
+  nameWithType: AGVSystem.Controllers
+  fullName: AGVSystem.Controllers
+  type: Namespace
+  assemblies:
+  - AGVSystem
+references:
+- uid: AGVSystem.Controllers.WeatherForecastController
+  commentId: T:AGVSystem.Controllers.WeatherForecastController
+  href: AGVSystem.Controllers.WeatherForecastController.html
+  name: WeatherForecastController
+  nameWithType: WeatherForecastController
+  fullName: AGVSystem.Controllers.WeatherForecastController

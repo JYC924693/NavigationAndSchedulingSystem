@@ -1,0 +1,30 @@
+### YamlMime:ManagedReference
+items:
+- uid: AGVSystem
+  commentId: N:AGVSystem
+  id: AGVSystem
+  children:
+  - AGVSystem.Program
+  - AGVSystem.WeatherForecast
+  langs:
+  - csharp
+  - vb
+  name: AGVSystem
+  nameWithType: AGVSystem
+  fullName: AGVSystem
+  type: Namespace
+  assemblies:
+  - AGVSystem
+references:
+- uid: AGVSystem.Program
+  commentId: T:AGVSystem.Program
+  href: AGVSystem.Program.html
+  name: Program
+  nameWithType: Program
+  fullName: AGVSystem.Program
+- uid: AGVSystem.WeatherForecast
+  commentId: T:AGVSystem.WeatherForecast
+  href: AGVSystem.WeatherForecast.html
+  name: WeatherForecast
+  nameWithType: WeatherForecast
+  fullName: AGVSystem.WeatherForecast

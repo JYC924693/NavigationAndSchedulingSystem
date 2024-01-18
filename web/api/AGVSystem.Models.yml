@@ -1,0 +1,114 @@
+### YamlMime:ManagedReference
+items:
+- uid: AGVSystem.Models
+  commentId: N:AGVSystem.Models
+  id: AGVSystem.Models
+  children:
+  - AGVSystem.Models.ConcreteMap
+  - AGVSystem.Models.DataBase
+  - AGVSystem.Models.Edge
+  - AGVSystem.Models.Graph
+  - AGVSystem.Models.IMap
+  - AGVSystem.Models.MapContext
+  - AGVSystem.Models.MapConverter
+  - AGVSystem.Models.QRCode
+  - AGVSystem.Models.QRState
+  - AGVSystem.Models.Vertex
+  langs:
+  - csharp
+  - vb
+  name: AGVSystem.Models
+  nameWithType: AGVSystem.Models
+  fullName: AGVSystem.Models
+  type: Namespace
+  assemblies:
+  - AGVSystem
+references:
+- uid: AGVSystem.Models.DataBase
+  commentId: T:AGVSystem.Models.DataBase
+  href: AGVSystem.Models.DataBase.html
+  name: DataBase
+  nameWithType: DataBase
+  fullName: AGVSystem.Models.DataBase
+- uid: AGVSystem.Models.MapConverter
+  commentId: T:AGVSystem.Models.MapConverter
+  href: AGVSystem.Models.MapConverter.html
+  name: MapConverter
+  nameWithType: MapConverter
+  fullName: AGVSystem.Models.MapConverter
+- uid: AGVSystem.Models.MapContext
+  commentId: T:AGVSystem.Models.MapContext
+  href: AGVSystem.Models.MapContext.html
+  name: MapContext
+  nameWithType: MapContext
+  fullName: AGVSystem.Models.MapContext
+- uid: AGVSystem.Models.IMap
+  commentId: T:AGVSystem.Models.IMap
+  href: AGVSystem.Models.IMap.html
+  name: IMap
+  nameWithType: IMap
+  fullName: AGVSystem.Models.IMap
+- uid: AGVSystem.Models.ConcreteMap
+  commentId: T:AGVSystem.Models.ConcreteMap
+  parent: AGVSystem.Models
+  href: AGVSystem.Models.ConcreteMap.html
+  name: ConcreteMap
+  nameWithType: ConcreteMap
+  fullName: AGVSystem.Models.ConcreteMap
+- uid: AGVSystem.Models.Graph
+  commentId: T:AGVSystem.Models.Graph
+  parent: AGVSystem.Models
+  href: AGVSystem.Models.Graph.html
+  name: Graph
+  nameWithType: Graph
+  fullName: AGVSystem.Models.Graph
+- uid: AGVSystem.Models.Vertex
+  commentId: T:AGVSystem.Models.Vertex
+  parent: AGVSystem.Models
+  href: AGVSystem.Models.Vertex.html
+  name: Vertex
+  nameWithType: Vertex
+  fullName: AGVSystem.Models.Vertex
+- uid: AGVSystem.Models.Edge
+  commentId: T:AGVSystem.Models.Edge
+  parent: AGVSystem.Models
+  href: AGVSystem.Models.Edge.html
+  name: Edge
+  nameWithType: Edge
+  fullName: AGVSystem.Models.Edge
+- uid: AGVSystem.Models.QRCode
+  commentId: T:AGVSystem.Models.QRCode
+  parent: AGVSystem.Models
+  href: AGVSystem.Models.QRCode.html
+  name: QRCode
+  nameWithType: QRCode
+  fullName: AGVSystem.Models.QRCode
+- uid: AGVSystem.Models.QRState
+  commentId: T:AGVSystem.Models.QRState
+  parent: AGVSystem.Models
+  href: AGVSystem.Models.QRState.html
+  name: QRState
+  nameWithType: QRState
+  fullName: AGVSystem.Models.QRState
+- uid: AGVSystem.Models
+  commentId: N:AGVSystem.Models
+  href: AGVSystem.html
+  name: AGVSystem.Models
+  nameWithType: AGVSystem.Models
+  fullName: AGVSystem.Models
+  spec.csharp:
+  - uid: AGVSystem
+    name: AGVSystem
+    href: AGVSystem.html
+  - name: .
+  - uid: AGVSystem.Models
+    name: Models
+    href: AGVSystem.Models.html
+  spec.vb:
+  - uid: AGVSystem
+    name: AGVSystem
+    href: AGVSystem.html
+  - name: .
+  - uid: AGVSystem.Models
+    name: Models
+    href: AGVSystem.Models.html

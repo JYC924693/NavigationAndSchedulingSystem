@@ -54,7 +54,7 @@ namespace AGVSystem.Models
         /// 判断两个地图是否同构
         /// </summary>
         /// <param name="map">需要对比的另一个地图</param>
-        /// <returns>两个图的顶点数相等且每个顶点的入度和出度都相等，则图<see href="https://zh.wikipedia.org/wiki/%E5%9B%BE%E5%90%8C%E6%9E%84">同构</see>，返回<see langword="true"/>；否则返回<see langword="fasle"/></returns>
+        /// <returns>两个图的顶点数相等且每个顶点的入度和出度都相等，则图<see href="https://zh.wikipedia.org/wiki/%E5%9B%BE%E5%90%8C%E6%9E%84">同构</see>，返回<see langword="true"/>；否则返回<see langword="false"/></returns>
         public abstract bool AreIsomorphic(ConcreteMap map);
         /// <summary>
         /// 通过顶点和边构建一个图
@@ -142,7 +142,7 @@ namespace AGVSystem.Models
         /// </summary>
         /// <param name="from">边的起始点ID</param>
         /// <param name="to">边的终点ID</param>
-        /// <param name="weight">权重</param>
+        /// <param name="weight">边的权重</param>
         /// <param name="edge">获取的边</param>
         /// <returns>存在边时返回<see langword="true"/>；否则返回<see langword="false"/></returns>
         public bool TryGetEdge(in int from, in int to, in double weight, out Edge? edge)

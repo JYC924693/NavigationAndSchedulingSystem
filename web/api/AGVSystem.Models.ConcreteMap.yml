@@ -1,0 +1,2237 @@
+### YamlMime:ManagedReference
+items:
+- uid: AGVSystem.Models.ConcreteMap
+  commentId: T:AGVSystem.Models.ConcreteMap
+  id: ConcreteMap
+  parent: AGVSystem.Models
+  children:
+  - AGVSystem.Models.ConcreteMap.AddEdge(AGVSystem.Models.Edge)
+  - AGVSystem.Models.ConcreteMap.AddEdge(System.Int32,System.Int32,System.Double)
+  - AGVSystem.Models.ConcreteMap.AddEdges(System.Collections.Generic.List{AGVSystem.Models.Edge})
+  - AGVSystem.Models.ConcreteMap.AddVertex(AGVSystem.Models.Vertex)
+  - AGVSystem.Models.ConcreteMap.AddVertex(System.Int32)
+  - AGVSystem.Models.ConcreteMap.AddVertices(System.Collections.Generic.List{AGVSystem.Models.Vertex})
+  - AGVSystem.Models.ConcreteMap.AddVertices(System.Collections.Generic.List{System.Int32})
+  - AGVSystem.Models.ConcreteMap.AreIsomorphic(AGVSystem.Models.ConcreteMap)
+  - AGVSystem.Models.ConcreteMap.BuildMap(System.Collections.Generic.List{AGVSystem.Models.Edge})
+  - AGVSystem.Models.ConcreteMap.BuildMap(System.Collections.Generic.List{AGVSystem.Models.Vertex})
+  - AGVSystem.Models.ConcreteMap.BuildMap(System.Collections.Generic.List{AGVSystem.Models.Vertex},System.Collections.Generic.List{AGVSystem.Models.Edge})
+  - AGVSystem.Models.ConcreteMap.Clear
+  - AGVSystem.Models.ConcreteMap.ContainEdge(AGVSystem.Models.Edge)
+  - AGVSystem.Models.ConcreteMap.ContainEdge(System.Int32,System.Int32,System.Double)
+  - AGVSystem.Models.ConcreteMap.ContainVertex(AGVSystem.Models.Vertex)
+  - AGVSystem.Models.ConcreteMap.ContainVertex(System.Int32)
+  - AGVSystem.Models.ConcreteMap.E
+  - AGVSystem.Models.ConcreteMap.Edges
+  - AGVSystem.Models.ConcreteMap.GetAdjacencyEdges(AGVSystem.Models.Vertex)
+  - AGVSystem.Models.ConcreteMap.GetAdjacencyEdges(System.Int32)
+  - AGVSystem.Models.ConcreteMap.GetAdjacencyVertices(AGVSystem.Models.Vertex)
+  - AGVSystem.Models.ConcreteMap.GetAdjacencyVertices(System.Int32)
+  - AGVSystem.Models.ConcreteMap.GetAllDegrees
+  - AGVSystem.Models.ConcreteMap.GetDegree(System.Int32,System.Boolean)
+  - AGVSystem.Models.ConcreteMap.GetEdge(System.Int32,System.Int32,System.Double)
+  - AGVSystem.Models.ConcreteMap.GetVertex(System.Int32)
+  - AGVSystem.Models.ConcreteMap.InsertVertex(AGVSystem.Models.Vertex,AGVSystem.Models.Edge)
+  - AGVSystem.Models.ConcreteMap.InsertVertex(System.Int32,AGVSystem.Models.Edge)
+  - AGVSystem.Models.ConcreteMap.RemoveEdge(AGVSystem.Models.Edge)
+  - AGVSystem.Models.ConcreteMap.RemoveEdge(System.Int32,System.Int32,System.Double)
+  - AGVSystem.Models.ConcreteMap.RemoveEdges(System.Collections.Generic.List{AGVSystem.Models.Edge})
+  - AGVSystem.Models.ConcreteMap.RemoveVertex(AGVSystem.Models.Vertex)
+  - AGVSystem.Models.ConcreteMap.RemoveVertex(System.Int32)
+  - AGVSystem.Models.ConcreteMap.RemoveVertices(System.Collections.Generic.List{AGVSystem.Models.Vertex})
+  - AGVSystem.Models.ConcreteMap.TryGetEdge(System.Int32@,System.Int32@,AGVSystem.Models.Edge@)
+  - AGVSystem.Models.ConcreteMap.TryGetEdge(System.Int32@,System.Int32@,System.Double@,AGVSystem.Models.Edge@)
+  - AGVSystem.Models.ConcreteMap.V
+  - AGVSystem.Models.ConcreteMap.Vertices
+  langs:
+  - csharp
+  - vb
+  name: ConcreteMap
+  nameWithType: ConcreteMap
+  fullName: AGVSystem.Models.ConcreteMap
+  type: Class
+  source:
+    remote:
+      path: AGVSystem/Models/IMap.cs
+      branch: mapMaintenance
+      repo: https://github.com/JYC924693/NavigationAndSchedulingSystem.git
+    id: ConcreteMap
+    path: ../AGVSystem/Models/IMap.cs
+    startLine: 32
+  assemblies:
+  - AGVSystem
+  namespace: AGVSystem.Models
+  syntax:
+    content: public abstract class ConcreteMap
+    content.vb: Public MustInherit Class ConcreteMap
+  inheritance:
+  - System.Object
+  derivedClasses:
+  - AGVSystem.Models.Graph
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+- uid: AGVSystem.Models.ConcreteMap.V
+  commentId: P:AGVSystem.Models.ConcreteMap.V
+  id: V
+  parent: AGVSystem.Models.ConcreteMap
+  langs:
+  - csharp
+  - vb
+  name: V
+  nameWithType: ConcreteMap.V
+  fullName: AGVSystem.Models.ConcreteMap.V
+  type: Property
+  source:
+    remote:
+      path: AGVSystem/Models/IMap.cs
+      branch: mapMaintenance
+      repo: https://github.com/JYC924693/NavigationAndSchedulingSystem.git
+    id: V
+    path: ../AGVSystem/Models/IMap.cs
+    startLine: 37
+  assemblies:
+  - AGVSystem
+  namespace: AGVSystem.Models
+  summary: 图的顶点数
+  example: []
+  syntax:
+    content: public abstract int V { get; }
+    parameters: []
+    return:
+      type: System.Int32
+    content.vb: Public MustOverride ReadOnly Property V As Integer
+  overload: AGVSystem.Models.ConcreteMap.V*
+- uid: AGVSystem.Models.ConcreteMap.E
+  commentId: P:AGVSystem.Models.ConcreteMap.E
+  id: E
+  parent: AGVSystem.Models.ConcreteMap
+  langs:
+  - csharp
+  - vb
+  name: E
+  nameWithType: ConcreteMap.E
+  fullName: AGVSystem.Models.ConcreteMap.E
+  type: Property
+  source:
+    remote:
+      path: AGVSystem/Models/IMap.cs
+      branch: mapMaintenance
+      repo: https://github.com/JYC924693/NavigationAndSchedulingSystem.git
+    id: E
+    path: ../AGVSystem/Models/IMap.cs
+    startLine: 41
+  assemblies:
+  - AGVSystem
+  namespace: AGVSystem.Models
+  summary: 图的边数
+  example: []
+  syntax:
+    content: public abstract int E { get; }
+    parameters: []
+    return:
+      type: System.Int32
+    content.vb: Public MustOverride ReadOnly Property E As Integer
+  overload: AGVSystem.Models.ConcreteMap.E*
+- uid: AGVSystem.Models.ConcreteMap.Vertices
+  commentId: P:AGVSystem.Models.ConcreteMap.Vertices
+  id: Vertices
+  parent: AGVSystem.Models.ConcreteMap
+  langs:
+  - csharp
+  - vb
+  name: Vertices
+  nameWithType: ConcreteMap.Vertices
+  fullName: AGVSystem.Models.ConcreteMap.Vertices
+  type: Property
+  source:
+    remote:
+      path: AGVSystem/Models/IMap.cs
+      branch: mapMaintenance
+      repo: https://github.com/JYC924693/NavigationAndSchedulingSystem.git
+    id: Vertices
+    path: ../AGVSystem/Models/IMap.cs
+    startLine: 46
+  assemblies:
+  - AGVSystem
+  namespace: AGVSystem.Models
+  summary: 图的顶点集
+  example: []
+  syntax:
+    content: public abstract List<Vertex> Vertices { get; }
+    parameters: []
+    return:
+      type: System.Collections.Generic.List{AGVSystem.Models.Vertex}
+    content.vb: Public MustOverride ReadOnly Property Vertices As List(Of Vertex)
+  overload: AGVSystem.Models.ConcreteMap.Vertices*
+- uid: AGVSystem.Models.ConcreteMap.Edges
+  commentId: P:AGVSystem.Models.ConcreteMap.Edges
+  id: Edges
+  parent: AGVSystem.Models.ConcreteMap
+  langs:
+  - csharp
+  - vb
+  name: Edges
+  nameWithType: ConcreteMap.Edges
+  fullName: AGVSystem.Models.ConcreteMap.Edges
+  type: Property
+  source:
+    remote:
+      path: AGVSystem/Models/IMap.cs
+      branch: mapMaintenance
+      repo: https://github.com/JYC924693/NavigationAndSchedulingSystem.git
+    id: Edges
+    path: ../AGVSystem/Models/IMap.cs
+    startLine: 50
+  assemblies:
+  - AGVSystem
+  namespace: AGVSystem.Models
+  summary: 图的边集
+  example: []
+  syntax:
+    content: public abstract List<Edge> Edges { get; }
+    parameters: []
+    return:
+      type: System.Collections.Generic.List{AGVSystem.Models.Edge}
+    content.vb: Public MustOverride ReadOnly Property Edges As List(Of Edge)
+  overload: AGVSystem.Models.ConcreteMap.Edges*
+- uid: AGVSystem.Models.ConcreteMap.AreIsomorphic(AGVSystem.Models.ConcreteMap)
+  commentId: M:AGVSystem.Models.ConcreteMap.AreIsomorphic(AGVSystem.Models.ConcreteMap)
+  id: AreIsomorphic(AGVSystem.Models.ConcreteMap)
+  parent: AGVSystem.Models.ConcreteMap
+  langs:
+  - csharp
+  - vb
+  name: AreIsomorphic(ConcreteMap)
+  nameWithType: ConcreteMap.AreIsomorphic(ConcreteMap)
+  fullName: AGVSystem.Models.ConcreteMap.AreIsomorphic(AGVSystem.Models.ConcreteMap)
+  type: Method
+  source:
+    remote:
+      path: AGVSystem/Models/IMap.cs
+      branch: mapMaintenance
+      repo: https://github.com/JYC924693/NavigationAndSchedulingSystem.git
+    id: AreIsomorphic
+    path: ../AGVSystem/Models/IMap.cs
+    startLine: 57
+  assemblies:
+  - AGVSystem
+  namespace: AGVSystem.Models
+  summary: 判断两个地图是否同构
+  example: []
+  syntax:
+    content: public abstract bool AreIsomorphic(ConcreteMap map)
+    parameters:
+    - id: map
+      type: AGVSystem.Models.ConcreteMap
+      description: 需要对比的另一个地图
+    return:
+      type: System.Boolean
+      description: 两个图的顶点数相等且每个顶点的入度和出度都相等，则图<a href="https://zh.wikipedia.org/wiki/%E5%9B%BE%E5%90%8C%E6%9E%84">同构</a>，返回<a href="https://learn.microsoft.com/dotnet/csharp/language-reference/builtin-types/bool">true</a>；否则返回<a href="https://learn.microsoft.com/dotnet/csharp/language-reference/builtin-types/bool">false</a>
+    content.vb: Public MustOverride Function AreIsomorphic(map As ConcreteMap) As Boolean
+  overload: AGVSystem.Models.ConcreteMap.AreIsomorphic*
+- uid: AGVSystem.Models.ConcreteMap.BuildMap(System.Collections.Generic.List{AGVSystem.Models.Vertex},System.Collections.Generic.List{AGVSystem.Models.Edge})
+  commentId: M:AGVSystem.Models.ConcreteMap.BuildMap(System.Collections.Generic.List{AGVSystem.Models.Vertex},System.Collections.Generic.List{AGVSystem.Models.Edge})
+  id: BuildMap(System.Collections.Generic.List{AGVSystem.Models.Vertex},System.Collections.Generic.List{AGVSystem.Models.Edge})
+  parent: AGVSystem.Models.ConcreteMap
+  langs:
+  - csharp
+  - vb
+  name: BuildMap(List<Vertex>, List<Edge>)
+  nameWithType: ConcreteMap.BuildMap(List<Vertex>, List<Edge>)
+  fullName: AGVSystem.Models.ConcreteMap.BuildMap(System.Collections.Generic.List<AGVSystem.Models.Vertex>, System.Collections.Generic.List<AGVSystem.Models.Edge>)
+  type: Method
+  source:
+    remote:
+      path: AGVSystem/Models/IMap.cs
+      branch: mapMaintenance
+      repo: https://github.com/JYC924693/NavigationAndSchedulingSystem.git
+    id: BuildMap
+    path: ../AGVSystem/Models/IMap.cs
+    startLine: 63
+  assemblies:
+  - AGVSystem
+  namespace: AGVSystem.Models
+  summary: 通过顶点和边构建一个图
+  example: []
+  syntax:
+    content: public abstract void BuildMap(List<Vertex> vertices, List<Edge> edges)
+    parameters:
+    - id: vertices
+      type: System.Collections.Generic.List{AGVSystem.Models.Vertex}
+      description: 待构建图的顶点集合
+    - id: edges
+      type: System.Collections.Generic.List{AGVSystem.Models.Edge}
+      description: 待构建图的边集合
+    content.vb: Public MustOverride Sub BuildMap(vertices As List(Of Vertex), edges As List(Of Edge))
+  overload: AGVSystem.Models.ConcreteMap.BuildMap*
+  nameWithType.vb: ConcreteMap.BuildMap(List(Of Vertex), List(Of Edge))
+  fullName.vb: AGVSystem.Models.ConcreteMap.BuildMap(System.Collections.Generic.List(Of AGVSystem.Models.Vertex), System.Collections.Generic.List(Of AGVSystem.Models.Edge))
+  name.vb: BuildMap(List(Of Vertex), List(Of Edge))
+- uid: AGVSystem.Models.ConcreteMap.BuildMap(System.Collections.Generic.List{AGVSystem.Models.Vertex})
+  commentId: M:AGVSystem.Models.ConcreteMap.BuildMap(System.Collections.Generic.List{AGVSystem.Models.Vertex})
+  id: BuildMap(System.Collections.Generic.List{AGVSystem.Models.Vertex})
+  parent: AGVSystem.Models.ConcreteMap
+  langs:
+  - csharp
+  - vb
+  name: BuildMap(List<Vertex>)
+  nameWithType: ConcreteMap.BuildMap(List<Vertex>)
+  fullName: AGVSystem.Models.ConcreteMap.BuildMap(System.Collections.Generic.List<AGVSystem.Models.Vertex>)
+  type: Method
+  source:
+    remote:
+      path: AGVSystem/Models/IMap.cs
+      branch: mapMaintenance
+      repo: https://github.com/JYC924693/NavigationAndSchedulingSystem.git
+    id: BuildMap
+    path: ../AGVSystem/Models/IMap.cs
+    startLine: 68
+  assemblies:
+  - AGVSystem
+  namespace: AGVSystem.Models
+  summary: 通过顶点构建一个零图（无边的图）
+  example: []
+  syntax:
+    content: public void BuildMap(List<Vertex> vertices)
+    parameters:
+    - id: vertices
+      type: System.Collections.Generic.List{AGVSystem.Models.Vertex}
+      description: 待构建图的顶点集合
+    content.vb: Public Sub BuildMap(vertices As List(Of Vertex))
+  overload: AGVSystem.Models.ConcreteMap.BuildMap*
+  nameWithType.vb: ConcreteMap.BuildMap(List(Of Vertex))
+  fullName.vb: AGVSystem.Models.ConcreteMap.BuildMap(System.Collections.Generic.List(Of AGVSystem.Models.Vertex))
+  name.vb: BuildMap(List(Of Vertex))
+- uid: AGVSystem.Models.ConcreteMap.BuildMap(System.Collections.Generic.List{AGVSystem.Models.Edge})
+  commentId: M:AGVSystem.Models.ConcreteMap.BuildMap(System.Collections.Generic.List{AGVSystem.Models.Edge})
+  id: BuildMap(System.Collections.Generic.List{AGVSystem.Models.Edge})
+  parent: AGVSystem.Models.ConcreteMap
+  langs:
+  - csharp
+  - vb
+  name: BuildMap(List<Edge>)
+  nameWithType: ConcreteMap.BuildMap(List<Edge>)
+  fullName: AGVSystem.Models.ConcreteMap.BuildMap(System.Collections.Generic.List<AGVSystem.Models.Edge>)
+  type: Method
+  source:
+    remote:
+      path: AGVSystem/Models/IMap.cs
+      branch: mapMaintenance
+      repo: https://github.com/JYC924693/NavigationAndSchedulingSystem.git
+    id: BuildMap
+    path: ../AGVSystem/Models/IMap.cs
+    startLine: 73
+  assemblies:
+  - AGVSystem
+  namespace: AGVSystem.Models
+  summary: 通过顶点构建一个连通图（两点都是连通的图）
+  example: []
+  syntax:
+    content: public abstract void BuildMap(List<Edge> edges)
+    parameters:
+    - id: edges
+      type: System.Collections.Generic.List{AGVSystem.Models.Edge}
+      description: 待构建图的边集合
+    content.vb: Public MustOverride Sub BuildMap(edges As List(Of Edge))
+  overload: AGVSystem.Models.ConcreteMap.BuildMap*
+  nameWithType.vb: ConcreteMap.BuildMap(List(Of Edge))
+  fullName.vb: AGVSystem.Models.ConcreteMap.BuildMap(System.Collections.Generic.List(Of AGVSystem.Models.Edge))
+  name.vb: BuildMap(List(Of Edge))
+- uid: AGVSystem.Models.ConcreteMap.GetVertex(System.Int32)
+  commentId: M:AGVSystem.Models.ConcreteMap.GetVertex(System.Int32)
+  id: GetVertex(System.Int32)
+  parent: AGVSystem.Models.ConcreteMap
+  langs:
+  - csharp
+  - vb
+  name: GetVertex(int)
+  nameWithType: ConcreteMap.GetVertex(int)
+  fullName: AGVSystem.Models.ConcreteMap.GetVertex(int)
+  type: Method
+  source:
+    remote:
+      path: AGVSystem/Models/IMap.cs
+      branch: mapMaintenance
+      repo: https://github.com/JYC924693/NavigationAndSchedulingSystem.git
+    id: GetVertex
+    path: ../AGVSystem/Models/IMap.cs
+    startLine: 80
+  assemblies:
+  - AGVSystem
+  namespace: AGVSystem.Models
+  summary: 获取指定ID的节点数据，点不存在则抛出异常<xref href="System.ArgumentOutOfRangeException" data-throw-if-not-resolved="false"></xref>
+  example: []
+  syntax:
+    content: public abstract Vertex GetVertex(int id)
+    parameters:
+    - id: id
+      type: System.Int32
+      description: 待获取节点的ID
+    return:
+      type: AGVSystem.Models.Vertex
+      description: 对应ID的顶点
+    content.vb: Public MustOverride Function GetVertex(id As Integer) As Vertex
+  overload: AGVSystem.Models.ConcreteMap.GetVertex*
+  exceptions:
+  - type: System.ArgumentOutOfRangeException
+    commentId: T:System.ArgumentOutOfRangeException
+    description: 当点不在图中时抛出异常
+  nameWithType.vb: ConcreteMap.GetVertex(Integer)
+  fullName.vb: AGVSystem.Models.ConcreteMap.GetVertex(Integer)
+  name.vb: GetVertex(Integer)
+- uid: AGVSystem.Models.ConcreteMap.ContainVertex(System.Int32)
+  commentId: M:AGVSystem.Models.ConcreteMap.ContainVertex(System.Int32)
+  id: ContainVertex(System.Int32)
+  parent: AGVSystem.Models.ConcreteMap
+  langs:
+  - csharp
+  - vb
+  name: ContainVertex(int)
+  nameWithType: ConcreteMap.ContainVertex(int)
+  fullName: AGVSystem.Models.ConcreteMap.ContainVertex(int)
+  type: Method
+  source:
+    remote:
+      path: AGVSystem/Models/IMap.cs
+      branch: mapMaintenance
+      repo: https://github.com/JYC924693/NavigationAndSchedulingSystem.git
+    id: ContainVertex
+    path: ../AGVSystem/Models/IMap.cs
+    startLine: 83
+  assemblies:
+  - AGVSystem
+  namespace: AGVSystem.Models
+  summary: 判断此顶点是否在图中
+  example: []
+  syntax:
+    content: public bool ContainVertex(int id)
+    parameters:
+    - id: id
+      type: System.Int32
+      description: 顶点ID
+    return:
+      type: System.Boolean
+      description: 当顶点在图中，则返回<a href="https://learn.microsoft.com/dotnet/csharp/language-reference/builtin-types/bool">true</a>；否则返回<a href="https://learn.microsoft.com/dotnet/csharp/language-reference/builtin-types/bool">false</a>
+    content.vb: Public Function ContainVertex(id As Integer) As Boolean
+  overload: AGVSystem.Models.ConcreteMap.ContainVertex*
+  nameWithType.vb: ConcreteMap.ContainVertex(Integer)
+  fullName.vb: AGVSystem.Models.ConcreteMap.ContainVertex(Integer)
+  name.vb: ContainVertex(Integer)
+- uid: AGVSystem.Models.ConcreteMap.ContainVertex(AGVSystem.Models.Vertex)
+  commentId: M:AGVSystem.Models.ConcreteMap.ContainVertex(AGVSystem.Models.Vertex)
+  id: ContainVertex(AGVSystem.Models.Vertex)
+  parent: AGVSystem.Models.ConcreteMap
+  langs:
+  - csharp
+  - vb
+  name: ContainVertex(Vertex)
+  nameWithType: ConcreteMap.ContainVertex(Vertex)
+  fullName: AGVSystem.Models.ConcreteMap.ContainVertex(AGVSystem.Models.Vertex)
+  type: Method
+  source:
+    remote:
+      path: AGVSystem/Models/IMap.cs
+      branch: mapMaintenance
+      repo: https://github.com/JYC924693/NavigationAndSchedulingSystem.git
+    id: ContainVertex
+    path: ../AGVSystem/Models/IMap.cs
+    startLine: 89
+  assemblies:
+  - AGVSystem
+  namespace: AGVSystem.Models
+  summary: 判断此顶点是否在图中
+  example: []
+  syntax:
+    content: public abstract bool ContainVertex(Vertex v)
+    parameters:
+    - id: v
+      type: AGVSystem.Models.Vertex
+      description: 顶点
+    return:
+      type: System.Boolean
+      description: 当顶点在图中，则返回<a href="https://learn.microsoft.com/dotnet/csharp/language-reference/builtin-types/bool">true</a>；否则返回<a href="https://learn.microsoft.com/dotnet/csharp/language-reference/builtin-types/bool">false</a>
+    content.vb: Public MustOverride Function ContainVertex(v As Vertex) As Boolean
+  overload: AGVSystem.Models.ConcreteMap.ContainVertex*
+- uid: AGVSystem.Models.ConcreteMap.GetAdjacencyVertices(System.Int32)
+  commentId: M:AGVSystem.Models.ConcreteMap.GetAdjacencyVertices(System.Int32)
+  id: GetAdjacencyVertices(System.Int32)
+  parent: AGVSystem.Models.ConcreteMap
+  langs:
+  - csharp
+  - vb
+  name: GetAdjacencyVertices(int)
+  nameWithType: ConcreteMap.GetAdjacencyVertices(int)
+  fullName: AGVSystem.Models.ConcreteMap.GetAdjacencyVertices(int)
+  type: Method
+  source:
+    remote:
+      path: AGVSystem/Models/IMap.cs
+      branch: mapMaintenance
+      repo: https://github.com/JYC924693/NavigationAndSchedulingSystem.git
+    id: GetAdjacencyVertices
+    path: ../AGVSystem/Models/IMap.cs
+    startLine: 92
+  assemblies:
+  - AGVSystem
+  namespace: AGVSystem.Models
+  summary: 获取指定顶点的邻接点集合
+  example: []
+  syntax:
+    content: public List<Vertex> GetAdjacencyVertices(int id)
+    parameters:
+    - id: id
+      type: System.Int32
+      description: 待获取邻接点集合的ID
+    return:
+      type: System.Collections.Generic.List{AGVSystem.Models.Vertex}
+      description: 对应顶点的邻接点集合
+    content.vb: Public Function GetAdjacencyVertices(id As Integer) As List(Of Vertex)
+  overload: AGVSystem.Models.ConcreteMap.GetAdjacencyVertices*
+  nameWithType.vb: ConcreteMap.GetAdjacencyVertices(Integer)
+  fullName.vb: AGVSystem.Models.ConcreteMap.GetAdjacencyVertices(Integer)
+  name.vb: GetAdjacencyVertices(Integer)
+- uid: AGVSystem.Models.ConcreteMap.GetAdjacencyVertices(AGVSystem.Models.Vertex)
+  commentId: M:AGVSystem.Models.ConcreteMap.GetAdjacencyVertices(AGVSystem.Models.Vertex)
+  id: GetAdjacencyVertices(AGVSystem.Models.Vertex)
+  parent: AGVSystem.Models.ConcreteMap
+  langs:
+  - csharp
+  - vb
+  name: GetAdjacencyVertices(Vertex)
+  nameWithType: ConcreteMap.GetAdjacencyVertices(Vertex)
+  fullName: AGVSystem.Models.ConcreteMap.GetAdjacencyVertices(AGVSystem.Models.Vertex)
+  type: Method
+  source:
+    remote:
+      path: AGVSystem/Models/IMap.cs
+      branch: mapMaintenance
+      repo: https://github.com/JYC924693/NavigationAndSchedulingSystem.git
+    id: GetAdjacencyVertices
+    path: ../AGVSystem/Models/IMap.cs
+    startLine: 98
+  assemblies:
+  - AGVSystem
+  namespace: AGVSystem.Models
+  summary: 获取指定顶点的邻接点集合
+  example: []
+  syntax:
+    content: public abstract List<Vertex> GetAdjacencyVertices(Vertex vertex)
+    parameters:
+    - id: vertex
+      type: AGVSystem.Models.Vertex
+      description: 待获取邻接点集合的顶点
+    return:
+      type: System.Collections.Generic.List{AGVSystem.Models.Vertex}
+      description: 对应顶点的邻接点集合
+    content.vb: Public MustOverride Function GetAdjacencyVertices(vertex As Vertex) As List(Of Vertex)
+  overload: AGVSystem.Models.ConcreteMap.GetAdjacencyVertices*
+- uid: AGVSystem.Models.ConcreteMap.AddVertex(System.Int32)
+  commentId: M:AGVSystem.Models.ConcreteMap.AddVertex(System.Int32)
+  id: AddVertex(System.Int32)
+  parent: AGVSystem.Models.ConcreteMap
+  langs:
+  - csharp
+  - vb
+  name: AddVertex(int)
+  nameWithType: ConcreteMap.AddVertex(int)
+  fullName: AGVSystem.Models.ConcreteMap.AddVertex(int)
+  type: Method
+  source:
+    remote:
+      path: AGVSystem/Models/IMap.cs
+      branch: mapMaintenance
+      repo: https://github.com/JYC924693/NavigationAndSchedulingSystem.git
+    id: AddVertex
+    path: ../AGVSystem/Models/IMap.cs
+    startLine: 101
+  assemblies:
+  - AGVSystem
+  namespace: AGVSystem.Models
+  summary: 添加顶点
+  example: []
+  syntax:
+    content: public bool AddVertex(int id)
+    parameters:
+    - id: id
+      type: System.Int32
+      description: 顶点ID
+    return:
+      type: System.Boolean
+      description: 图中不存在该点则添加成功，返回<a href="https://learn.microsoft.com/dotnet/csharp/language-reference/builtin-types/bool">true</a>；否则返回<a href="https://learn.microsoft.com/dotnet/csharp/language-reference/builtin-types/bool">false</a>
+    content.vb: Public Function AddVertex(id As Integer) As Boolean
+  overload: AGVSystem.Models.ConcreteMap.AddVertex*
+  nameWithType.vb: ConcreteMap.AddVertex(Integer)
+  fullName.vb: AGVSystem.Models.ConcreteMap.AddVertex(Integer)
+  name.vb: AddVertex(Integer)
+- uid: AGVSystem.Models.ConcreteMap.AddVertex(AGVSystem.Models.Vertex)
+  commentId: M:AGVSystem.Models.ConcreteMap.AddVertex(AGVSystem.Models.Vertex)
+  id: AddVertex(AGVSystem.Models.Vertex)
+  parent: AGVSystem.Models.ConcreteMap
+  langs:
+  - csharp
+  - vb
+  name: AddVertex(Vertex)
+  nameWithType: ConcreteMap.AddVertex(Vertex)
+  fullName: AGVSystem.Models.ConcreteMap.AddVertex(AGVSystem.Models.Vertex)
+  type: Method
+  source:
+    remote:
+      path: AGVSystem/Models/IMap.cs
+      branch: mapMaintenance
+      repo: https://github.com/JYC924693/NavigationAndSchedulingSystem.git
+    id: AddVertex
+    path: ../AGVSystem/Models/IMap.cs
+    startLine: 107
+  assemblies:
+  - AGVSystem
+  namespace: AGVSystem.Models
+  summary: 添加顶点
+  example: []
+  syntax:
+    content: public bool AddVertex(Vertex vertex)
+    parameters:
+    - id: vertex
+      type: AGVSystem.Models.Vertex
+      description: 顶点
+    return:
+      type: System.Boolean
+      description: 图中不存在该点则添加成功，返回<a href="https://learn.microsoft.com/dotnet/csharp/language-reference/builtin-types/bool">true</a>；否则返回<a href="https://learn.microsoft.com/dotnet/csharp/language-reference/builtin-types/bool">false</a>
+    content.vb: Public Function AddVertex(vertex As Vertex) As Boolean
+  overload: AGVSystem.Models.ConcreteMap.AddVertex*
+- uid: AGVSystem.Models.ConcreteMap.AddVertices(System.Collections.Generic.List{AGVSystem.Models.Vertex})
+  commentId: M:AGVSystem.Models.ConcreteMap.AddVertices(System.Collections.Generic.List{AGVSystem.Models.Vertex})
+  id: AddVertices(System.Collections.Generic.List{AGVSystem.Models.Vertex})
+  parent: AGVSystem.Models.ConcreteMap
+  langs:
+  - csharp
+  - vb
+  name: AddVertices(List<Vertex>)
+  nameWithType: ConcreteMap.AddVertices(List<Vertex>)
+  fullName: AGVSystem.Models.ConcreteMap.AddVertices(System.Collections.Generic.List<AGVSystem.Models.Vertex>)
+  type: Method
+  source:
+    remote:
+      path: AGVSystem/Models/IMap.cs
+      branch: mapMaintenance
+      repo: https://github.com/JYC924693/NavigationAndSchedulingSystem.git
+    id: AddVertices
+    path: ../AGVSystem/Models/IMap.cs
+    startLine: 113
+  assemblies:
+  - AGVSystem
+  namespace: AGVSystem.Models
+  summary: 添加顶点集合
+  example: []
+  syntax:
+    content: public abstract List<Vertex> AddVertices(List<Vertex> vertexes)
+    parameters:
+    - id: vertexes
+      type: System.Collections.Generic.List{AGVSystem.Models.Vertex}
+      description: 顶点集合
+    return:
+      type: System.Collections.Generic.List{AGVSystem.Models.Vertex}
+      description: 图中不存在该点则添加成功，返回添加失败的点集
+    content.vb: Public MustOverride Function AddVertices(vertexes As List(Of Vertex)) As List(Of Vertex)
+  overload: AGVSystem.Models.ConcreteMap.AddVertices*
+  nameWithType.vb: ConcreteMap.AddVertices(List(Of Vertex))
+  fullName.vb: AGVSystem.Models.ConcreteMap.AddVertices(System.Collections.Generic.List(Of AGVSystem.Models.Vertex))
+  name.vb: AddVertices(List(Of Vertex))
+- uid: AGVSystem.Models.ConcreteMap.AddVertices(System.Collections.Generic.List{System.Int32})
+  commentId: M:AGVSystem.Models.ConcreteMap.AddVertices(System.Collections.Generic.List{System.Int32})
+  id: AddVertices(System.Collections.Generic.List{System.Int32})
+  parent: AGVSystem.Models.ConcreteMap
+  langs:
+  - csharp
+  - vb
+  name: AddVertices(List<int>)
+  nameWithType: ConcreteMap.AddVertices(List<int>)
+  fullName: AGVSystem.Models.ConcreteMap.AddVertices(System.Collections.Generic.List<int>)
+  type: Method
+  source:
+    remote:
+      path: AGVSystem/Models/IMap.cs
+      branch: mapMaintenance
+      repo: https://github.com/JYC924693/NavigationAndSchedulingSystem.git
+    id: AddVertices
+    path: ../AGVSystem/Models/IMap.cs
+    startLine: 116
+  assemblies:
+  - AGVSystem
+  namespace: AGVSystem.Models
+  summary: 添加顶点集合
+  example: []
+  syntax:
+    content: public List<Vertex> AddVertices(List<int> vertexes)
+    parameters:
+    - id: vertexes
+      type: System.Collections.Generic.List{System.Int32}
+      description: 顶点ID集合
+    return:
+      type: System.Collections.Generic.List{AGVSystem.Models.Vertex}
+      description: 图中不存在该点则添加成功，返回添加失败的点集
+    content.vb: Public Function AddVertices(vertexes As List(Of Integer)) As List(Of Vertex)
+  overload: AGVSystem.Models.ConcreteMap.AddVertices*
+  nameWithType.vb: ConcreteMap.AddVertices(List(Of Integer))
+  fullName.vb: AGVSystem.Models.ConcreteMap.AddVertices(System.Collections.Generic.List(Of Integer))
+  name.vb: AddVertices(List(Of Integer))
+- uid: AGVSystem.Models.ConcreteMap.InsertVertex(System.Int32,AGVSystem.Models.Edge)
+  commentId: M:AGVSystem.Models.ConcreteMap.InsertVertex(System.Int32,AGVSystem.Models.Edge)
+  id: InsertVertex(System.Int32,AGVSystem.Models.Edge)
+  parent: AGVSystem.Models.ConcreteMap
+  langs:
+  - csharp
+  - vb
+  name: InsertVertex(int, Edge)
+  nameWithType: ConcreteMap.InsertVertex(int, Edge)
+  fullName: AGVSystem.Models.ConcreteMap.InsertVertex(int, AGVSystem.Models.Edge)
+  type: Method
+  source:
+    remote:
+      path: AGVSystem/Models/IMap.cs
+      branch: mapMaintenance
+      repo: https://github.com/JYC924693/NavigationAndSchedulingSystem.git
+    id: InsertVertex
+    path: ../AGVSystem/Models/IMap.cs
+    startLine: 117
+  assemblies:
+  - AGVSystem
+  namespace: AGVSystem.Models
+  syntax:
+    content: public bool InsertVertex(int id, Edge edge)
+    parameters:
+    - id: id
+      type: System.Int32
+    - id: edge
+      type: AGVSystem.Models.Edge
+    return:
+      type: System.Boolean
+    content.vb: Public Function InsertVertex(id As Integer, edge As Edge) As Boolean
+  overload: AGVSystem.Models.ConcreteMap.InsertVertex*
+  nameWithType.vb: ConcreteMap.InsertVertex(Integer, Edge)
+  fullName.vb: AGVSystem.Models.ConcreteMap.InsertVertex(Integer, AGVSystem.Models.Edge)
+  name.vb: InsertVertex(Integer, Edge)
+- uid: AGVSystem.Models.ConcreteMap.InsertVertex(AGVSystem.Models.Vertex,AGVSystem.Models.Edge)
+  commentId: M:AGVSystem.Models.ConcreteMap.InsertVertex(AGVSystem.Models.Vertex,AGVSystem.Models.Edge)
+  id: InsertVertex(AGVSystem.Models.Vertex,AGVSystem.Models.Edge)
+  parent: AGVSystem.Models.ConcreteMap
+  langs:
+  - csharp
+  - vb
+  name: InsertVertex(Vertex, Edge)
+  nameWithType: ConcreteMap.InsertVertex(Vertex, Edge)
+  fullName: AGVSystem.Models.ConcreteMap.InsertVertex(AGVSystem.Models.Vertex, AGVSystem.Models.Edge)
+  type: Method
+  source:
+    remote:
+      path: AGVSystem/Models/IMap.cs
+      branch: mapMaintenance
+      repo: https://github.com/JYC924693/NavigationAndSchedulingSystem.git
+    id: InsertVertex
+    path: ../AGVSystem/Models/IMap.cs
+    startLine: 118
+  assemblies:
+  - AGVSystem
+  namespace: AGVSystem.Models
+  syntax:
+    content: public abstract bool InsertVertex(Vertex vertex, Edge edge)
+    parameters:
+    - id: vertex
+      type: AGVSystem.Models.Vertex
+    - id: edge
+      type: AGVSystem.Models.Edge
+    return:
+      type: System.Boolean
+    content.vb: Public MustOverride Function InsertVertex(vertex As Vertex, edge As Edge) As Boolean
+  overload: AGVSystem.Models.ConcreteMap.InsertVertex*
+- uid: AGVSystem.Models.ConcreteMap.RemoveVertex(System.Int32)
+  commentId: M:AGVSystem.Models.ConcreteMap.RemoveVertex(System.Int32)
+  id: RemoveVertex(System.Int32)
+  parent: AGVSystem.Models.ConcreteMap
+  langs:
+  - csharp
+  - vb
+  name: RemoveVertex(int)
+  nameWithType: ConcreteMap.RemoveVertex(int)
+  fullName: AGVSystem.Models.ConcreteMap.RemoveVertex(int)
+  type: Method
+  source:
+    remote:
+      path: AGVSystem/Models/IMap.cs
+      branch: mapMaintenance
+      repo: https://github.com/JYC924693/NavigationAndSchedulingSystem.git
+    id: RemoveVertex
+    path: ../AGVSystem/Models/IMap.cs
+    startLine: 121
+  assemblies:
+  - AGVSystem
+  namespace: AGVSystem.Models
+  summary: 将该顶点及其相邻边移除
+  example: []
+  syntax:
+    content: public bool RemoveVertex(int id)
+    parameters:
+    - id: id
+      type: System.Int32
+      description: 待移除顶点ID
+    return:
+      type: System.Boolean
+      description: 图中存在该点则移除成功，返回<a href="https://learn.microsoft.com/dotnet/csharp/language-reference/builtin-types/bool">true</a>；否则为<a href="https://learn.microsoft.com/dotnet/csharp/language-reference/builtin-types/bool">false</a>
+    content.vb: Public Function RemoveVertex(id As Integer) As Boolean
+  overload: AGVSystem.Models.ConcreteMap.RemoveVertex*
+  nameWithType.vb: ConcreteMap.RemoveVertex(Integer)
+  fullName.vb: AGVSystem.Models.ConcreteMap.RemoveVertex(Integer)
+  name.vb: RemoveVertex(Integer)
+- uid: AGVSystem.Models.ConcreteMap.RemoveVertex(AGVSystem.Models.Vertex)
+  commentId: M:AGVSystem.Models.ConcreteMap.RemoveVertex(AGVSystem.Models.Vertex)
+  id: RemoveVertex(AGVSystem.Models.Vertex)
+  parent: AGVSystem.Models.ConcreteMap
+  langs:
+  - csharp
+  - vb
+  name: RemoveVertex(Vertex)
+  nameWithType: ConcreteMap.RemoveVertex(Vertex)
+  fullName: AGVSystem.Models.ConcreteMap.RemoveVertex(AGVSystem.Models.Vertex)
+  type: Method
+  source:
+    remote:
+      path: AGVSystem/Models/IMap.cs
+      branch: mapMaintenance
+      repo: https://github.com/JYC924693/NavigationAndSchedulingSystem.git
+    id: RemoveVertex
+    path: ../AGVSystem/Models/IMap.cs
+    startLine: 127
+  assemblies:
+  - AGVSystem
+  namespace: AGVSystem.Models
+  summary: 将该顶点及其相邻边移除
+  example: []
+  syntax:
+    content: public bool RemoveVertex(Vertex vertex)
+    parameters:
+    - id: vertex
+      type: AGVSystem.Models.Vertex
+      description: 待移除顶点
+    return:
+      type: System.Boolean
+      description: 图中存在该点则移除成功，返回<a href="https://learn.microsoft.com/dotnet/csharp/language-reference/builtin-types/bool">true</a>；否则为<a href="https://learn.microsoft.com/dotnet/csharp/language-reference/builtin-types/bool">false</a>
+    content.vb: Public Function RemoveVertex(vertex As Vertex) As Boolean
+  overload: AGVSystem.Models.ConcreteMap.RemoveVertex*
+- uid: AGVSystem.Models.ConcreteMap.RemoveVertices(System.Collections.Generic.List{AGVSystem.Models.Vertex})
+  commentId: M:AGVSystem.Models.ConcreteMap.RemoveVertices(System.Collections.Generic.List{AGVSystem.Models.Vertex})
+  id: RemoveVertices(System.Collections.Generic.List{AGVSystem.Models.Vertex})
+  parent: AGVSystem.Models.ConcreteMap
+  langs:
+  - csharp
+  - vb
+  name: RemoveVertices(List<Vertex>)
+  nameWithType: ConcreteMap.RemoveVertices(List<Vertex>)
+  fullName: AGVSystem.Models.ConcreteMap.RemoveVertices(System.Collections.Generic.List<AGVSystem.Models.Vertex>)
+  type: Method
+  source:
+    remote:
+      path: AGVSystem/Models/IMap.cs
+      branch: mapMaintenance
+      repo: https://github.com/JYC924693/NavigationAndSchedulingSystem.git
+    id: RemoveVertices
+    path: ../AGVSystem/Models/IMap.cs
+    startLine: 133
+  assemblies:
+  - AGVSystem
+  namespace: AGVSystem.Models
+  summary: 移除顶点的集合及其相邻边的集合
+  example: []
+  syntax:
+    content: public abstract List<Vertex> RemoveVertices(List<Vertex> vertexes)
+    parameters:
+    - id: vertexes
+      type: System.Collections.Generic.List{AGVSystem.Models.Vertex}
+      description: 待移除顶点集合
+    return:
+      type: System.Collections.Generic.List{AGVSystem.Models.Vertex}
+      description: 当图中不存在该点则该点移除失败，返回移除失败的点集
+    content.vb: Public MustOverride Function RemoveVertices(vertexes As List(Of Vertex)) As List(Of Vertex)
+  overload: AGVSystem.Models.ConcreteMap.RemoveVertices*
+  nameWithType.vb: ConcreteMap.RemoveVertices(List(Of Vertex))
+  fullName.vb: AGVSystem.Models.ConcreteMap.RemoveVertices(System.Collections.Generic.List(Of AGVSystem.Models.Vertex))
+  name.vb: RemoveVertices(List(Of Vertex))
+- uid: AGVSystem.Models.ConcreteMap.TryGetEdge(System.Int32@,System.Int32@,AGVSystem.Models.Edge@)
+  commentId: M:AGVSystem.Models.ConcreteMap.TryGetEdge(System.Int32@,System.Int32@,AGVSystem.Models.Edge@)
+  id: TryGetEdge(System.Int32@,System.Int32@,AGVSystem.Models.Edge@)
+  parent: AGVSystem.Models.ConcreteMap
+  langs:
+  - csharp
+  - vb
+  name: TryGetEdge(in int, in int, out Edge?)
+  nameWithType: ConcreteMap.TryGetEdge(in int, in int, out Edge?)
+  fullName: AGVSystem.Models.ConcreteMap.TryGetEdge(in int, in int, out AGVSystem.Models.Edge?)
+  type: Method
+  source:
+    remote:
+      path: AGVSystem/Models/IMap.cs
+      branch: mapMaintenance
+      repo: https://github.com/JYC924693/NavigationAndSchedulingSystem.git
+    id: TryGetEdge
+    path: ../AGVSystem/Models/IMap.cs
+    startLine: 138
+  assemblies:
+  - AGVSystem
+  namespace: AGVSystem.Models
+  summary: 尝试获取一条边，存在则将边赋值给参数<code class="paramref">edge</code>，不存在则<code class="paramref">edge</code>为<a href="https://learn.microsoft.com/dotnet/csharp/language-reference/keywords/null">null</a>
+  example: []
+  syntax:
+    content: public bool TryGetEdge(in int from, in int to, out Edge? edge)
+    parameters:
+    - id: from
+      type: System.Int32
+      description: 边的起始点ID
+    - id: to
+      type: System.Int32
+      description: 边的终点ID
+    - id: edge
+      type: AGVSystem.Models.Edge
+      description: 获取的边
+    return:
+      type: System.Boolean
+      description: 存在边时返回<a href="https://learn.microsoft.com/dotnet/csharp/language-reference/builtin-types/bool">true</a>；否则返回<a href="https://learn.microsoft.com/dotnet/csharp/language-reference/builtin-types/bool">false</a>
+    content.vb: Public Function TryGetEdge(from As Integer, [to] As Integer, edge As Edge) As Boolean
+  overload: AGVSystem.Models.ConcreteMap.TryGetEdge*
+  nameWithType.vb: ConcreteMap.TryGetEdge(Integer, Integer, Edge)
+  fullName.vb: AGVSystem.Models.ConcreteMap.TryGetEdge(Integer, Integer, AGVSystem.Models.Edge)
+  name.vb: TryGetEdge(Integer, Integer, Edge)
+- uid: AGVSystem.Models.ConcreteMap.TryGetEdge(System.Int32@,System.Int32@,System.Double@,AGVSystem.Models.Edge@)
+  commentId: M:AGVSystem.Models.ConcreteMap.TryGetEdge(System.Int32@,System.Int32@,System.Double@,AGVSystem.Models.Edge@)
+  id: TryGetEdge(System.Int32@,System.Int32@,System.Double@,AGVSystem.Models.Edge@)
+  parent: AGVSystem.Models.ConcreteMap
+  langs:
+  - csharp
+  - vb
+  name: TryGetEdge(in int, in int, in double, out Edge?)
+  nameWithType: ConcreteMap.TryGetEdge(in int, in int, in double, out Edge?)
+  fullName: AGVSystem.Models.ConcreteMap.TryGetEdge(in int, in int, in double, out AGVSystem.Models.Edge?)
+  type: Method
+  source:
+    remote:
+      path: AGVSystem/Models/IMap.cs
+      branch: mapMaintenance
+      repo: https://github.com/JYC924693/NavigationAndSchedulingSystem.git
+    id: TryGetEdge
+    path: ../AGVSystem/Models/IMap.cs
+    startLine: 147
+  assemblies:
+  - AGVSystem
+  namespace: AGVSystem.Models
+  summary: 尝试获取一条边，存在则将边赋值给参数<code class="paramref">edge</code>，不存在则<code class="paramref">edge</code>为<a href="https://learn.microsoft.com/dotnet/csharp/language-reference/keywords/null">null</a>
+  example: []
+  syntax:
+    content: public bool TryGetEdge(in int from, in int to, in double weight, out Edge? edge)
+    parameters:
+    - id: from
+      type: System.Int32
+      description: 边的起始点ID
+    - id: to
+      type: System.Int32
+      description: 边的终点ID
+    - id: weight
+      type: System.Double
+      description: 边的权重
+    - id: edge
+      type: AGVSystem.Models.Edge
+      description: 获取的边
+    return:
+      type: System.Boolean
+      description: 存在边时返回<a href="https://learn.microsoft.com/dotnet/csharp/language-reference/builtin-types/bool">true</a>；否则返回<a href="https://learn.microsoft.com/dotnet/csharp/language-reference/builtin-types/bool">false</a>
+    content.vb: Public Function TryGetEdge(from As Integer, [to] As Integer, weight As Double, edge As Edge) As Boolean
+  overload: AGVSystem.Models.ConcreteMap.TryGetEdge*
+  nameWithType.vb: ConcreteMap.TryGetEdge(Integer, Integer, Double, Edge)
+  fullName.vb: AGVSystem.Models.ConcreteMap.TryGetEdge(Integer, Integer, Double, AGVSystem.Models.Edge)
+  name.vb: TryGetEdge(Integer, Integer, Double, Edge)
+- uid: AGVSystem.Models.ConcreteMap.GetEdge(System.Int32,System.Int32,System.Double)
+  commentId: M:AGVSystem.Models.ConcreteMap.GetEdge(System.Int32,System.Int32,System.Double)
+  id: GetEdge(System.Int32,System.Int32,System.Double)
+  parent: AGVSystem.Models.ConcreteMap
+  langs:
+  - csharp
+  - vb
+  name: GetEdge(int, int, double)
+  nameWithType: ConcreteMap.GetEdge(int, int, double)
+  fullName: AGVSystem.Models.ConcreteMap.GetEdge(int, int, double)
+  type: Method
+  source:
+    remote:
+      path: AGVSystem/Models/IMap.cs
+      branch: mapMaintenance
+      repo: https://github.com/JYC924693/NavigationAndSchedulingSystem.git
+    id: GetEdge
+    path: ../AGVSystem/Models/IMap.cs
+    startLine: 165
+  assemblies:
+  - AGVSystem
+  namespace: AGVSystem.Models
+  summary: 获取一条边
+  example: []
+  syntax:
+    content: public abstract Edge GetEdge(int from, int to, double weight = 1)
+    parameters:
+    - id: from
+      type: System.Int32
+      description: 边的起始点ID
+    - id: to
+      type: System.Int32
+      description: 边的终点ID
+    - id: weight
+      type: System.Double
+      description: 边的权重， 默认为1
+    return:
+      type: AGVSystem.Models.Edge
+      description: 返回对应的边
+    content.vb: Public MustOverride Function GetEdge(from As Integer, [to] As Integer, weight As Double = 1) As Edge
+  overload: AGVSystem.Models.ConcreteMap.GetEdge*
+  nameWithType.vb: ConcreteMap.GetEdge(Integer, Integer, Double)
+  fullName.vb: AGVSystem.Models.ConcreteMap.GetEdge(Integer, Integer, Double)
+  name.vb: GetEdge(Integer, Integer, Double)
+- uid: AGVSystem.Models.ConcreteMap.ContainEdge(System.Int32,System.Int32,System.Double)
+  commentId: M:AGVSystem.Models.ConcreteMap.ContainEdge(System.Int32,System.Int32,System.Double)
+  id: ContainEdge(System.Int32,System.Int32,System.Double)
+  parent: AGVSystem.Models.ConcreteMap
+  langs:
+  - csharp
+  - vb
+  name: ContainEdge(int, int, double)
+  nameWithType: ConcreteMap.ContainEdge(int, int, double)
+  fullName: AGVSystem.Models.ConcreteMap.ContainEdge(int, int, double)
+  type: Method
+  source:
+    remote:
+      path: AGVSystem/Models/IMap.cs
+      branch: mapMaintenance
+      repo: https://github.com/JYC924693/NavigationAndSchedulingSystem.git
+    id: ContainEdge
+    path: ../AGVSystem/Models/IMap.cs
+    startLine: 170
+  assemblies:
+  - AGVSystem
+  namespace: AGVSystem.Models
+  summary: 判断一条边是否存在图里
+  example: []
+  syntax:
+    content: public bool ContainEdge(int from, int to, double weight = 1)
+    parameters:
+    - id: from
+      type: System.Int32
+      description: 边的起始点ID
+    - id: to
+      type: System.Int32
+      description: 边的终点ID
+    - id: weight
+      type: System.Double
+      description: 边的权重， 默认为1
+    return:
+      type: System.Boolean
+      description: 图中存在边则返回<a href="https://learn.microsoft.com/dotnet/csharp/language-reference/builtin-types/bool">true</a>；否则返回<a href="https://learn.microsoft.com/dotnet/csharp/language-reference/builtin-types/bool">false</a>
+    content.vb: Public Function ContainEdge(from As Integer, [to] As Integer, weight As Double = 1) As Boolean
+  overload: AGVSystem.Models.ConcreteMap.ContainEdge*
+  nameWithType.vb: ConcreteMap.ContainEdge(Integer, Integer, Double)
+  fullName.vb: AGVSystem.Models.ConcreteMap.ContainEdge(Integer, Integer, Double)
+  name.vb: ContainEdge(Integer, Integer, Double)
+- uid: AGVSystem.Models.ConcreteMap.ContainEdge(AGVSystem.Models.Edge)
+  commentId: M:AGVSystem.Models.ConcreteMap.ContainEdge(AGVSystem.Models.Edge)
+  id: ContainEdge(AGVSystem.Models.Edge)
+  parent: AGVSystem.Models.ConcreteMap
+  langs:
+  - csharp
+  - vb
+  name: ContainEdge(Edge)
+  nameWithType: ConcreteMap.ContainEdge(Edge)
+  fullName: AGVSystem.Models.ConcreteMap.ContainEdge(AGVSystem.Models.Edge)
+  type: Method
+  source:
+    remote:
+      path: AGVSystem/Models/IMap.cs
+      branch: mapMaintenance
+      repo: https://github.com/JYC924693/NavigationAndSchedulingSystem.git
+    id: ContainEdge
+    path: ../AGVSystem/Models/IMap.cs
+    startLine: 176
+  assemblies:
+  - AGVSystem
+  namespace: AGVSystem.Models
+  summary: 判断一条边是否存在图里
+  example: []
+  syntax:
+    content: public abstract bool ContainEdge(Edge e)
+    parameters:
+    - id: e
+      type: AGVSystem.Models.Edge
+      description: 需要判断的边
+    return:
+      type: System.Boolean
+      description: 图中存在边则返回<a href="https://learn.microsoft.com/dotnet/csharp/language-reference/builtin-types/bool">true</a>；否则返回<a href="https://learn.microsoft.com/dotnet/csharp/language-reference/builtin-types/bool">false</a>
+    content.vb: Public MustOverride Function ContainEdge(e As Edge) As Boolean
+  overload: AGVSystem.Models.ConcreteMap.ContainEdge*
+- uid: AGVSystem.Models.ConcreteMap.GetAdjacencyEdges(System.Int32)
+  commentId: M:AGVSystem.Models.ConcreteMap.GetAdjacencyEdges(System.Int32)
+  id: GetAdjacencyEdges(System.Int32)
+  parent: AGVSystem.Models.ConcreteMap
+  langs:
+  - csharp
+  - vb
+  name: GetAdjacencyEdges(int)
+  nameWithType: ConcreteMap.GetAdjacencyEdges(int)
+  fullName: AGVSystem.Models.ConcreteMap.GetAdjacencyEdges(int)
+  type: Method
+  source:
+    remote:
+      path: AGVSystem/Models/IMap.cs
+      branch: mapMaintenance
+      repo: https://github.com/JYC924693/NavigationAndSchedulingSystem.git
+    id: GetAdjacencyEdges
+    path: ../AGVSystem/Models/IMap.cs
+    startLine: 182
+  assemblies:
+  - AGVSystem
+  namespace: AGVSystem.Models
+  summary: 获取指定点的邻接边集
+  example: []
+  syntax:
+    content: public List<Edge> GetAdjacencyEdges(int id)
+    parameters:
+    - id: id
+      type: System.Int32
+      description: 指定点的ID
+    return:
+      type: System.Collections.Generic.List{AGVSystem.Models.Edge}
+      description: 返回图中边含有该点的所有边
+    content.vb: Public Function GetAdjacencyEdges(id As Integer) As List(Of Edge)
+  overload: AGVSystem.Models.ConcreteMap.GetAdjacencyEdges*
+  nameWithType.vb: ConcreteMap.GetAdjacencyEdges(Integer)
+  fullName.vb: AGVSystem.Models.ConcreteMap.GetAdjacencyEdges(Integer)
+  name.vb: GetAdjacencyEdges(Integer)
+- uid: AGVSystem.Models.ConcreteMap.GetAdjacencyEdges(AGVSystem.Models.Vertex)
+  commentId: M:AGVSystem.Models.ConcreteMap.GetAdjacencyEdges(AGVSystem.Models.Vertex)
+  id: GetAdjacencyEdges(AGVSystem.Models.Vertex)
+  parent: AGVSystem.Models.ConcreteMap
+  langs:
+  - csharp
+  - vb
+  name: GetAdjacencyEdges(Vertex)
+  nameWithType: ConcreteMap.GetAdjacencyEdges(Vertex)
+  fullName: AGVSystem.Models.ConcreteMap.GetAdjacencyEdges(AGVSystem.Models.Vertex)
+  type: Method
+  source:
+    remote:
+      path: AGVSystem/Models/IMap.cs
+      branch: mapMaintenance
+      repo: https://github.com/JYC924693/NavigationAndSchedulingSystem.git
+    id: GetAdjacencyEdges
+    path: ../AGVSystem/Models/IMap.cs
+    startLine: 188
+  assemblies:
+  - AGVSystem
+  namespace: AGVSystem.Models
+  summary: 获取指定点的邻接边集
+  example: []
+  syntax:
+    content: public abstract List<Edge> GetAdjacencyEdges(Vertex vertex)
+    parameters:
+    - id: vertex
+      type: AGVSystem.Models.Vertex
+      description: 指定点
+    return:
+      type: System.Collections.Generic.List{AGVSystem.Models.Edge}
+      description: 返回图中边含有该点的所有边
+    content.vb: Public MustOverride Function GetAdjacencyEdges(vertex As Vertex) As List(Of Edge)
+  overload: AGVSystem.Models.ConcreteMap.GetAdjacencyEdges*
+- uid: AGVSystem.Models.ConcreteMap.AddEdge(System.Int32,System.Int32,System.Double)
+  commentId: M:AGVSystem.Models.ConcreteMap.AddEdge(System.Int32,System.Int32,System.Double)
+  id: AddEdge(System.Int32,System.Int32,System.Double)
+  parent: AGVSystem.Models.ConcreteMap
+  langs:
+  - csharp
+  - vb
+  name: AddEdge(int, int, double)
+  nameWithType: ConcreteMap.AddEdge(int, int, double)
+  fullName: AGVSystem.Models.ConcreteMap.AddEdge(int, int, double)
+  type: Method
+  source:
+    remote:
+      path: AGVSystem/Models/IMap.cs
+      branch: mapMaintenance
+      repo: https://github.com/JYC924693/NavigationAndSchedulingSystem.git
+    id: AddEdge
+    path: ../AGVSystem/Models/IMap.cs
+    startLine: 193
+  assemblies:
+  - AGVSystem
+  namespace: AGVSystem.Models
+  summary: 向图中存在的点添加边
+  example: []
+  syntax:
+    content: public bool AddEdge(int from, int to, double weight = 1)
+    parameters:
+    - id: from
+      type: System.Int32
+      description: 边的起始点ID
+    - id: to
+      type: System.Int32
+      description: 边的终点ID
+    - id: weight
+      type: System.Double
+      description: 边的权重， 默认为1
+    return:
+      type: System.Boolean
+      description: 图中存在边的两个点，不存在该边则添加成功，返回<a href="https://learn.microsoft.com/dotnet/csharp/language-reference/builtin-types/bool">true</a>；否则返回<a href="https://learn.microsoft.com/dotnet/csharp/language-reference/builtin-types/bool">false</a>
+    content.vb: Public Function AddEdge(from As Integer, [to] As Integer, weight As Double = 1) As Boolean
+  overload: AGVSystem.Models.ConcreteMap.AddEdge*
+  nameWithType.vb: ConcreteMap.AddEdge(Integer, Integer, Double)
+  fullName.vb: AGVSystem.Models.ConcreteMap.AddEdge(Integer, Integer, Double)
+  name.vb: AddEdge(Integer, Integer, Double)
+- uid: AGVSystem.Models.ConcreteMap.AddEdge(AGVSystem.Models.Edge)
+  commentId: M:AGVSystem.Models.ConcreteMap.AddEdge(AGVSystem.Models.Edge)
+  id: AddEdge(AGVSystem.Models.Edge)
+  parent: AGVSystem.Models.ConcreteMap
+  langs:
+  - csharp
+  - vb
+  name: AddEdge(Edge)
+  nameWithType: ConcreteMap.AddEdge(Edge)
+  fullName: AGVSystem.Models.ConcreteMap.AddEdge(AGVSystem.Models.Edge)
+  type: Method
+  source:
+    remote:
+      path: AGVSystem/Models/IMap.cs
+      branch: mapMaintenance
+      repo: https://github.com/JYC924693/NavigationAndSchedulingSystem.git
+    id: AddEdge
+    path: ../AGVSystem/Models/IMap.cs
+    startLine: 199
+  assemblies:
+  - AGVSystem
+  namespace: AGVSystem.Models
+  summary: 向图中存在的点添加边
+  example: []
+  syntax:
+    content: public bool AddEdge(Edge e)
+    parameters:
+    - id: e
+      type: AGVSystem.Models.Edge
+      description: 待添加的边
+    return:
+      type: System.Boolean
+      description: 图中存在边的两个点，不存在该边则添加成功，返回<a href="https://learn.microsoft.com/dotnet/csharp/language-reference/builtin-types/bool">true</a>；否则返回<a href="https://learn.microsoft.com/dotnet/csharp/language-reference/builtin-types/bool">false</a>
+    content.vb: Public Function AddEdge(e As Edge) As Boolean
+  overload: AGVSystem.Models.ConcreteMap.AddEdge*
+- uid: AGVSystem.Models.ConcreteMap.AddEdges(System.Collections.Generic.List{AGVSystem.Models.Edge})
+  commentId: M:AGVSystem.Models.ConcreteMap.AddEdges(System.Collections.Generic.List{AGVSystem.Models.Edge})
+  id: AddEdges(System.Collections.Generic.List{AGVSystem.Models.Edge})
+  parent: AGVSystem.Models.ConcreteMap
+  langs:
+  - csharp
+  - vb
+  name: AddEdges(List<Edge>)
+  nameWithType: ConcreteMap.AddEdges(List<Edge>)
+  fullName: AGVSystem.Models.ConcreteMap.AddEdges(System.Collections.Generic.List<AGVSystem.Models.Edge>)
+  type: Method
+  source:
+    remote:
+      path: AGVSystem/Models/IMap.cs
+      branch: mapMaintenance
+      repo: https://github.com/JYC924693/NavigationAndSchedulingSystem.git
+    id: AddEdges
+    path: ../AGVSystem/Models/IMap.cs
+    startLine: 205
+  assemblies:
+  - AGVSystem
+  namespace: AGVSystem.Models
+  summary: 向图中存在的点添加边集
+  example: []
+  syntax:
+    content: public abstract List<Edge> AddEdges(List<Edge> edges)
+    parameters:
+    - id: edges
+      type: System.Collections.Generic.List{AGVSystem.Models.Edge}
+      description: 待添加的边集
+    return:
+      type: System.Collections.Generic.List{AGVSystem.Models.Edge}
+      description: 存在边的两个点，不存在该边则添加成功，返回的是未添加成功的边集
+    content.vb: Public MustOverride Function AddEdges(edges As List(Of Edge)) As List(Of Edge)
+  overload: AGVSystem.Models.ConcreteMap.AddEdges*
+  nameWithType.vb: ConcreteMap.AddEdges(List(Of Edge))
+  fullName.vb: AGVSystem.Models.ConcreteMap.AddEdges(System.Collections.Generic.List(Of AGVSystem.Models.Edge))
+  name.vb: AddEdges(List(Of Edge))
+- uid: AGVSystem.Models.ConcreteMap.RemoveEdge(System.Int32,System.Int32,System.Double)
+  commentId: M:AGVSystem.Models.ConcreteMap.RemoveEdge(System.Int32,System.Int32,System.Double)
+  id: RemoveEdge(System.Int32,System.Int32,System.Double)
+  parent: AGVSystem.Models.ConcreteMap
+  langs:
+  - csharp
+  - vb
+  name: RemoveEdge(int, int, double)
+  nameWithType: ConcreteMap.RemoveEdge(int, int, double)
+  fullName: AGVSystem.Models.ConcreteMap.RemoveEdge(int, int, double)
+  type: Method
+  source:
+    remote:
+      path: AGVSystem/Models/IMap.cs
+      branch: mapMaintenance
+      repo: https://github.com/JYC924693/NavigationAndSchedulingSystem.git
+    id: RemoveEdge
+    path: ../AGVSystem/Models/IMap.cs
+    startLine: 210
+  assemblies:
+  - AGVSystem
+  namespace: AGVSystem.Models
+  summary: 移除指定边
+  example: []
+  syntax:
+    content: public bool RemoveEdge(int from, int to, double weight = 1)
+    parameters:
+    - id: from
+      type: System.Int32
+      description: 边的起始点ID
+    - id: to
+      type: System.Int32
+      description: 边的终点ID
+    - id: weight
+      type: System.Double
+      description: 边的权重， 默认为1
+    return:
+      type: System.Boolean
+      description: 边存在则删除成功，返回<a href="https://learn.microsoft.com/dotnet/csharp/language-reference/builtin-types/bool">true</a>；否则返回<a href="https://learn.microsoft.com/dotnet/csharp/language-reference/builtin-types/bool">false</a>
+    content.vb: Public Function RemoveEdge(from As Integer, [to] As Integer, weight As Double = 1) As Boolean
+  overload: AGVSystem.Models.ConcreteMap.RemoveEdge*
+  nameWithType.vb: ConcreteMap.RemoveEdge(Integer, Integer, Double)
+  fullName.vb: AGVSystem.Models.ConcreteMap.RemoveEdge(Integer, Integer, Double)
+  name.vb: RemoveEdge(Integer, Integer, Double)
+- uid: AGVSystem.Models.ConcreteMap.RemoveEdge(AGVSystem.Models.Edge)
+  commentId: M:AGVSystem.Models.ConcreteMap.RemoveEdge(AGVSystem.Models.Edge)
+  id: RemoveEdge(AGVSystem.Models.Edge)
+  parent: AGVSystem.Models.ConcreteMap
+  langs:
+  - csharp
+  - vb
+  name: RemoveEdge(Edge)
+  nameWithType: ConcreteMap.RemoveEdge(Edge)
+  fullName: AGVSystem.Models.ConcreteMap.RemoveEdge(AGVSystem.Models.Edge)
+  type: Method
+  source:
+    remote:
+      path: AGVSystem/Models/IMap.cs
+      branch: mapMaintenance
+      repo: https://github.com/JYC924693/NavigationAndSchedulingSystem.git
+    id: RemoveEdge
+    path: ../AGVSystem/Models/IMap.cs
+    startLine: 216
+  assemblies:
+  - AGVSystem
+  namespace: AGVSystem.Models
+  summary: 移除指定边
+  example: []
+  syntax:
+    content: public bool RemoveEdge(Edge e)
+    parameters:
+    - id: e
+      type: AGVSystem.Models.Edge
+      description: 待移除的边
+    return:
+      type: System.Boolean
+      description: 边存在则删除成功，返回<a href="https://learn.microsoft.com/dotnet/csharp/language-reference/builtin-types/bool">true</a>；否则返回<a href="https://learn.microsoft.com/dotnet/csharp/language-reference/builtin-types/bool">false</a>
+    content.vb: Public Function RemoveEdge(e As Edge) As Boolean
+  overload: AGVSystem.Models.ConcreteMap.RemoveEdge*
+- uid: AGVSystem.Models.ConcreteMap.RemoveEdges(System.Collections.Generic.List{AGVSystem.Models.Edge})
+  commentId: M:AGVSystem.Models.ConcreteMap.RemoveEdges(System.Collections.Generic.List{AGVSystem.Models.Edge})
+  id: RemoveEdges(System.Collections.Generic.List{AGVSystem.Models.Edge})
+  parent: AGVSystem.Models.ConcreteMap
+  langs:
+  - csharp
+  - vb
+  name: RemoveEdges(List<Edge>)
+  nameWithType: ConcreteMap.RemoveEdges(List<Edge>)
+  fullName: AGVSystem.Models.ConcreteMap.RemoveEdges(System.Collections.Generic.List<AGVSystem.Models.Edge>)
+  type: Method
+  source:
+    remote:
+      path: AGVSystem/Models/IMap.cs
+      branch: mapMaintenance
+      repo: https://github.com/JYC924693/NavigationAndSchedulingSystem.git
+    id: RemoveEdges
+    path: ../AGVSystem/Models/IMap.cs
+    startLine: 222
+  assemblies:
+  - AGVSystem
+  namespace: AGVSystem.Models
+  summary: 移除指定的边集
+  example: []
+  syntax:
+    content: public abstract List<Edge> RemoveEdges(List<Edge> edges)
+    parameters:
+    - id: edges
+      type: System.Collections.Generic.List{AGVSystem.Models.Edge}
+      description: 待移除的边集
+    return:
+      type: System.Collections.Generic.List{AGVSystem.Models.Edge}
+      description: 删除存在的边，返回的是未成功删除的边集
+    content.vb: Public MustOverride Function RemoveEdges(edges As List(Of Edge)) As List(Of Edge)
+  overload: AGVSystem.Models.ConcreteMap.RemoveEdges*
+  nameWithType.vb: ConcreteMap.RemoveEdges(List(Of Edge))
+  fullName.vb: AGVSystem.Models.ConcreteMap.RemoveEdges(System.Collections.Generic.List(Of AGVSystem.Models.Edge))
+  name.vb: RemoveEdges(List(Of Edge))
+- uid: AGVSystem.Models.ConcreteMap.Clear
+  commentId: M:AGVSystem.Models.ConcreteMap.Clear
+  id: Clear
+  parent: AGVSystem.Models.ConcreteMap
+  langs:
+  - csharp
+  - vb
+  name: Clear()
+  nameWithType: ConcreteMap.Clear()
+  fullName: AGVSystem.Models.ConcreteMap.Clear()
+  type: Method
+  source:
+    remote:
+      path: AGVSystem/Models/IMap.cs
+      branch: mapMaintenance
+      repo: https://github.com/JYC924693/NavigationAndSchedulingSystem.git
+    id: Clear
+    path: ../AGVSystem/Models/IMap.cs
+    startLine: 226
+  assemblies:
+  - AGVSystem
+  namespace: AGVSystem.Models
+  summary: 清空图的节点和边
+  example: []
+  syntax:
+    content: public abstract void Clear()
+    content.vb: Public MustOverride Sub Clear()
+  overload: AGVSystem.Models.ConcreteMap.Clear*
+- uid: AGVSystem.Models.ConcreteMap.GetDegree(System.Int32,System.Boolean)
+  commentId: M:AGVSystem.Models.ConcreteMap.GetDegree(System.Int32,System.Boolean)
+  id: GetDegree(System.Int32,System.Boolean)
+  parent: AGVSystem.Models.ConcreteMap
+  langs:
+  - csharp
+  - vb
+  name: GetDegree(int, bool)
+  nameWithType: ConcreteMap.GetDegree(int, bool)
+  fullName: AGVSystem.Models.ConcreteMap.GetDegree(int, bool)
+  type: Method
+  source:
+    remote:
+      path: AGVSystem/Models/IMap.cs
+      branch: mapMaintenance
+      repo: https://github.com/JYC924693/NavigationAndSchedulingSystem.git
+    id: GetDegree
+    path: ../AGVSystem/Models/IMap.cs
+    startLine: 233
+  assemblies:
+  - AGVSystem
+  namespace: AGVSystem.Models
+  summary: 获取指定节点的入度或出度
+  example: []
+  syntax:
+    content: public abstract int GetDegree(int id, bool isInDegree = true)
+    parameters:
+    - id: id
+      type: System.Int32
+      description: 节点ID
+    - id: isInDegree
+      type: System.Boolean
+      description: 出入度，<a href="https://learn.microsoft.com/dotnet/csharp/language-reference/builtin-types/bool">true</a>为入度，<a href="https://learn.microsoft.com/dotnet/csharp/language-reference/builtin-types/bool">false</a>为出度
+    return:
+      type: System.Int32
+      description: 该节点的入度或出度
+    content.vb: Public MustOverride Function GetDegree(id As Integer, isInDegree As Boolean = True) As Integer
+  overload: AGVSystem.Models.ConcreteMap.GetDegree*
+  nameWithType.vb: ConcreteMap.GetDegree(Integer, Boolean)
+  fullName.vb: AGVSystem.Models.ConcreteMap.GetDegree(Integer, Boolean)
+  name.vb: GetDegree(Integer, Boolean)
+- uid: AGVSystem.Models.ConcreteMap.GetAllDegrees
+  commentId: M:AGVSystem.Models.ConcreteMap.GetAllDegrees
+  id: GetAllDegrees
+  parent: AGVSystem.Models.ConcreteMap
+  langs:
+  - csharp
+  - vb
+  name: GetAllDegrees()
+  nameWithType: ConcreteMap.GetAllDegrees()
+  fullName: AGVSystem.Models.ConcreteMap.GetAllDegrees()
+  type: Method
+  source:
+    remote:
+      path: AGVSystem/Models/IMap.cs
+      branch: mapMaintenance
+      repo: https://github.com/JYC924693/NavigationAndSchedulingSystem.git
+    id: GetAllDegrees
+    path: ../AGVSystem/Models/IMap.cs
+    startLine: 238
+  assemblies:
+  - AGVSystem
+  namespace: AGVSystem.Models
+  summary: 获取图中每个顶点的出入度
+  example: []
+  syntax:
+    content: public abstract Dictionary<int, (int InDegree, int OutDegree)> GetAllDegrees()
+    return:
+      type: System.Collections.Generic.Dictionary{System.Int32,System.ValueTuple{System.Int32,System.Int32}}
+      description: 每个顶点出入度的集合
+    content.vb: Public MustOverride Function GetAllDegrees() As Dictionary(Of Integer, (InDegree As Integer, OutDegree As Integer))
+  overload: AGVSystem.Models.ConcreteMap.GetAllDegrees*
+references:
+- uid: AGVSystem.Models
+  commentId: N:AGVSystem.Models
+  href: AGVSystem.html
+  name: AGVSystem.Models
+  nameWithType: AGVSystem.Models
+  fullName: AGVSystem.Models
+  spec.csharp:
+  - uid: AGVSystem
+    name: AGVSystem
+    href: AGVSystem.html
+  - name: .
+  - uid: AGVSystem.Models
+    name: Models
+    href: AGVSystem.Models.html
+  spec.vb:
+  - uid: AGVSystem
+    name: AGVSystem
+    href: AGVSystem.html
+  - name: .
+  - uid: AGVSystem.Models
+    name: Models
+    href: AGVSystem.Models.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  name: MemberwiseClone()
+  nameWithType: object.MemberwiseClone()
+  fullName: object.MemberwiseClone()
+  nameWithType.vb: Object.MemberwiseClone()
+  fullName.vb: Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: AGVSystem.Models.ConcreteMap.V*
+  commentId: Overload:AGVSystem.Models.ConcreteMap.V
+  href: AGVSystem.Models.ConcreteMap.html#AGVSystem_Models_ConcreteMap_V
+  name: V
+  nameWithType: ConcreteMap.V
+  fullName: AGVSystem.Models.ConcreteMap.V
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.int32
+  name: int
+  nameWithType: int
+  fullName: int
+  nameWithType.vb: Integer
+  fullName.vb: Integer
+  name.vb: Integer
+- uid: AGVSystem.Models.ConcreteMap.E*
+  commentId: Overload:AGVSystem.Models.ConcreteMap.E
+  href: AGVSystem.Models.ConcreteMap.html#AGVSystem_Models_ConcreteMap_E
+  name: E
+  nameWithType: ConcreteMap.E
+  fullName: AGVSystem.Models.ConcreteMap.E
+- uid: AGVSystem.Models.ConcreteMap.Vertices*
+  commentId: Overload:AGVSystem.Models.ConcreteMap.Vertices
+  href: AGVSystem.Models.ConcreteMap.html#AGVSystem_Models_ConcreteMap_Vertices
+  name: Vertices
+  nameWithType: ConcreteMap.Vertices
+  fullName: AGVSystem.Models.ConcreteMap.Vertices
+- uid: System.Collections.Generic.List{AGVSystem.Models.Vertex}
+  commentId: T:System.Collections.Generic.List{AGVSystem.Models.Vertex}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.List`1
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  name: List<Vertex>
+  nameWithType: List<Vertex>
+  fullName: System.Collections.Generic.List<AGVSystem.Models.Vertex>
+  nameWithType.vb: List(Of Vertex)
+  fullName.vb: System.Collections.Generic.List(Of AGVSystem.Models.Vertex)
+  name.vb: List(Of Vertex)
+  spec.csharp:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: <
+  - uid: AGVSystem.Models.Vertex
+    name: Vertex
+    href: AGVSystem.Models.Vertex.html
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: AGVSystem.Models.Vertex
+    name: Vertex
+    href: AGVSystem.Models.Vertex.html
+  - name: )
+- uid: System.Collections.Generic.List`1
+  commentId: T:System.Collections.Generic.List`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  name: List<T>
+  nameWithType: List<T>
+  fullName: System.Collections.Generic.List<T>
+  nameWithType.vb: List(Of T)
+  fullName.vb: System.Collections.Generic.List(Of T)
+  name.vb: List(Of T)
+  spec.csharp:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: System.Collections.Generic
+  commentId: N:System.Collections.Generic
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Collections.Generic
+  nameWithType: System.Collections.Generic
+  fullName: System.Collections.Generic
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+- uid: AGVSystem.Models.ConcreteMap.Edges*
+  commentId: Overload:AGVSystem.Models.ConcreteMap.Edges
+  href: AGVSystem.Models.ConcreteMap.html#AGVSystem_Models_ConcreteMap_Edges
+  name: Edges
+  nameWithType: ConcreteMap.Edges
+  fullName: AGVSystem.Models.ConcreteMap.Edges
+- uid: System.Collections.Generic.List{AGVSystem.Models.Edge}
+  commentId: T:System.Collections.Generic.List{AGVSystem.Models.Edge}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.List`1
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  name: List<Edge>
+  nameWithType: List<Edge>
+  fullName: System.Collections.Generic.List<AGVSystem.Models.Edge>
+  nameWithType.vb: List(Of Edge)
+  fullName.vb: System.Collections.Generic.List(Of AGVSystem.Models.Edge)
+  name.vb: List(Of Edge)
+  spec.csharp:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: <
+  - uid: AGVSystem.Models.Edge
+    name: Edge
+    href: AGVSystem.Models.Edge.html
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: AGVSystem.Models.Edge
+    name: Edge
+    href: AGVSystem.Models.Edge.html
+  - name: )
+- uid: AGVSystem.Models.ConcreteMap.AreIsomorphic*
+  commentId: Overload:AGVSystem.Models.ConcreteMap.AreIsomorphic
+  href: AGVSystem.Models.ConcreteMap.html#AGVSystem_Models_ConcreteMap_AreIsomorphic_AGVSystem_Models_ConcreteMap_
+  name: AreIsomorphic
+  nameWithType: ConcreteMap.AreIsomorphic
+  fullName: AGVSystem.Models.ConcreteMap.AreIsomorphic
+- uid: AGVSystem.Models.ConcreteMap
+  commentId: T:AGVSystem.Models.ConcreteMap
+  parent: AGVSystem.Models
+  href: AGVSystem.Models.ConcreteMap.html
+  name: ConcreteMap
+  nameWithType: ConcreteMap
+  fullName: AGVSystem.Models.ConcreteMap
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.boolean
+  name: bool
+  nameWithType: bool
+  fullName: bool
+  nameWithType.vb: Boolean
+  fullName.vb: Boolean
+  name.vb: Boolean
+- uid: AGVSystem.Models.ConcreteMap.BuildMap*
+  commentId: Overload:AGVSystem.Models.ConcreteMap.BuildMap
+  href: AGVSystem.Models.ConcreteMap.html#AGVSystem_Models_ConcreteMap_BuildMap_System_Collections_Generic_List_AGVSystem_Models_Vertex__System_Collections_Generic_List_AGVSystem_Models_Edge__
+  name: BuildMap
+  nameWithType: ConcreteMap.BuildMap
+  fullName: AGVSystem.Models.ConcreteMap.BuildMap
+- uid: System.ArgumentOutOfRangeException
+  commentId: T:System.ArgumentOutOfRangeException
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.argumentoutofrangeexception
+  name: ArgumentOutOfRangeException
+  nameWithType: ArgumentOutOfRangeException
+  fullName: System.ArgumentOutOfRangeException
+- uid: AGVSystem.Models.ConcreteMap.GetVertex*
+  commentId: Overload:AGVSystem.Models.ConcreteMap.GetVertex
+  href: AGVSystem.Models.ConcreteMap.html#AGVSystem_Models_ConcreteMap_GetVertex_System_Int32_
+  name: GetVertex
+  nameWithType: ConcreteMap.GetVertex
+  fullName: AGVSystem.Models.ConcreteMap.GetVertex
+- uid: AGVSystem.Models.Vertex
+  commentId: T:AGVSystem.Models.Vertex
+  parent: AGVSystem.Models
+  href: AGVSystem.Models.Vertex.html
+  name: Vertex
+  nameWithType: Vertex
+  fullName: AGVSystem.Models.Vertex
+- uid: AGVSystem.Models.ConcreteMap.ContainVertex*
+  commentId: Overload:AGVSystem.Models.ConcreteMap.ContainVertex
+  href: AGVSystem.Models.ConcreteMap.html#AGVSystem_Models_ConcreteMap_ContainVertex_System_Int32_
+  name: ContainVertex
+  nameWithType: ConcreteMap.ContainVertex
+  fullName: AGVSystem.Models.ConcreteMap.ContainVertex
+- uid: AGVSystem.Models.ConcreteMap.GetAdjacencyVertices*
+  commentId: Overload:AGVSystem.Models.ConcreteMap.GetAdjacencyVertices
+  href: AGVSystem.Models.ConcreteMap.html#AGVSystem_Models_ConcreteMap_GetAdjacencyVertices_System_Int32_
+  name: GetAdjacencyVertices
+  nameWithType: ConcreteMap.GetAdjacencyVertices
+  fullName: AGVSystem.Models.ConcreteMap.GetAdjacencyVertices
+- uid: AGVSystem.Models.ConcreteMap.AddVertex*
+  commentId: Overload:AGVSystem.Models.ConcreteMap.AddVertex
+  href: AGVSystem.Models.ConcreteMap.html#AGVSystem_Models_ConcreteMap_AddVertex_System_Int32_
+  name: AddVertex
+  nameWithType: ConcreteMap.AddVertex
+  fullName: AGVSystem.Models.ConcreteMap.AddVertex
+- uid: AGVSystem.Models.ConcreteMap.AddVertices*
+  commentId: Overload:AGVSystem.Models.ConcreteMap.AddVertices
+  href: AGVSystem.Models.ConcreteMap.html#AGVSystem_Models_ConcreteMap_AddVertices_System_Collections_Generic_List_AGVSystem_Models_Vertex__
+  name: AddVertices
+  nameWithType: ConcreteMap.AddVertices
+  fullName: AGVSystem.Models.ConcreteMap.AddVertices
+- uid: System.Collections.Generic.List{System.Int32}
+  commentId: T:System.Collections.Generic.List{System.Int32}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.List`1
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  name: List<int>
+  nameWithType: List<int>
+  fullName: System.Collections.Generic.List<int>
+  nameWithType.vb: List(Of Integer)
+  fullName.vb: System.Collections.Generic.List(Of Integer)
+  name.vb: List(Of Integer)
+  spec.csharp:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: <
+  - uid: System.Int32
+    name: int
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.Int32
+    name: Integer
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: )
+- uid: AGVSystem.Models.ConcreteMap.InsertVertex*
+  commentId: Overload:AGVSystem.Models.ConcreteMap.InsertVertex
+  href: AGVSystem.Models.ConcreteMap.html#AGVSystem_Models_ConcreteMap_InsertVertex_System_Int32_AGVSystem_Models_Edge_
+  name: InsertVertex
+  nameWithType: ConcreteMap.InsertVertex
+  fullName: AGVSystem.Models.ConcreteMap.InsertVertex
+- uid: AGVSystem.Models.Edge
+  commentId: T:AGVSystem.Models.Edge
+  parent: AGVSystem.Models
+  href: AGVSystem.Models.Edge.html
+  name: Edge
+  nameWithType: Edge
+  fullName: AGVSystem.Models.Edge
+- uid: AGVSystem.Models.ConcreteMap.RemoveVertex*
+  commentId: Overload:AGVSystem.Models.ConcreteMap.RemoveVertex
+  href: AGVSystem.Models.ConcreteMap.html#AGVSystem_Models_ConcreteMap_RemoveVertex_System_Int32_
+  name: RemoveVertex
+  nameWithType: ConcreteMap.RemoveVertex
+  fullName: AGVSystem.Models.ConcreteMap.RemoveVertex
+- uid: AGVSystem.Models.ConcreteMap.RemoveVertices*
+  commentId: Overload:AGVSystem.Models.ConcreteMap.RemoveVertices
+  href: AGVSystem.Models.ConcreteMap.html#AGVSystem_Models_ConcreteMap_RemoveVertices_System_Collections_Generic_List_AGVSystem_Models_Vertex__
+  name: RemoveVertices
+  nameWithType: ConcreteMap.RemoveVertices
+  fullName: AGVSystem.Models.ConcreteMap.RemoveVertices
+- uid: AGVSystem.Models.ConcreteMap.TryGetEdge*
+  commentId: Overload:AGVSystem.Models.ConcreteMap.TryGetEdge
+  href: AGVSystem.Models.ConcreteMap.html#AGVSystem_Models_ConcreteMap_TryGetEdge_System_Int32__System_Int32__AGVSystem_Models_Edge__
+  name: TryGetEdge
+  nameWithType: ConcreteMap.TryGetEdge
+  fullName: AGVSystem.Models.ConcreteMap.TryGetEdge
+- uid: System.Double
+  commentId: T:System.Double
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.double
+  name: double
+  nameWithType: double
+  fullName: double
+  nameWithType.vb: Double
+  fullName.vb: Double
+  name.vb: Double
+- uid: AGVSystem.Models.ConcreteMap.GetEdge*
+  commentId: Overload:AGVSystem.Models.ConcreteMap.GetEdge
+  href: AGVSystem.Models.ConcreteMap.html#AGVSystem_Models_ConcreteMap_GetEdge_System_Int32_System_Int32_System_Double_
+  name: GetEdge
+  nameWithType: ConcreteMap.GetEdge
+  fullName: AGVSystem.Models.ConcreteMap.GetEdge
+- uid: AGVSystem.Models.ConcreteMap.ContainEdge*
+  commentId: Overload:AGVSystem.Models.ConcreteMap.ContainEdge
+  href: AGVSystem.Models.ConcreteMap.html#AGVSystem_Models_ConcreteMap_ContainEdge_System_Int32_System_Int32_System_Double_
+  name: ContainEdge
+  nameWithType: ConcreteMap.ContainEdge
+  fullName: AGVSystem.Models.ConcreteMap.ContainEdge
+- uid: AGVSystem.Models.ConcreteMap.GetAdjacencyEdges*
+  commentId: Overload:AGVSystem.Models.ConcreteMap.GetAdjacencyEdges
+  href: AGVSystem.Models.ConcreteMap.html#AGVSystem_Models_ConcreteMap_GetAdjacencyEdges_System_Int32_
+  name: GetAdjacencyEdges
+  nameWithType: ConcreteMap.GetAdjacencyEdges
+  fullName: AGVSystem.Models.ConcreteMap.GetAdjacencyEdges
+- uid: AGVSystem.Models.ConcreteMap.AddEdge*
+  commentId: Overload:AGVSystem.Models.ConcreteMap.AddEdge
+  href: AGVSystem.Models.ConcreteMap.html#AGVSystem_Models_ConcreteMap_AddEdge_System_Int32_System_Int32_System_Double_
+  name: AddEdge
+  nameWithType: ConcreteMap.AddEdge
+  fullName: AGVSystem.Models.ConcreteMap.AddEdge
+- uid: AGVSystem.Models.ConcreteMap.AddEdges*
+  commentId: Overload:AGVSystem.Models.ConcreteMap.AddEdges
+  href: AGVSystem.Models.ConcreteMap.html#AGVSystem_Models_ConcreteMap_AddEdges_System_Collections_Generic_List_AGVSystem_Models_Edge__
+  name: AddEdges
+  nameWithType: ConcreteMap.AddEdges
+  fullName: AGVSystem.Models.ConcreteMap.AddEdges
+- uid: AGVSystem.Models.ConcreteMap.RemoveEdge*
+  commentId: Overload:AGVSystem.Models.ConcreteMap.RemoveEdge
+  href: AGVSystem.Models.ConcreteMap.html#AGVSystem_Models_ConcreteMap_RemoveEdge_System_Int32_System_Int32_System_Double_
+  name: RemoveEdge
+  nameWithType: ConcreteMap.RemoveEdge
+  fullName: AGVSystem.Models.ConcreteMap.RemoveEdge
+- uid: AGVSystem.Models.ConcreteMap.RemoveEdges*
+  commentId: Overload:AGVSystem.Models.ConcreteMap.RemoveEdges
+  href: AGVSystem.Models.ConcreteMap.html#AGVSystem_Models_ConcreteMap_RemoveEdges_System_Collections_Generic_List_AGVSystem_Models_Edge__
+  name: RemoveEdges
+  nameWithType: ConcreteMap.RemoveEdges
+  fullName: AGVSystem.Models.ConcreteMap.RemoveEdges
+- uid: AGVSystem.Models.ConcreteMap.Clear*
+  commentId: Overload:AGVSystem.Models.ConcreteMap.Clear
+  href: AGVSystem.Models.ConcreteMap.html#AGVSystem_Models_ConcreteMap_Clear
+  name: Clear
+  nameWithType: ConcreteMap.Clear
+  fullName: AGVSystem.Models.ConcreteMap.Clear
+- uid: AGVSystem.Models.ConcreteMap.GetDegree*
+  commentId: Overload:AGVSystem.Models.ConcreteMap.GetDegree
+  href: AGVSystem.Models.ConcreteMap.html#AGVSystem_Models_ConcreteMap_GetDegree_System_Int32_System_Boolean_
+  name: GetDegree
+  nameWithType: ConcreteMap.GetDegree
+  fullName: AGVSystem.Models.ConcreteMap.GetDegree
+- uid: AGVSystem.Models.ConcreteMap.GetAllDegrees*
+  commentId: Overload:AGVSystem.Models.ConcreteMap.GetAllDegrees
+  href: AGVSystem.Models.ConcreteMap.html#AGVSystem_Models_ConcreteMap_GetAllDegrees
+  name: GetAllDegrees
+  nameWithType: ConcreteMap.GetAllDegrees
+  fullName: AGVSystem.Models.ConcreteMap.GetAllDegrees
+- uid: System.Collections.Generic.Dictionary{System.Int32,System.ValueTuple{System.Int32,System.Int32}}
+  commentId: T:System.Collections.Generic.Dictionary{System.Int32,System.ValueTuple{System.Int32,System.Int32}}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.Dictionary`2
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2
+  name: Dictionary<int, (int InDegree, int OutDegree)>
+  nameWithType: Dictionary<int, (int InDegree, int OutDegree)>
+  fullName: System.Collections.Generic.Dictionary<int, (int InDegree, int OutDegree)>
+  nameWithType.vb: Dictionary(Of Integer, (InDegree As Integer, OutDegree As Integer))
+  fullName.vb: System.Collections.Generic.Dictionary(Of Integer, (InDegree As Integer, OutDegree As Integer))
+  name.vb: Dictionary(Of Integer, (InDegree As Integer, OutDegree As Integer))
+  spec.csharp:
+  - uid: System.Collections.Generic.Dictionary`2
+    name: Dictionary
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2
+  - name: <
+  - uid: System.Int32
+    name: int
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: ','
+  - name: " "
+  - name: (
+  - uid: System.Int32
+    name: int
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: " "
+  - uid: System.ValueTuple{System.Int32,System.Int32}.InDegree
+    name: InDegree
+    href: https://learn.microsoft.com/dotnet/api/system.valuetuple-system.int32,system.int32-.indegree
+  - name: ','
+  - name: " "
+  - uid: System.Int32
+    name: int
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: " "
+  - uid: System.ValueTuple{System.Int32,System.Int32}.OutDegree
+    name: OutDegree
+    href: https://learn.microsoft.com/dotnet/api/system.valuetuple-system.int32,system.int32-.outdegree
+  - name: )
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.Dictionary`2
+    name: Dictionary
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.Int32
+    name: Integer
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: ','
+  - name: " "
+  - name: (
+  - uid: System.ValueTuple{System.Int32,System.Int32}.InDegree
+    name: InDegree
+    href: https://learn.microsoft.com/dotnet/api/system.valuetuple-system.int32,system.int32-.indegree
+  - name: " "
+  - name: As
+  - name: " "
+  - uid: System.Int32
+    name: Integer
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: ','
+  - name: " "
+  - uid: System.ValueTuple{System.Int32,System.Int32}.OutDegree
+    name: OutDegree
+    href: https://learn.microsoft.com/dotnet/api/system.valuetuple-system.int32,system.int32-.outdegree
+  - name: " "
+  - name: As
+  - name: " "
+  - uid: System.Int32
+    name: Integer
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: )
+  - name: )
+- uid: System.Collections.Generic.Dictionary`2
+  commentId: T:System.Collections.Generic.Dictionary`2
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2
+  name: Dictionary<TKey, TValue>
+  nameWithType: Dictionary<TKey, TValue>
+  fullName: System.Collections.Generic.Dictionary<TKey, TValue>
+  nameWithType.vb: Dictionary(Of TKey, TValue)
+  fullName.vb: System.Collections.Generic.Dictionary(Of TKey, TValue)
+  name.vb: Dictionary(Of TKey, TValue)
+  spec.csharp:
+  - uid: System.Collections.Generic.Dictionary`2
+    name: Dictionary
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2
+  - name: <
+  - name: TKey
+  - name: ','
+  - name: " "
+  - name: TValue
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.Dictionary`2
+    name: Dictionary
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TKey
+  - name: ','
+  - name: " "
+  - name: TValue
+  - name: )
