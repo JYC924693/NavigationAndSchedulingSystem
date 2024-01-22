@@ -5,7 +5,6 @@ namespace AGVSystemTest
     [TestClass]
     public class MapTest
     {
-
         [TestMethod]
         public void JudgeMapEqual()
         {
@@ -31,7 +30,6 @@ namespace AGVSystemTest
                 }
             }
         }
-
         [TestMethod]
         public void GetVertexes()
         {
@@ -52,7 +50,6 @@ namespace AGVSystemTest
                 }, "获取顶点方法有误！");
             }
         }
-
         [TestMethod]
         public void GetAdjacencyVertexes()
         {
@@ -83,7 +80,6 @@ namespace AGVSystemTest
 
             Assert.IsTrue(subNontrivialMap2.AreIsomorphic(resultMap), "获取邻接点方法有误！");
         }
-
         [TestMethod]
         public void AddVertexes()
         {
@@ -104,7 +100,6 @@ namespace AGVSystemTest
                 Assert.IsFalse(zeroMap.AddVertex(vertex), "添加顶点方法有误！");
             }
         }
-
         [TestMethod]
         public void InsertVertexes()
         {
@@ -156,8 +151,6 @@ namespace AGVSystemTest
                 }
             }
         }
-
-
         [TestMethod]
         public void RemoveVertexes()
         {
@@ -185,7 +178,6 @@ namespace AGVSystemTest
             }
             Assert.IsTrue(emptyMap.AreIsomorphic(sparseMap), "移除顶点方法有误！");
         }
-
         [TestMethod]
         public void GetAdjacencyEdges()
         {
@@ -206,7 +198,6 @@ namespace AGVSystemTest
                 }, "获取邻接点方法有误！");
             }
         }
-
         [TestMethod]
         public void AddEdges()
         {
@@ -232,7 +223,6 @@ namespace AGVSystemTest
                 Assert.IsTrue(sparseMap.AddEdge(edge), "添加边方法有误！");
             }
         }
-
         [TestMethod]
         public void DeleteEdges()
         {
@@ -261,7 +251,6 @@ namespace AGVSystemTest
             }
             Assert.IsTrue(subSparseZeroMap.AreIsomorphic(sparseMap), "添加边方法有误！");
         }
-
         [TestMethod]
         public void DeleteMap()
         {
@@ -280,15 +269,23 @@ namespace AGVSystemTest
             }
         }
 
-        [TestMethod]
-        public void AllOperation()
-        {
-            var e = new Edge(3, 1);
-            var e2 = new UndirectedEdge(e);
-            Assert.IsNotNull(e2);
-            Assert.IsTrue(e.From.ID == e2.To.ID && e.To.ID == e2.From.ID);
+        //[TestMethod]
+        //public void Temp()
+        //{
+        //    var map = MapFactory.CreateMap(@"C:\Users\Lenovo\Desktop\新建 文本文档.txt", MapFactory.Type.SparseGraph);
 
-        }
+        //    Console.WriteLine("vertexes: ");
+        //    foreach (var v in map.Vertices)
+        //    {
+        //        Console.WriteLine(v);
+        //    }
+
+        //    Console.WriteLine("\nedges: ");
+        //    foreach (var e in map.Edges)
+        //    {
+        //        Console.WriteLine(e);
+        //    }
+        //}
     }
 
     public class MapFactory

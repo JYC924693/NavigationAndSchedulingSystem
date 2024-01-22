@@ -7,8 +7,10 @@ items:
   children:
   - AGVSystem.Models.MapConverter.#ctor(MySql.Data.MySqlClient.MySqlConnectionStringBuilder)
   - AGVSystem.Models.MapConverter.#ctor(System.String,System.String,System.String)
+  - AGVSystem.Models.MapConverter.AddVertices(System.Collections.Generic.List{AGVSystem.Models.Vertex})
   - AGVSystem.Models.MapConverter.GetEdges
   - AGVSystem.Models.MapConverter.GetVertices
+  - AGVSystem.Models.MapConverter.RemoveVertices(System.Collections.Generic.List{AGVSystem.Models.Vertex})
   langs:
   - csharp
   - vb
@@ -164,6 +166,70 @@ items:
       type: System.Collections.Generic.List{AGVSystem.Models.Vertex}
     content.vb: Public Function GetVertices() As List(Of Vertex)
   overload: AGVSystem.Models.MapConverter.GetVertices*
+- uid: AGVSystem.Models.MapConverter.AddVertices(System.Collections.Generic.List{AGVSystem.Models.Vertex})
+  commentId: M:AGVSystem.Models.MapConverter.AddVertices(System.Collections.Generic.List{AGVSystem.Models.Vertex})
+  id: AddVertices(System.Collections.Generic.List{AGVSystem.Models.Vertex})
+  parent: AGVSystem.Models.MapConverter
+  langs:
+  - csharp
+  - vb
+  name: AddVertices(List<Vertex>)
+  nameWithType: MapConverter.AddVertices(List<Vertex>)
+  fullName: AGVSystem.Models.MapConverter.AddVertices(System.Collections.Generic.List<AGVSystem.Models.Vertex>)
+  type: Method
+  source:
+    remote:
+      path: AGVSystem/Models/DataBase.cs
+      branch: mapMaintenance
+      repo: https://github.com/JYC924693/NavigationAndSchedulingSystem.git
+    id: AddVertices
+    path: ../AGVSystem/Models/DataBase.cs
+    startLine: 73
+  assemblies:
+  - AGVSystem
+  namespace: AGVSystem.Models
+  syntax:
+    content: public void AddVertices(List<Vertex> vertexes)
+    parameters:
+    - id: vertexes
+      type: System.Collections.Generic.List{AGVSystem.Models.Vertex}
+    content.vb: Public Sub AddVertices(vertexes As List(Of Vertex))
+  overload: AGVSystem.Models.MapConverter.AddVertices*
+  nameWithType.vb: MapConverter.AddVertices(List(Of Vertex))
+  fullName.vb: AGVSystem.Models.MapConverter.AddVertices(System.Collections.Generic.List(Of AGVSystem.Models.Vertex))
+  name.vb: AddVertices(List(Of Vertex))
+- uid: AGVSystem.Models.MapConverter.RemoveVertices(System.Collections.Generic.List{AGVSystem.Models.Vertex})
+  commentId: M:AGVSystem.Models.MapConverter.RemoveVertices(System.Collections.Generic.List{AGVSystem.Models.Vertex})
+  id: RemoveVertices(System.Collections.Generic.List{AGVSystem.Models.Vertex})
+  parent: AGVSystem.Models.MapConverter
+  langs:
+  - csharp
+  - vb
+  name: RemoveVertices(List<Vertex>)
+  nameWithType: MapConverter.RemoveVertices(List<Vertex>)
+  fullName: AGVSystem.Models.MapConverter.RemoveVertices(System.Collections.Generic.List<AGVSystem.Models.Vertex>)
+  type: Method
+  source:
+    remote:
+      path: AGVSystem/Models/DataBase.cs
+      branch: mapMaintenance
+      repo: https://github.com/JYC924693/NavigationAndSchedulingSystem.git
+    id: RemoveVertices
+    path: ../AGVSystem/Models/DataBase.cs
+    startLine: 78
+  assemblies:
+  - AGVSystem
+  namespace: AGVSystem.Models
+  syntax:
+    content: public void RemoveVertices(List<Vertex> vertexes)
+    parameters:
+    - id: vertexes
+      type: System.Collections.Generic.List{AGVSystem.Models.Vertex}
+    content.vb: Public Sub RemoveVertices(vertexes As List(Of Vertex))
+  overload: AGVSystem.Models.MapConverter.RemoveVertices*
+  nameWithType.vb: MapConverter.RemoveVertices(List(Of Vertex))
+  fullName.vb: AGVSystem.Models.MapConverter.RemoveVertices(System.Collections.Generic.List(Of AGVSystem.Models.Vertex))
+  name.vb: RemoveVertices(List(Of Vertex))
 references:
 - uid: AGVSystem.Models
   commentId: N:AGVSystem.Models
@@ -624,3 +690,15 @@ references:
     name: Vertex
     href: AGVSystem.Models.Vertex.html
   - name: )
+- uid: AGVSystem.Models.MapConverter.AddVertices*
+  commentId: Overload:AGVSystem.Models.MapConverter.AddVertices
+  href: AGVSystem.Models.MapConverter.html#AGVSystem_Models_MapConverter_AddVertices_System_Collections_Generic_List_AGVSystem_Models_Vertex__
+  name: AddVertices
+  nameWithType: MapConverter.AddVertices
+  fullName: AGVSystem.Models.MapConverter.AddVertices
+- uid: AGVSystem.Models.MapConverter.RemoveVertices*
+  commentId: Overload:AGVSystem.Models.MapConverter.RemoveVertices
+  href: AGVSystem.Models.MapConverter.html#AGVSystem_Models_MapConverter_RemoveVertices_System_Collections_Generic_List_AGVSystem_Models_Vertex__
+  name: RemoveVertices
+  nameWithType: MapConverter.RemoveVertices
+  fullName: AGVSystem.Models.MapConverter.RemoveVertices

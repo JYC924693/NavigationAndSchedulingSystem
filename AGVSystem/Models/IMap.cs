@@ -154,6 +154,17 @@ namespace AGVSystem.Models
                 edge = GetEdge(from, to);
             }
 
+            try
+            {
+                GetVertex(12);
+
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+                //throw;
+            }
+
             return isExist;
         }
         /// <summary>
@@ -722,5 +733,18 @@ namespace AGVSystem.Models
         SubtendLeft,
         SubtendForward,
         SubtendRight,
+    }
+
+    public enum AgvState
+    {
+        Left = -30,
+        Backward = -1,
+        Forward = 1,
+        Right = 30
+    }
+
+    public enum TaskMode
+    {
+        None = 0,
     }
 }

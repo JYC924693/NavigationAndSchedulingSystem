@@ -1,1 +1,1 @@
-docfx C:\Users\Lenovo\Documents\Code\C#\Project\NavigationAndSchedulingSystem\web\docfx.json --serve -p 9020
+docfx C:\Users\Lenovo\Documents\Code\C#\Project\NavigationAndSchedulingSystem\web\docfx.json --serve -p 9020 --open-browser -n 192.168.0.53

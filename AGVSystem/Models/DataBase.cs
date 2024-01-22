@@ -1,5 +1,6 @@
 ﻿using MySql.Data.MySqlClient;
 using System.Data;
+using MySql.Data.Types;
 
 namespace AGVSystem.Models
 {
@@ -26,6 +27,10 @@ namespace AGVSystem.Models
             };
 
             _connection = new MySqlConnection(builder.ConnectionString);
+            if (!_connection.Ping())
+            {
+                throw new MySqlConversionException("Ping测试失败！");
+            }
         }
         public List<Edge> GetEdges()
         {
@@ -70,5 +75,52 @@ namespace AGVSystem.Models
 
             return vertices;
         }
+
+        public void AddVertex(Vertex v)
+        {
+
+        }
+
+        public void RemoveVertex(Vertex v)
+        {
+
+        }
+    }
+
+    public abstract class QrTable
+    {
+        public abstract List<Vertex> GetVertices();
+        public abstract List<Edge> GetEdges();
+        public abstract bool AddQrCode(QRCode qr);
+        public abstract QRCode ChangeQrCode(int id, QRCode newQr);
+        public abstract QRState ChangeQrState(int id, QRState state);
+        public abstract int ChangeQrId(int id, int newId);
+        public abstract Edge ChangeEdge(int head, int tail, Edge newEdge);
+        public abstract int ChangeEdgeId(int head, int tail, int newHead, int newTail);
+        public abstract int ChangeWeight(int head, int tail, int weight);
+        public abstract bool RemoveVertex(int id);
+        public abstract bool RemoveEdge(int head, int tail);
+    }
+
+    public abstract class PathTable
+    {
+        public abstract Path GetPath(string name);
+        public abstract bool AddPath(string name);
+        public abstract Path ChangePath(string name, Path newPath);
+        public abstract List<int> ChangeIdSequence(string name, List<int> newIdSequence);
+        public abstract List<AgvState> ChangeAgvStateSequence(string name, List<AgvState> newAgvState);
+        public abstract List<double> ChangeAngleSequence(string name, List<double> newAngleSequence);
+        public abstract List<TaskMode> ChangeTaskModeSequence(string name, List<TaskMode> newTaskModeSequence);
+        public abstract string ChangeTaskName(string name, string newName);
+        public abstract bool RemovePath(string name);
+    }
+
+    public class Path
+    {
+        public List<int> IdSequence;
+        public List<AgvState> MoveSequence;
+        public List<double> AngleSequence;
+        public List<TaskMode> TaskSequence;
+        public string Name;
     }
 }
