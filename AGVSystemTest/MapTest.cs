@@ -1,3 +1,5 @@
+#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
+
 using AGVSystem.Models;
 
 namespace AGVSystemTest
@@ -30,6 +32,7 @@ namespace AGVSystemTest
                 }
             }
         }
+
         [TestMethod]
         public void GetVertexes()
         {
@@ -50,6 +53,7 @@ namespace AGVSystemTest
                 }, "获取顶点方法有误！");
             }
         }
+
         [TestMethod]
         public void GetAdjacencyVertexes()
         {
@@ -80,6 +84,7 @@ namespace AGVSystemTest
 
             Assert.IsTrue(subNontrivialMap2.AreIsomorphic(resultMap), "获取邻接点方法有误！");
         }
+
         [TestMethod]
         public void AddVertexes()
         {
@@ -100,6 +105,7 @@ namespace AGVSystemTest
                 Assert.IsFalse(zeroMap.AddVertex(vertex), "添加顶点方法有误！");
             }
         }
+
         [TestMethod]
         public void InsertVertexes()
         {
@@ -151,6 +157,7 @@ namespace AGVSystemTest
                 }
             }
         }
+
         [TestMethod]
         public void RemoveVertexes()
         {
@@ -178,6 +185,7 @@ namespace AGVSystemTest
             }
             Assert.IsTrue(emptyMap.AreIsomorphic(sparseMap), "移除顶点方法有误！");
         }
+
         [TestMethod]
         public void GetAdjacencyEdges()
         {
@@ -198,6 +206,7 @@ namespace AGVSystemTest
                 }, "获取邻接点方法有误！");
             }
         }
+
         [TestMethod]
         public void AddEdges()
         {
@@ -223,6 +232,7 @@ namespace AGVSystemTest
                 Assert.IsTrue(sparseMap.AddEdge(edge), "添加边方法有误！");
             }
         }
+
         [TestMethod]
         public void DeleteEdges()
         {
@@ -251,6 +261,7 @@ namespace AGVSystemTest
             }
             Assert.IsTrue(subSparseZeroMap.AreIsomorphic(sparseMap), "添加边方法有误！");
         }
+
         [TestMethod]
         public void DeleteMap()
         {
@@ -258,8 +269,7 @@ namespace AGVSystemTest
             var nontrivialMap = MapFactory.CreateMap(MapFactory.NontrivialGraph1, MapFactory.Type.NontrivialGraph);
             var sparseMap = MapFactory.CreateMap(MapFactory.SparseGraph1, MapFactory.Type.SparseGraph);
 
-            var maps = new List<ConcreteMap> { nontrivialMap, sparseMap }
-            ;
+            var maps = new List<ConcreteMap> { nontrivialMap, sparseMap };
             foreach (var map in maps)
             {
                 map.Clear();

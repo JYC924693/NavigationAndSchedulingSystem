@@ -1,4 +1,6 @@
-﻿using static System.Net.WebRequestMethods;
+﻿#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
+
+using static System.Net.WebRequestMethods;
 
 namespace AGVSystem.Models
 {
@@ -246,7 +248,7 @@ namespace AGVSystem.Models
         /// <summary>
         /// 获取图中每个顶点的出入度
         /// </summary>
-        /// <returns>每个顶点出入度的集合</returns>
+        /// <returns>每个顶点出入度组成的集合</returns>
         public abstract Dictionary<int, (int InDegree, int OutDegree)> GetAllDegrees();
     }
 
