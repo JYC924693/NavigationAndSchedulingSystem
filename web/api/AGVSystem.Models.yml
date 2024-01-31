@@ -4,15 +4,22 @@ items:
   commentId: N:AGVSystem.Models
   id: AGVSystem.Models
   children:
+  - AGVSystem.Models.AgvState
   - AGVSystem.Models.ConcreteMap
-  - AGVSystem.Models.DataBase
+  - AGVSystem.Models.DataAccess
   - AGVSystem.Models.Edge
   - AGVSystem.Models.Graph
   - AGVSystem.Models.IMap
   - AGVSystem.Models.MapContext
-  - AGVSystem.Models.MapConverter
+  - AGVSystem.Models.MySqlConnectionInstance
+  - AGVSystem.Models.MySqlPathTable
+  - AGVSystem.Models.MySqlQrTable
+  - AGVSystem.Models.Path
+  - AGVSystem.Models.PathTable
   - AGVSystem.Models.QRCode
   - AGVSystem.Models.QRState
+  - AGVSystem.Models.QrTable
+  - AGVSystem.Models.TaskMode
   - AGVSystem.Models.Vertex
   langs:
   - csharp
@@ -24,18 +31,51 @@ items:
   assemblies:
   - AGVSystem
 references:
-- uid: AGVSystem.Models.DataBase
-  commentId: T:AGVSystem.Models.DataBase
-  href: AGVSystem.Models.DataBase.html
-  name: DataBase
-  nameWithType: DataBase
-  fullName: AGVSystem.Models.DataBase
-- uid: AGVSystem.Models.MapConverter
-  commentId: T:AGVSystem.Models.MapConverter
-  href: AGVSystem.Models.MapConverter.html
-  name: MapConverter
-  nameWithType: MapConverter
-  fullName: AGVSystem.Models.MapConverter
+- uid: AGVSystem.Models.DataAccess
+  commentId: T:AGVSystem.Models.DataAccess
+  href: AGVSystem.Models.DataAccess.html
+  name: DataAccess
+  nameWithType: DataAccess
+  fullName: AGVSystem.Models.DataAccess
+- uid: AGVSystem.Models.MySqlConnectionInstance
+  commentId: T:AGVSystem.Models.MySqlConnectionInstance
+  href: AGVSystem.Models.MySqlConnectionInstance.html
+  name: MySqlConnectionInstance
+  nameWithType: MySqlConnectionInstance
+  fullName: AGVSystem.Models.MySqlConnectionInstance
+- uid: AGVSystem.Models.QrTable
+  commentId: T:AGVSystem.Models.QrTable
+  parent: AGVSystem.Models
+  href: AGVSystem.Models.QrTable.html
+  name: QrTable
+  nameWithType: QrTable
+  fullName: AGVSystem.Models.QrTable
+- uid: AGVSystem.Models.MySqlQrTable
+  commentId: T:AGVSystem.Models.MySqlQrTable
+  href: AGVSystem.Models.MySqlQrTable.html
+  name: MySqlQrTable
+  nameWithType: MySqlQrTable
+  fullName: AGVSystem.Models.MySqlQrTable
+- uid: AGVSystem.Models.PathTable
+  commentId: T:AGVSystem.Models.PathTable
+  parent: AGVSystem.Models
+  href: AGVSystem.Models.PathTable.html
+  name: PathTable
+  nameWithType: PathTable
+  fullName: AGVSystem.Models.PathTable
+- uid: AGVSystem.Models.MySqlPathTable
+  commentId: T:AGVSystem.Models.MySqlPathTable
+  href: AGVSystem.Models.MySqlPathTable.html
+  name: MySqlPathTable
+  nameWithType: MySqlPathTable
+  fullName: AGVSystem.Models.MySqlPathTable
+- uid: AGVSystem.Models.Path
+  commentId: T:AGVSystem.Models.Path
+  parent: AGVSystem.Models
+  href: AGVSystem.Models.Path.html
+  name: Path
+  nameWithType: Path
+  fullName: AGVSystem.Models.Path
 - uid: AGVSystem.Models.MapContext
   commentId: T:AGVSystem.Models.MapContext
   href: AGVSystem.Models.MapContext.html
@@ -90,6 +130,20 @@ references:
   name: QRState
   nameWithType: QRState
   fullName: AGVSystem.Models.QRState
+- uid: AGVSystem.Models.AgvState
+  commentId: T:AGVSystem.Models.AgvState
+  parent: AGVSystem.Models
+  href: AGVSystem.Models.AgvState.html
+  name: AgvState
+  nameWithType: AgvState
+  fullName: AGVSystem.Models.AgvState
+- uid: AGVSystem.Models.TaskMode
+  commentId: T:AGVSystem.Models.TaskMode
+  parent: AGVSystem.Models
+  href: AGVSystem.Models.TaskMode.html
+  name: TaskMode
+  nameWithType: TaskMode
+  fullName: AGVSystem.Models.TaskMode
 - uid: AGVSystem.Models
   commentId: N:AGVSystem.Models
   href: AGVSystem.html

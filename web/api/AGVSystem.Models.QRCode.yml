@@ -6,6 +6,7 @@ items:
   parent: AGVSystem.Models
   children:
   - AGVSystem.Models.QRCode.#ctor
+  - AGVSystem.Models.QRCode.#ctor(System.Int32)
   - AGVSystem.Models.QRCode.#ctor(System.Int32,AGVSystem.Models.QRState)
   - AGVSystem.Models.QRCode.ID
   - AGVSystem.Models.QRCode.State
@@ -24,7 +25,7 @@ items:
       repo: https://github.com/JYC924693/NavigationAndSchedulingSystem.git
     id: QRCode
     path: ../AGVSystem/Models/IMap.cs
-    startLine: 690
+    startLine: 703
   assemblies:
   - AGVSystem
   namespace: AGVSystem.Models
@@ -58,7 +59,7 @@ items:
       repo: https://github.com/JYC924693/NavigationAndSchedulingSystem.git
     id: .ctor
     path: ../AGVSystem/Models/IMap.cs
-    startLine: 692
+    startLine: 705
   assemblies:
   - AGVSystem
   namespace: AGVSystem.Models
@@ -69,6 +70,38 @@ items:
   nameWithType.vb: QRCode.New()
   fullName.vb: AGVSystem.Models.QRCode.New()
   name.vb: New()
+- uid: AGVSystem.Models.QRCode.#ctor(System.Int32)
+  commentId: M:AGVSystem.Models.QRCode.#ctor(System.Int32)
+  id: '#ctor(System.Int32)'
+  parent: AGVSystem.Models.QRCode
+  langs:
+  - csharp
+  - vb
+  name: QRCode(int)
+  nameWithType: QRCode.QRCode(int)
+  fullName: AGVSystem.Models.QRCode.QRCode(int)
+  type: Constructor
+  source:
+    remote:
+      path: AGVSystem/Models/IMap.cs
+      branch: mapMaintenance
+      repo: https://github.com/JYC924693/NavigationAndSchedulingSystem.git
+    id: .ctor
+    path: ../AGVSystem/Models/IMap.cs
+    startLine: 710
+  assemblies:
+  - AGVSystem
+  namespace: AGVSystem.Models
+  syntax:
+    content: public QRCode(int id)
+    parameters:
+    - id: id
+      type: System.Int32
+    content.vb: Public Sub New(id As Integer)
+  overload: AGVSystem.Models.QRCode.#ctor*
+  nameWithType.vb: QRCode.New(Integer)
+  fullName.vb: AGVSystem.Models.QRCode.New(Integer)
+  name.vb: New(Integer)
 - uid: AGVSystem.Models.QRCode.#ctor(System.Int32,AGVSystem.Models.QRState)
   commentId: M:AGVSystem.Models.QRCode.#ctor(System.Int32,AGVSystem.Models.QRState)
   id: '#ctor(System.Int32,AGVSystem.Models.QRState)'
@@ -87,7 +120,7 @@ items:
       repo: https://github.com/JYC924693/NavigationAndSchedulingSystem.git
     id: .ctor
     path: ../AGVSystem/Models/IMap.cs
-    startLine: 697
+    startLine: 715
   assemblies:
   - AGVSystem
   namespace: AGVSystem.Models
@@ -121,7 +154,7 @@ items:
       repo: https://github.com/JYC924693/NavigationAndSchedulingSystem.git
     id: ID
     path: ../AGVSystem/Models/IMap.cs
-    startLine: 703
+    startLine: 721
   assemblies:
   - AGVSystem
   namespace: AGVSystem.Models
@@ -150,7 +183,7 @@ items:
       repo: https://github.com/JYC924693/NavigationAndSchedulingSystem.git
     id: State
     path: ../AGVSystem/Models/IMap.cs
-    startLine: 704
+    startLine: 722
   assemblies:
   - AGVSystem
   namespace: AGVSystem.Models
@@ -179,7 +212,7 @@ items:
       repo: https://github.com/JYC924693/NavigationAndSchedulingSystem.git
     id: ToString
     path: ../AGVSystem/Models/IMap.cs
-    startLine: 706
+    startLine: 724
   assemblies:
   - AGVSystem
   namespace: AGVSystem.Models

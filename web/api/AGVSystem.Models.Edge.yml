@@ -29,7 +29,7 @@ items:
       repo: https://github.com/JYC924693/NavigationAndSchedulingSystem.git
     id: Edge
     path: ../AGVSystem/Models/IMap.cs
-    startLine: 642
+    startLine: 655
   assemblies:
   - AGVSystem
   namespace: AGVSystem.Models
@@ -63,7 +63,7 @@ items:
       repo: https://github.com/JYC924693/NavigationAndSchedulingSystem.git
     id: From
     path: ../AGVSystem/Models/IMap.cs
-    startLine: 644
+    startLine: 657
   assemblies:
   - AGVSystem
   namespace: AGVSystem.Models
@@ -92,7 +92,7 @@ items:
       repo: https://github.com/JYC924693/NavigationAndSchedulingSystem.git
     id: To
     path: ../AGVSystem/Models/IMap.cs
-    startLine: 645
+    startLine: 658
   assemblies:
   - AGVSystem
   namespace: AGVSystem.Models
@@ -121,7 +121,7 @@ items:
       repo: https://github.com/JYC924693/NavigationAndSchedulingSystem.git
     id: Weight
     path: ../AGVSystem/Models/IMap.cs
-    startLine: 646
+    startLine: 659
   assemblies:
   - AGVSystem
   namespace: AGVSystem.Models
@@ -150,7 +150,7 @@ items:
       repo: https://github.com/JYC924693/NavigationAndSchedulingSystem.git
     id: op_Equality
     path: ../AGVSystem/Models/IMap.cs
-    startLine: 648
+    startLine: 661
   assemblies:
   - AGVSystem
   namespace: AGVSystem.Models
@@ -186,7 +186,7 @@ items:
       repo: https://github.com/JYC924693/NavigationAndSchedulingSystem.git
     id: op_Inequality
     path: ../AGVSystem/Models/IMap.cs
-    startLine: 653
+    startLine: 666
   assemblies:
   - AGVSystem
   namespace: AGVSystem.Models
@@ -222,7 +222,7 @@ items:
       repo: https://github.com/JYC924693/NavigationAndSchedulingSystem.git
     id: .ctor
     path: ../AGVSystem/Models/IMap.cs
-    startLine: 658
+    startLine: 671
   assemblies:
   - AGVSystem
   namespace: AGVSystem.Models
@@ -258,7 +258,7 @@ items:
       repo: https://github.com/JYC924693/NavigationAndSchedulingSystem.git
     id: .ctor
     path: ../AGVSystem/Models/IMap.cs
-    startLine: 665
+    startLine: 678
   assemblies:
   - AGVSystem
   namespace: AGVSystem.Models
@@ -294,7 +294,7 @@ items:
       repo: https://github.com/JYC924693/NavigationAndSchedulingSystem.git
     id: .ctor
     path: ../AGVSystem/Models/IMap.cs
-    startLine: 672
+    startLine: 685
   assemblies:
   - AGVSystem
   namespace: AGVSystem.Models
@@ -326,7 +326,7 @@ items:
       repo: https://github.com/JYC924693/NavigationAndSchedulingSystem.git
     id: Reverse
     path: ../AGVSystem/Models/IMap.cs
-    startLine: 679
+    startLine: 692
   assemblies:
   - AGVSystem
   namespace: AGVSystem.Models
@@ -352,7 +352,7 @@ items:
       repo: https://github.com/JYC924693/NavigationAndSchedulingSystem.git
     id: ToString
     path: ../AGVSystem/Models/IMap.cs
-    startLine: 684
+    startLine: 697
   assemblies:
   - AGVSystem
   namespace: AGVSystem.Models

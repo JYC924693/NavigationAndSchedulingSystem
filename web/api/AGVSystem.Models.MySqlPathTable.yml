@@ -1,0 +1,1366 @@
+### YamlMime:ManagedReference
+items:
+- uid: AGVSystem.Models.MySqlPathTable
+  commentId: T:AGVSystem.Models.MySqlPathTable
+  id: MySqlPathTable
+  parent: AGVSystem.Models
+  children:
+  - AGVSystem.Models.MySqlPathTable.#ctor
+  - AGVSystem.Models.MySqlPathTable.AddPath(AGVSystem.Models.Path)
+  - AGVSystem.Models.MySqlPathTable.ChangeAgvStateSequence(System.String,System.Collections.Generic.List{AGVSystem.Models.AgvState})
+  - AGVSystem.Models.MySqlPathTable.ChangeAngleSequence(System.String,System.Collections.Generic.List{System.Double})
+  - AGVSystem.Models.MySqlPathTable.ChangeIdSequence(System.String,System.Collections.Generic.List{System.Int32})
+  - AGVSystem.Models.MySqlPathTable.ChangePath(System.String,AGVSystem.Models.Path)
+  - AGVSystem.Models.MySqlPathTable.ChangeTaskModeSequence(System.String,System.Collections.Generic.List{AGVSystem.Models.TaskMode})
+  - AGVSystem.Models.MySqlPathTable.ChangeTaskName(System.String,System.String)
+  - AGVSystem.Models.MySqlPathTable.GetPath(System.String)
+  - AGVSystem.Models.MySqlPathTable.RemovePath(System.String)
+  langs:
+  - csharp
+  - vb
+  name: MySqlPathTable
+  nameWithType: MySqlPathTable
+  fullName: AGVSystem.Models.MySqlPathTable
+  type: Class
+  source:
+    remote:
+      path: AGVSystem/Models/DataAccess.cs
+      branch: mapMaintenance
+      repo: https://github.com/JYC924693/NavigationAndSchedulingSystem.git
+    id: MySqlPathTable
+    path: ../AGVSystem/Models/DataAccess.cs
+    startLine: 461
+  assemblies:
+  - AGVSystem
+  namespace: AGVSystem.Models
+  syntax:
+    content: 'public class MySqlPathTable : PathTable'
+    content.vb: Public Class MySqlPathTable Inherits PathTable
+  inheritance:
+  - System.Object
+  - AGVSystem.Models.PathTable
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+- uid: AGVSystem.Models.MySqlPathTable.#ctor
+  commentId: M:AGVSystem.Models.MySqlPathTable.#ctor
+  id: '#ctor'
+  parent: AGVSystem.Models.MySqlPathTable
+  langs:
+  - csharp
+  - vb
+  name: MySqlPathTable()
+  nameWithType: MySqlPathTable.MySqlPathTable()
+  fullName: AGVSystem.Models.MySqlPathTable.MySqlPathTable()
+  type: Constructor
+  source:
+    remote:
+      path: AGVSystem/Models/DataAccess.cs
+      branch: mapMaintenance
+      repo: https://github.com/JYC924693/NavigationAndSchedulingSystem.git
+    id: .ctor
+    path: ../AGVSystem/Models/DataAccess.cs
+    startLine: 466
+  assemblies:
+  - AGVSystem
+  namespace: AGVSystem.Models
+  syntax:
+    content: public MySqlPathTable()
+    content.vb: Public Sub New()
+  overload: AGVSystem.Models.MySqlPathTable.#ctor*
+  nameWithType.vb: MySqlPathTable.New()
+  fullName.vb: AGVSystem.Models.MySqlPathTable.New()
+  name.vb: New()
+- uid: AGVSystem.Models.MySqlPathTable.GetPath(System.String)
+  commentId: M:AGVSystem.Models.MySqlPathTable.GetPath(System.String)
+  id: GetPath(System.String)
+  parent: AGVSystem.Models.MySqlPathTable
+  langs:
+  - csharp
+  - vb
+  name: GetPath(string)
+  nameWithType: MySqlPathTable.GetPath(string)
+  fullName: AGVSystem.Models.MySqlPathTable.GetPath(string)
+  type: Method
+  source:
+    remote:
+      path: AGVSystem/Models/DataAccess.cs
+      branch: mapMaintenance
+      repo: https://github.com/JYC924693/NavigationAndSchedulingSystem.git
+    id: GetPath
+    path: ../AGVSystem/Models/DataAccess.cs
+    startLine: 484
+  assemblies:
+  - AGVSystem
+  namespace: AGVSystem.Models
+  example: []
+  syntax:
+    content: public override Path GetPath(string name)
+    parameters:
+    - id: name
+      type: System.String
+    return:
+      type: AGVSystem.Models.Path
+    content.vb: Public Overrides Function GetPath(name As String) As Path
+  overridden: AGVSystem.Models.PathTable.GetPath(System.String)
+  overload: AGVSystem.Models.MySqlPathTable.GetPath*
+  nameWithType.vb: MySqlPathTable.GetPath(String)
+  fullName.vb: AGVSystem.Models.MySqlPathTable.GetPath(String)
+  name.vb: GetPath(String)
+- uid: AGVSystem.Models.MySqlPathTable.AddPath(AGVSystem.Models.Path)
+  commentId: M:AGVSystem.Models.MySqlPathTable.AddPath(AGVSystem.Models.Path)
+  id: AddPath(AGVSystem.Models.Path)
+  parent: AGVSystem.Models.MySqlPathTable
+  langs:
+  - csharp
+  - vb
+  name: AddPath(Path)
+  nameWithType: MySqlPathTable.AddPath(Path)
+  fullName: AGVSystem.Models.MySqlPathTable.AddPath(AGVSystem.Models.Path)
+  type: Method
+  source:
+    remote:
+      path: AGVSystem/Models/DataAccess.cs
+      branch: mapMaintenance
+      repo: https://github.com/JYC924693/NavigationAndSchedulingSystem.git
+    id: AddPath
+    path: ../AGVSystem/Models/DataAccess.cs
+    startLine: 511
+  assemblies:
+  - AGVSystem
+  namespace: AGVSystem.Models
+  example: []
+  syntax:
+    content: public override bool AddPath(Path path)
+    parameters:
+    - id: path
+      type: AGVSystem.Models.Path
+    return:
+      type: System.Boolean
+    content.vb: Public Overrides Function AddPath(path As Path) As Boolean
+  overridden: AGVSystem.Models.PathTable.AddPath(AGVSystem.Models.Path)
+  overload: AGVSystem.Models.MySqlPathTable.AddPath*
+- uid: AGVSystem.Models.MySqlPathTable.ChangePath(System.String,AGVSystem.Models.Path)
+  commentId: M:AGVSystem.Models.MySqlPathTable.ChangePath(System.String,AGVSystem.Models.Path)
+  id: ChangePath(System.String,AGVSystem.Models.Path)
+  parent: AGVSystem.Models.MySqlPathTable
+  langs:
+  - csharp
+  - vb
+  name: ChangePath(string, Path)
+  nameWithType: MySqlPathTable.ChangePath(string, Path)
+  fullName: AGVSystem.Models.MySqlPathTable.ChangePath(string, AGVSystem.Models.Path)
+  type: Method
+  source:
+    remote:
+      path: AGVSystem/Models/DataAccess.cs
+      branch: mapMaintenance
+      repo: https://github.com/JYC924693/NavigationAndSchedulingSystem.git
+    id: ChangePath
+    path: ../AGVSystem/Models/DataAccess.cs
+    startLine: 536
+  assemblies:
+  - AGVSystem
+  namespace: AGVSystem.Models
+  example: []
+  syntax:
+    content: public override bool ChangePath(string name, Path newPath)
+    parameters:
+    - id: name
+      type: System.String
+    - id: newPath
+      type: AGVSystem.Models.Path
+    return:
+      type: System.Boolean
+    content.vb: Public Overrides Function ChangePath(name As String, newPath As Path) As Boolean
+  overridden: AGVSystem.Models.PathTable.ChangePath(System.String,AGVSystem.Models.Path)
+  overload: AGVSystem.Models.MySqlPathTable.ChangePath*
+  nameWithType.vb: MySqlPathTable.ChangePath(String, Path)
+  fullName.vb: AGVSystem.Models.MySqlPathTable.ChangePath(String, AGVSystem.Models.Path)
+  name.vb: ChangePath(String, Path)
+- uid: AGVSystem.Models.MySqlPathTable.ChangeIdSequence(System.String,System.Collections.Generic.List{System.Int32})
+  commentId: M:AGVSystem.Models.MySqlPathTable.ChangeIdSequence(System.String,System.Collections.Generic.List{System.Int32})
+  id: ChangeIdSequence(System.String,System.Collections.Generic.List{System.Int32})
+  parent: AGVSystem.Models.MySqlPathTable
+  langs:
+  - csharp
+  - vb
+  name: ChangeIdSequence(string, List<int>)
+  nameWithType: MySqlPathTable.ChangeIdSequence(string, List<int>)
+  fullName: AGVSystem.Models.MySqlPathTable.ChangeIdSequence(string, System.Collections.Generic.List<int>)
+  type: Method
+  source:
+    remote:
+      path: AGVSystem/Models/DataAccess.cs
+      branch: mapMaintenance
+      repo: https://github.com/JYC924693/NavigationAndSchedulingSystem.git
+    id: ChangeIdSequence
+    path: ../AGVSystem/Models/DataAccess.cs
+    startLine: 565
+  assemblies:
+  - AGVSystem
+  namespace: AGVSystem.Models
+  example: []
+  syntax:
+    content: public override bool ChangeIdSequence(string name, List<int> newIdSequence)
+    parameters:
+    - id: name
+      type: System.String
+    - id: newIdSequence
+      type: System.Collections.Generic.List{System.Int32}
+    return:
+      type: System.Boolean
+    content.vb: Public Overrides Function ChangeIdSequence(name As String, newIdSequence As List(Of Integer)) As Boolean
+  overridden: AGVSystem.Models.PathTable.ChangeIdSequence(System.String,System.Collections.Generic.List{System.Int32})
+  overload: AGVSystem.Models.MySqlPathTable.ChangeIdSequence*
+  nameWithType.vb: MySqlPathTable.ChangeIdSequence(String, List(Of Integer))
+  fullName.vb: AGVSystem.Models.MySqlPathTable.ChangeIdSequence(String, System.Collections.Generic.List(Of Integer))
+  name.vb: ChangeIdSequence(String, List(Of Integer))
+- uid: AGVSystem.Models.MySqlPathTable.ChangeAgvStateSequence(System.String,System.Collections.Generic.List{AGVSystem.Models.AgvState})
+  commentId: M:AGVSystem.Models.MySqlPathTable.ChangeAgvStateSequence(System.String,System.Collections.Generic.List{AGVSystem.Models.AgvState})
+  id: ChangeAgvStateSequence(System.String,System.Collections.Generic.List{AGVSystem.Models.AgvState})
+  parent: AGVSystem.Models.MySqlPathTable
+  langs:
+  - csharp
+  - vb
+  name: ChangeAgvStateSequence(string, List<AgvState>)
+  nameWithType: MySqlPathTable.ChangeAgvStateSequence(string, List<AgvState>)
+  fullName: AGVSystem.Models.MySqlPathTable.ChangeAgvStateSequence(string, System.Collections.Generic.List<AGVSystem.Models.AgvState>)
+  type: Method
+  source:
+    remote:
+      path: AGVSystem/Models/DataAccess.cs
+      branch: mapMaintenance
+      repo: https://github.com/JYC924693/NavigationAndSchedulingSystem.git
+    id: ChangeAgvStateSequence
+    path: ../AGVSystem/Models/DataAccess.cs
+    startLine: 585
+  assemblies:
+  - AGVSystem
+  namespace: AGVSystem.Models
+  example: []
+  syntax:
+    content: public override bool ChangeAgvStateSequence(string name, List<AgvState> newAgvState)
+    parameters:
+    - id: name
+      type: System.String
+    - id: newAgvState
+      type: System.Collections.Generic.List{AGVSystem.Models.AgvState}
+    return:
+      type: System.Boolean
+    content.vb: Public Overrides Function ChangeAgvStateSequence(name As String, newAgvState As List(Of AgvState)) As Boolean
+  overridden: AGVSystem.Models.PathTable.ChangeAgvStateSequence(System.String,System.Collections.Generic.List{AGVSystem.Models.AgvState})
+  overload: AGVSystem.Models.MySqlPathTable.ChangeAgvStateSequence*
+  nameWithType.vb: MySqlPathTable.ChangeAgvStateSequence(String, List(Of AgvState))
+  fullName.vb: AGVSystem.Models.MySqlPathTable.ChangeAgvStateSequence(String, System.Collections.Generic.List(Of AGVSystem.Models.AgvState))
+  name.vb: ChangeAgvStateSequence(String, List(Of AgvState))
+- uid: AGVSystem.Models.MySqlPathTable.ChangeAngleSequence(System.String,System.Collections.Generic.List{System.Double})
+  commentId: M:AGVSystem.Models.MySqlPathTable.ChangeAngleSequence(System.String,System.Collections.Generic.List{System.Double})
+  id: ChangeAngleSequence(System.String,System.Collections.Generic.List{System.Double})
+  parent: AGVSystem.Models.MySqlPathTable
+  langs:
+  - csharp
+  - vb
+  name: ChangeAngleSequence(string, List<double>)
+  nameWithType: MySqlPathTable.ChangeAngleSequence(string, List<double>)
+  fullName: AGVSystem.Models.MySqlPathTable.ChangeAngleSequence(string, System.Collections.Generic.List<double>)
+  type: Method
+  source:
+    remote:
+      path: AGVSystem/Models/DataAccess.cs
+      branch: mapMaintenance
+      repo: https://github.com/JYC924693/NavigationAndSchedulingSystem.git
+    id: ChangeAngleSequence
+    path: ../AGVSystem/Models/DataAccess.cs
+    startLine: 605
+  assemblies:
+  - AGVSystem
+  namespace: AGVSystem.Models
+  example: []
+  syntax:
+    content: public override bool ChangeAngleSequence(string name, List<double> newAngleSequence)
+    parameters:
+    - id: name
+      type: System.String
+    - id: newAngleSequence
+      type: System.Collections.Generic.List{System.Double}
+    return:
+      type: System.Boolean
+    content.vb: Public Overrides Function ChangeAngleSequence(name As String, newAngleSequence As List(Of Double)) As Boolean
+  overridden: AGVSystem.Models.PathTable.ChangeAngleSequence(System.String,System.Collections.Generic.List{System.Double})
+  overload: AGVSystem.Models.MySqlPathTable.ChangeAngleSequence*
+  nameWithType.vb: MySqlPathTable.ChangeAngleSequence(String, List(Of Double))
+  fullName.vb: AGVSystem.Models.MySqlPathTable.ChangeAngleSequence(String, System.Collections.Generic.List(Of Double))
+  name.vb: ChangeAngleSequence(String, List(Of Double))
+- uid: AGVSystem.Models.MySqlPathTable.ChangeTaskModeSequence(System.String,System.Collections.Generic.List{AGVSystem.Models.TaskMode})
+  commentId: M:AGVSystem.Models.MySqlPathTable.ChangeTaskModeSequence(System.String,System.Collections.Generic.List{AGVSystem.Models.TaskMode})
+  id: ChangeTaskModeSequence(System.String,System.Collections.Generic.List{AGVSystem.Models.TaskMode})
+  parent: AGVSystem.Models.MySqlPathTable
+  langs:
+  - csharp
+  - vb
+  name: ChangeTaskModeSequence(string, List<TaskMode>)
+  nameWithType: MySqlPathTable.ChangeTaskModeSequence(string, List<TaskMode>)
+  fullName: AGVSystem.Models.MySqlPathTable.ChangeTaskModeSequence(string, System.Collections.Generic.List<AGVSystem.Models.TaskMode>)
+  type: Method
+  source:
+    remote:
+      path: AGVSystem/Models/DataAccess.cs
+      branch: mapMaintenance
+      repo: https://github.com/JYC924693/NavigationAndSchedulingSystem.git
+    id: ChangeTaskModeSequence
+    path: ../AGVSystem/Models/DataAccess.cs
+    startLine: 623
+  assemblies:
+  - AGVSystem
+  namespace: AGVSystem.Models
+  example: []
+  syntax:
+    content: public override bool ChangeTaskModeSequence(string name, List<TaskMode> newTaskModeSequence)
+    parameters:
+    - id: name
+      type: System.String
+    - id: newTaskModeSequence
+      type: System.Collections.Generic.List{AGVSystem.Models.TaskMode}
+    return:
+      type: System.Boolean
+    content.vb: Public Overrides Function ChangeTaskModeSequence(name As String, newTaskModeSequence As List(Of TaskMode)) As Boolean
+  overridden: AGVSystem.Models.PathTable.ChangeTaskModeSequence(System.String,System.Collections.Generic.List{AGVSystem.Models.TaskMode})
+  overload: AGVSystem.Models.MySqlPathTable.ChangeTaskModeSequence*
+  nameWithType.vb: MySqlPathTable.ChangeTaskModeSequence(String, List(Of TaskMode))
+  fullName.vb: AGVSystem.Models.MySqlPathTable.ChangeTaskModeSequence(String, System.Collections.Generic.List(Of AGVSystem.Models.TaskMode))
+  name.vb: ChangeTaskModeSequence(String, List(Of TaskMode))
+- uid: AGVSystem.Models.MySqlPathTable.ChangeTaskName(System.String,System.String)
+  commentId: M:AGVSystem.Models.MySqlPathTable.ChangeTaskName(System.String,System.String)
+  id: ChangeTaskName(System.String,System.String)
+  parent: AGVSystem.Models.MySqlPathTable
+  langs:
+  - csharp
+  - vb
+  name: ChangeTaskName(string, string)
+  nameWithType: MySqlPathTable.ChangeTaskName(string, string)
+  fullName: AGVSystem.Models.MySqlPathTable.ChangeTaskName(string, string)
+  type: Method
+  source:
+    remote:
+      path: AGVSystem/Models/DataAccess.cs
+      branch: mapMaintenance
+      repo: https://github.com/JYC924693/NavigationAndSchedulingSystem.git
+    id: ChangeTaskName
+    path: ../AGVSystem/Models/DataAccess.cs
+    startLine: 641
+  assemblies:
+  - AGVSystem
+  namespace: AGVSystem.Models
+  example: []
+  syntax:
+    content: public override bool ChangeTaskName(string name, string newName)
+    parameters:
+    - id: name
+      type: System.String
+    - id: newName
+      type: System.String
+    return:
+      type: System.Boolean
+    content.vb: Public Overrides Function ChangeTaskName(name As String, newName As String) As Boolean
+  overridden: AGVSystem.Models.PathTable.ChangeTaskName(System.String,System.String)
+  overload: AGVSystem.Models.MySqlPathTable.ChangeTaskName*
+  nameWithType.vb: MySqlPathTable.ChangeTaskName(String, String)
+  fullName.vb: AGVSystem.Models.MySqlPathTable.ChangeTaskName(String, String)
+  name.vb: ChangeTaskName(String, String)
+- uid: AGVSystem.Models.MySqlPathTable.RemovePath(System.String)
+  commentId: M:AGVSystem.Models.MySqlPathTable.RemovePath(System.String)
+  id: RemovePath(System.String)
+  parent: AGVSystem.Models.MySqlPathTable
+  langs:
+  - csharp
+  - vb
+  name: RemovePath(string)
+  nameWithType: MySqlPathTable.RemovePath(string)
+  fullName: AGVSystem.Models.MySqlPathTable.RemovePath(string)
+  type: Method
+  source:
+    remote:
+      path: AGVSystem/Models/DataAccess.cs
+      branch: mapMaintenance
+      repo: https://github.com/JYC924693/NavigationAndSchedulingSystem.git
+    id: RemovePath
+    path: ../AGVSystem/Models/DataAccess.cs
+    startLine: 664
+  assemblies:
+  - AGVSystem
+  namespace: AGVSystem.Models
+  example: []
+  syntax:
+    content: public override bool RemovePath(string name)
+    parameters:
+    - id: name
+      type: System.String
+    return:
+      type: System.Boolean
+    content.vb: Public Overrides Function RemovePath(name As String) As Boolean
+  overridden: AGVSystem.Models.PathTable.RemovePath(System.String)
+  overload: AGVSystem.Models.MySqlPathTable.RemovePath*
+  nameWithType.vb: MySqlPathTable.RemovePath(String)
+  fullName.vb: AGVSystem.Models.MySqlPathTable.RemovePath(String)
+  name.vb: RemovePath(String)
+references:
+- uid: AGVSystem.Models
+  commentId: N:AGVSystem.Models
+  href: AGVSystem.html
+  name: AGVSystem.Models
+  nameWithType: AGVSystem.Models
+  fullName: AGVSystem.Models
+  spec.csharp:
+  - uid: AGVSystem
+    name: AGVSystem
+    href: AGVSystem.html
+  - name: .
+  - uid: AGVSystem.Models
+    name: Models
+    href: AGVSystem.Models.html
+  spec.vb:
+  - uid: AGVSystem
+    name: AGVSystem
+    href: AGVSystem.html
+  - name: .
+  - uid: AGVSystem.Models
+    name: Models
+    href: AGVSystem.Models.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: AGVSystem.Models.PathTable
+  commentId: T:AGVSystem.Models.PathTable
+  parent: AGVSystem.Models
+  href: AGVSystem.Models.PathTable.html
+  name: PathTable
+  nameWithType: PathTable
+  fullName: AGVSystem.Models.PathTable
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  name: MemberwiseClone()
+  nameWithType: object.MemberwiseClone()
+  fullName: object.MemberwiseClone()
+  nameWithType.vb: Object.MemberwiseClone()
+  fullName.vb: Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: AGVSystem.Models.MySqlPathTable.#ctor*
+  commentId: Overload:AGVSystem.Models.MySqlPathTable.#ctor
+  href: AGVSystem.Models.MySqlPathTable.html#AGVSystem_Models_MySqlPathTable__ctor
+  name: MySqlPathTable
+  nameWithType: MySqlPathTable.MySqlPathTable
+  fullName: AGVSystem.Models.MySqlPathTable.MySqlPathTable
+  nameWithType.vb: MySqlPathTable.New
+  fullName.vb: AGVSystem.Models.MySqlPathTable.New
+  name.vb: New
+- uid: AGVSystem.Models.PathTable.GetPath(System.String)
+  commentId: M:AGVSystem.Models.PathTable.GetPath(System.String)
+  parent: AGVSystem.Models.PathTable
+  isExternal: true
+  href: AGVSystem.Models.PathTable.html#AGVSystem_Models_PathTable_GetPath_System_String_
+  name: GetPath(string)
+  nameWithType: PathTable.GetPath(string)
+  fullName: AGVSystem.Models.PathTable.GetPath(string)
+  nameWithType.vb: PathTable.GetPath(String)
+  fullName.vb: AGVSystem.Models.PathTable.GetPath(String)
+  name.vb: GetPath(String)
+  spec.csharp:
+  - uid: AGVSystem.Models.PathTable.GetPath(System.String)
+    name: GetPath
+    href: AGVSystem.Models.PathTable.html#AGVSystem_Models_PathTable_GetPath_System_String_
+  - name: (
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+  spec.vb:
+  - uid: AGVSystem.Models.PathTable.GetPath(System.String)
+    name: GetPath
+    href: AGVSystem.Models.PathTable.html#AGVSystem_Models_PathTable_GetPath_System_String_
+  - name: (
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+- uid: AGVSystem.Models.MySqlPathTable.GetPath*
+  commentId: Overload:AGVSystem.Models.MySqlPathTable.GetPath
+  href: AGVSystem.Models.MySqlPathTable.html#AGVSystem_Models_MySqlPathTable_GetPath_System_String_
+  name: GetPath
+  nameWithType: MySqlPathTable.GetPath
+  fullName: AGVSystem.Models.MySqlPathTable.GetPath
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String
+- uid: AGVSystem.Models.Path
+  commentId: T:AGVSystem.Models.Path
+  parent: AGVSystem.Models
+  href: AGVSystem.Models.Path.html
+  name: Path
+  nameWithType: Path
+  fullName: AGVSystem.Models.Path
+- uid: AGVSystem.Models.PathTable.AddPath(AGVSystem.Models.Path)
+  commentId: M:AGVSystem.Models.PathTable.AddPath(AGVSystem.Models.Path)
+  parent: AGVSystem.Models.PathTable
+  href: AGVSystem.Models.PathTable.html#AGVSystem_Models_PathTable_AddPath_AGVSystem_Models_Path_
+  name: AddPath(Path)
+  nameWithType: PathTable.AddPath(Path)
+  fullName: AGVSystem.Models.PathTable.AddPath(AGVSystem.Models.Path)
+  spec.csharp:
+  - uid: AGVSystem.Models.PathTable.AddPath(AGVSystem.Models.Path)
+    name: AddPath
+    href: AGVSystem.Models.PathTable.html#AGVSystem_Models_PathTable_AddPath_AGVSystem_Models_Path_
+  - name: (
+  - uid: AGVSystem.Models.Path
+    name: Path
+    href: AGVSystem.Models.Path.html
+  - name: )
+  spec.vb:
+  - uid: AGVSystem.Models.PathTable.AddPath(AGVSystem.Models.Path)
+    name: AddPath
+    href: AGVSystem.Models.PathTable.html#AGVSystem_Models_PathTable_AddPath_AGVSystem_Models_Path_
+  - name: (
+  - uid: AGVSystem.Models.Path
+    name: Path
+    href: AGVSystem.Models.Path.html
+  - name: )
+- uid: AGVSystem.Models.MySqlPathTable.AddPath*
+  commentId: Overload:AGVSystem.Models.MySqlPathTable.AddPath
+  href: AGVSystem.Models.MySqlPathTable.html#AGVSystem_Models_MySqlPathTable_AddPath_AGVSystem_Models_Path_
+  name: AddPath
+  nameWithType: MySqlPathTable.AddPath
+  fullName: AGVSystem.Models.MySqlPathTable.AddPath
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.boolean
+  name: bool
+  nameWithType: bool
+  fullName: bool
+  nameWithType.vb: Boolean
+  fullName.vb: Boolean
+  name.vb: Boolean
+- uid: AGVSystem.Models.PathTable.ChangePath(System.String,AGVSystem.Models.Path)
+  commentId: M:AGVSystem.Models.PathTable.ChangePath(System.String,AGVSystem.Models.Path)
+  parent: AGVSystem.Models.PathTable
+  isExternal: true
+  href: AGVSystem.Models.PathTable.html#AGVSystem_Models_PathTable_ChangePath_System_String_AGVSystem_Models_Path_
+  name: ChangePath(string, Path)
+  nameWithType: PathTable.ChangePath(string, Path)
+  fullName: AGVSystem.Models.PathTable.ChangePath(string, AGVSystem.Models.Path)
+  nameWithType.vb: PathTable.ChangePath(String, Path)
+  fullName.vb: AGVSystem.Models.PathTable.ChangePath(String, AGVSystem.Models.Path)
+  name.vb: ChangePath(String, Path)
+  spec.csharp:
+  - uid: AGVSystem.Models.PathTable.ChangePath(System.String,AGVSystem.Models.Path)
+    name: ChangePath
+    href: AGVSystem.Models.PathTable.html#AGVSystem_Models_PathTable_ChangePath_System_String_AGVSystem_Models_Path_
+  - name: (
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: AGVSystem.Models.Path
+    name: Path
+    href: AGVSystem.Models.Path.html
+  - name: )
+  spec.vb:
+  - uid: AGVSystem.Models.PathTable.ChangePath(System.String,AGVSystem.Models.Path)
+    name: ChangePath
+    href: AGVSystem.Models.PathTable.html#AGVSystem_Models_PathTable_ChangePath_System_String_AGVSystem_Models_Path_
+  - name: (
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: AGVSystem.Models.Path
+    name: Path
+    href: AGVSystem.Models.Path.html
+  - name: )
+- uid: AGVSystem.Models.MySqlPathTable.ChangePath*
+  commentId: Overload:AGVSystem.Models.MySqlPathTable.ChangePath
+  href: AGVSystem.Models.MySqlPathTable.html#AGVSystem_Models_MySqlPathTable_ChangePath_System_String_AGVSystem_Models_Path_
+  name: ChangePath
+  nameWithType: MySqlPathTable.ChangePath
+  fullName: AGVSystem.Models.MySqlPathTable.ChangePath
+- uid: AGVSystem.Models.PathTable.ChangeIdSequence(System.String,System.Collections.Generic.List{System.Int32})
+  commentId: M:AGVSystem.Models.PathTable.ChangeIdSequence(System.String,System.Collections.Generic.List{System.Int32})
+  parent: AGVSystem.Models.PathTable
+  isExternal: true
+  href: AGVSystem.Models.PathTable.html#AGVSystem_Models_PathTable_ChangeIdSequence_System_String_System_Collections_Generic_List_System_Int32__
+  name: ChangeIdSequence(string, List<int>)
+  nameWithType: PathTable.ChangeIdSequence(string, List<int>)
+  fullName: AGVSystem.Models.PathTable.ChangeIdSequence(string, System.Collections.Generic.List<int>)
+  nameWithType.vb: PathTable.ChangeIdSequence(String, List(Of Integer))
+  fullName.vb: AGVSystem.Models.PathTable.ChangeIdSequence(String, System.Collections.Generic.List(Of Integer))
+  name.vb: ChangeIdSequence(String, List(Of Integer))
+  spec.csharp:
+  - uid: AGVSystem.Models.PathTable.ChangeIdSequence(System.String,System.Collections.Generic.List{System.Int32})
+    name: ChangeIdSequence
+    href: AGVSystem.Models.PathTable.html#AGVSystem_Models_PathTable_ChangeIdSequence_System_String_System_Collections_Generic_List_System_Int32__
+  - name: (
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: <
+  - uid: System.Int32
+    name: int
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: '>'
+  - name: )
+  spec.vb:
+  - uid: AGVSystem.Models.PathTable.ChangeIdSequence(System.String,System.Collections.Generic.List{System.Int32})
+    name: ChangeIdSequence
+    href: AGVSystem.Models.PathTable.html#AGVSystem_Models_PathTable_ChangeIdSequence_System_String_System_Collections_Generic_List_System_Int32__
+  - name: (
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.Int32
+    name: Integer
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: )
+  - name: )
+- uid: AGVSystem.Models.MySqlPathTable.ChangeIdSequence*
+  commentId: Overload:AGVSystem.Models.MySqlPathTable.ChangeIdSequence
+  href: AGVSystem.Models.MySqlPathTable.html#AGVSystem_Models_MySqlPathTable_ChangeIdSequence_System_String_System_Collections_Generic_List_System_Int32__
+  name: ChangeIdSequence
+  nameWithType: MySqlPathTable.ChangeIdSequence
+  fullName: AGVSystem.Models.MySqlPathTable.ChangeIdSequence
+- uid: System.Collections.Generic.List{System.Int32}
+  commentId: T:System.Collections.Generic.List{System.Int32}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.List`1
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  name: List<int>
+  nameWithType: List<int>
+  fullName: System.Collections.Generic.List<int>
+  nameWithType.vb: List(Of Integer)
+  fullName.vb: System.Collections.Generic.List(Of Integer)
+  name.vb: List(Of Integer)
+  spec.csharp:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: <
+  - uid: System.Int32
+    name: int
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.Int32
+    name: Integer
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: )
+- uid: System.Collections.Generic.List`1
+  commentId: T:System.Collections.Generic.List`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  name: List<T>
+  nameWithType: List<T>
+  fullName: System.Collections.Generic.List<T>
+  nameWithType.vb: List(Of T)
+  fullName.vb: System.Collections.Generic.List(Of T)
+  name.vb: List(Of T)
+  spec.csharp:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: System.Collections.Generic
+  commentId: N:System.Collections.Generic
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Collections.Generic
+  nameWithType: System.Collections.Generic
+  fullName: System.Collections.Generic
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+- uid: AGVSystem.Models.PathTable.ChangeAgvStateSequence(System.String,System.Collections.Generic.List{AGVSystem.Models.AgvState})
+  commentId: M:AGVSystem.Models.PathTable.ChangeAgvStateSequence(System.String,System.Collections.Generic.List{AGVSystem.Models.AgvState})
+  parent: AGVSystem.Models.PathTable
+  isExternal: true
+  href: AGVSystem.Models.PathTable.html#AGVSystem_Models_PathTable_ChangeAgvStateSequence_System_String_System_Collections_Generic_List_AGVSystem_Models_AgvState__
+  name: ChangeAgvStateSequence(string, List<AgvState>)
+  nameWithType: PathTable.ChangeAgvStateSequence(string, List<AgvState>)
+  fullName: AGVSystem.Models.PathTable.ChangeAgvStateSequence(string, System.Collections.Generic.List<AGVSystem.Models.AgvState>)
+  nameWithType.vb: PathTable.ChangeAgvStateSequence(String, List(Of AgvState))
+  fullName.vb: AGVSystem.Models.PathTable.ChangeAgvStateSequence(String, System.Collections.Generic.List(Of AGVSystem.Models.AgvState))
+  name.vb: ChangeAgvStateSequence(String, List(Of AgvState))
+  spec.csharp:
+  - uid: AGVSystem.Models.PathTable.ChangeAgvStateSequence(System.String,System.Collections.Generic.List{AGVSystem.Models.AgvState})
+    name: ChangeAgvStateSequence
+    href: AGVSystem.Models.PathTable.html#AGVSystem_Models_PathTable_ChangeAgvStateSequence_System_String_System_Collections_Generic_List_AGVSystem_Models_AgvState__
+  - name: (
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: <
+  - uid: AGVSystem.Models.AgvState
+    name: AgvState
+    href: AGVSystem.Models.AgvState.html
+  - name: '>'
+  - name: )
+  spec.vb:
+  - uid: AGVSystem.Models.PathTable.ChangeAgvStateSequence(System.String,System.Collections.Generic.List{AGVSystem.Models.AgvState})
+    name: ChangeAgvStateSequence
+    href: AGVSystem.Models.PathTable.html#AGVSystem_Models_PathTable_ChangeAgvStateSequence_System_String_System_Collections_Generic_List_AGVSystem_Models_AgvState__
+  - name: (
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: AGVSystem.Models.AgvState
+    name: AgvState
+    href: AGVSystem.Models.AgvState.html
+  - name: )
+  - name: )
+- uid: AGVSystem.Models.MySqlPathTable.ChangeAgvStateSequence*
+  commentId: Overload:AGVSystem.Models.MySqlPathTable.ChangeAgvStateSequence
+  href: AGVSystem.Models.MySqlPathTable.html#AGVSystem_Models_MySqlPathTable_ChangeAgvStateSequence_System_String_System_Collections_Generic_List_AGVSystem_Models_AgvState__
+  name: ChangeAgvStateSequence
+  nameWithType: MySqlPathTable.ChangeAgvStateSequence
+  fullName: AGVSystem.Models.MySqlPathTable.ChangeAgvStateSequence
+- uid: System.Collections.Generic.List{AGVSystem.Models.AgvState}
+  commentId: T:System.Collections.Generic.List{AGVSystem.Models.AgvState}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.List`1
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  name: List<AgvState>
+  nameWithType: List<AgvState>
+  fullName: System.Collections.Generic.List<AGVSystem.Models.AgvState>
+  nameWithType.vb: List(Of AgvState)
+  fullName.vb: System.Collections.Generic.List(Of AGVSystem.Models.AgvState)
+  name.vb: List(Of AgvState)
+  spec.csharp:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: <
+  - uid: AGVSystem.Models.AgvState
+    name: AgvState
+    href: AGVSystem.Models.AgvState.html
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: AGVSystem.Models.AgvState
+    name: AgvState
+    href: AGVSystem.Models.AgvState.html
+  - name: )
+- uid: AGVSystem.Models.PathTable.ChangeAngleSequence(System.String,System.Collections.Generic.List{System.Double})
+  commentId: M:AGVSystem.Models.PathTable.ChangeAngleSequence(System.String,System.Collections.Generic.List{System.Double})
+  parent: AGVSystem.Models.PathTable
+  isExternal: true
+  href: AGVSystem.Models.PathTable.html#AGVSystem_Models_PathTable_ChangeAngleSequence_System_String_System_Collections_Generic_List_System_Double__
+  name: ChangeAngleSequence(string, List<double>)
+  nameWithType: PathTable.ChangeAngleSequence(string, List<double>)
+  fullName: AGVSystem.Models.PathTable.ChangeAngleSequence(string, System.Collections.Generic.List<double>)
+  nameWithType.vb: PathTable.ChangeAngleSequence(String, List(Of Double))
+  fullName.vb: AGVSystem.Models.PathTable.ChangeAngleSequence(String, System.Collections.Generic.List(Of Double))
+  name.vb: ChangeAngleSequence(String, List(Of Double))
+  spec.csharp:
+  - uid: AGVSystem.Models.PathTable.ChangeAngleSequence(System.String,System.Collections.Generic.List{System.Double})
+    name: ChangeAngleSequence
+    href: AGVSystem.Models.PathTable.html#AGVSystem_Models_PathTable_ChangeAngleSequence_System_String_System_Collections_Generic_List_System_Double__
+  - name: (
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: <
+  - uid: System.Double
+    name: double
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.double
+  - name: '>'
+  - name: )
+  spec.vb:
+  - uid: AGVSystem.Models.PathTable.ChangeAngleSequence(System.String,System.Collections.Generic.List{System.Double})
+    name: ChangeAngleSequence
+    href: AGVSystem.Models.PathTable.html#AGVSystem_Models_PathTable_ChangeAngleSequence_System_String_System_Collections_Generic_List_System_Double__
+  - name: (
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.Double
+    name: Double
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.double
+  - name: )
+  - name: )
+- uid: AGVSystem.Models.MySqlPathTable.ChangeAngleSequence*
+  commentId: Overload:AGVSystem.Models.MySqlPathTable.ChangeAngleSequence
+  href: AGVSystem.Models.MySqlPathTable.html#AGVSystem_Models_MySqlPathTable_ChangeAngleSequence_System_String_System_Collections_Generic_List_System_Double__
+  name: ChangeAngleSequence
+  nameWithType: MySqlPathTable.ChangeAngleSequence
+  fullName: AGVSystem.Models.MySqlPathTable.ChangeAngleSequence
+- uid: System.Collections.Generic.List{System.Double}
+  commentId: T:System.Collections.Generic.List{System.Double}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.List`1
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  name: List<double>
+  nameWithType: List<double>
+  fullName: System.Collections.Generic.List<double>
+  nameWithType.vb: List(Of Double)
+  fullName.vb: System.Collections.Generic.List(Of Double)
+  name.vb: List(Of Double)
+  spec.csharp:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: <
+  - uid: System.Double
+    name: double
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.double
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.Double
+    name: Double
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.double
+  - name: )
+- uid: AGVSystem.Models.PathTable.ChangeTaskModeSequence(System.String,System.Collections.Generic.List{AGVSystem.Models.TaskMode})
+  commentId: M:AGVSystem.Models.PathTable.ChangeTaskModeSequence(System.String,System.Collections.Generic.List{AGVSystem.Models.TaskMode})
+  parent: AGVSystem.Models.PathTable
+  isExternal: true
+  href: AGVSystem.Models.PathTable.html#AGVSystem_Models_PathTable_ChangeTaskModeSequence_System_String_System_Collections_Generic_List_AGVSystem_Models_TaskMode__
+  name: ChangeTaskModeSequence(string, List<TaskMode>)
+  nameWithType: PathTable.ChangeTaskModeSequence(string, List<TaskMode>)
+  fullName: AGVSystem.Models.PathTable.ChangeTaskModeSequence(string, System.Collections.Generic.List<AGVSystem.Models.TaskMode>)
+  nameWithType.vb: PathTable.ChangeTaskModeSequence(String, List(Of TaskMode))
+  fullName.vb: AGVSystem.Models.PathTable.ChangeTaskModeSequence(String, System.Collections.Generic.List(Of AGVSystem.Models.TaskMode))
+  name.vb: ChangeTaskModeSequence(String, List(Of TaskMode))
+  spec.csharp:
+  - uid: AGVSystem.Models.PathTable.ChangeTaskModeSequence(System.String,System.Collections.Generic.List{AGVSystem.Models.TaskMode})
+    name: ChangeTaskModeSequence
+    href: AGVSystem.Models.PathTable.html#AGVSystem_Models_PathTable_ChangeTaskModeSequence_System_String_System_Collections_Generic_List_AGVSystem_Models_TaskMode__
+  - name: (
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: <
+  - uid: AGVSystem.Models.TaskMode
+    name: TaskMode
+    href: AGVSystem.Models.TaskMode.html
+  - name: '>'
+  - name: )
+  spec.vb:
+  - uid: AGVSystem.Models.PathTable.ChangeTaskModeSequence(System.String,System.Collections.Generic.List{AGVSystem.Models.TaskMode})
+    name: ChangeTaskModeSequence
+    href: AGVSystem.Models.PathTable.html#AGVSystem_Models_PathTable_ChangeTaskModeSequence_System_String_System_Collections_Generic_List_AGVSystem_Models_TaskMode__
+  - name: (
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: AGVSystem.Models.TaskMode
+    name: TaskMode
+    href: AGVSystem.Models.TaskMode.html
+  - name: )
+  - name: )
+- uid: AGVSystem.Models.MySqlPathTable.ChangeTaskModeSequence*
+  commentId: Overload:AGVSystem.Models.MySqlPathTable.ChangeTaskModeSequence
+  href: AGVSystem.Models.MySqlPathTable.html#AGVSystem_Models_MySqlPathTable_ChangeTaskModeSequence_System_String_System_Collections_Generic_List_AGVSystem_Models_TaskMode__
+  name: ChangeTaskModeSequence
+  nameWithType: MySqlPathTable.ChangeTaskModeSequence
+  fullName: AGVSystem.Models.MySqlPathTable.ChangeTaskModeSequence
+- uid: System.Collections.Generic.List{AGVSystem.Models.TaskMode}
+  commentId: T:System.Collections.Generic.List{AGVSystem.Models.TaskMode}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.List`1
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  name: List<TaskMode>
+  nameWithType: List<TaskMode>
+  fullName: System.Collections.Generic.List<AGVSystem.Models.TaskMode>
+  nameWithType.vb: List(Of TaskMode)
+  fullName.vb: System.Collections.Generic.List(Of AGVSystem.Models.TaskMode)
+  name.vb: List(Of TaskMode)
+  spec.csharp:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: <
+  - uid: AGVSystem.Models.TaskMode
+    name: TaskMode
+    href: AGVSystem.Models.TaskMode.html
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: AGVSystem.Models.TaskMode
+    name: TaskMode
+    href: AGVSystem.Models.TaskMode.html
+  - name: )
+- uid: AGVSystem.Models.PathTable.ChangeTaskName(System.String,System.String)
+  commentId: M:AGVSystem.Models.PathTable.ChangeTaskName(System.String,System.String)
+  parent: AGVSystem.Models.PathTable
+  isExternal: true
+  href: AGVSystem.Models.PathTable.html#AGVSystem_Models_PathTable_ChangeTaskName_System_String_System_String_
+  name: ChangeTaskName(string, string)
+  nameWithType: PathTable.ChangeTaskName(string, string)
+  fullName: AGVSystem.Models.PathTable.ChangeTaskName(string, string)
+  nameWithType.vb: PathTable.ChangeTaskName(String, String)
+  fullName.vb: AGVSystem.Models.PathTable.ChangeTaskName(String, String)
+  name.vb: ChangeTaskName(String, String)
+  spec.csharp:
+  - uid: AGVSystem.Models.PathTable.ChangeTaskName(System.String,System.String)
+    name: ChangeTaskName
+    href: AGVSystem.Models.PathTable.html#AGVSystem_Models_PathTable_ChangeTaskName_System_String_System_String_
+  - name: (
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+  spec.vb:
+  - uid: AGVSystem.Models.PathTable.ChangeTaskName(System.String,System.String)
+    name: ChangeTaskName
+    href: AGVSystem.Models.PathTable.html#AGVSystem_Models_PathTable_ChangeTaskName_System_String_System_String_
+  - name: (
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+- uid: AGVSystem.Models.MySqlPathTable.ChangeTaskName*
+  commentId: Overload:AGVSystem.Models.MySqlPathTable.ChangeTaskName
+  href: AGVSystem.Models.MySqlPathTable.html#AGVSystem_Models_MySqlPathTable_ChangeTaskName_System_String_System_String_
+  name: ChangeTaskName
+  nameWithType: MySqlPathTable.ChangeTaskName
+  fullName: AGVSystem.Models.MySqlPathTable.ChangeTaskName
+- uid: AGVSystem.Models.PathTable.RemovePath(System.String)
+  commentId: M:AGVSystem.Models.PathTable.RemovePath(System.String)
+  parent: AGVSystem.Models.PathTable
+  isExternal: true
+  href: AGVSystem.Models.PathTable.html#AGVSystem_Models_PathTable_RemovePath_System_String_
+  name: RemovePath(string)
+  nameWithType: PathTable.RemovePath(string)
+  fullName: AGVSystem.Models.PathTable.RemovePath(string)
+  nameWithType.vb: PathTable.RemovePath(String)
+  fullName.vb: AGVSystem.Models.PathTable.RemovePath(String)
+  name.vb: RemovePath(String)
+  spec.csharp:
+  - uid: AGVSystem.Models.PathTable.RemovePath(System.String)
+    name: RemovePath
+    href: AGVSystem.Models.PathTable.html#AGVSystem_Models_PathTable_RemovePath_System_String_
+  - name: (
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+  spec.vb:
+  - uid: AGVSystem.Models.PathTable.RemovePath(System.String)
+    name: RemovePath
+    href: AGVSystem.Models.PathTable.html#AGVSystem_Models_PathTable_RemovePath_System_String_
+  - name: (
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+- uid: AGVSystem.Models.MySqlPathTable.RemovePath*
+  commentId: Overload:AGVSystem.Models.MySqlPathTable.RemovePath
+  href: AGVSystem.Models.MySqlPathTable.html#AGVSystem_Models_MySqlPathTable_RemovePath_System_String_
+  name: RemovePath
+  nameWithType: MySqlPathTable.RemovePath
+  fullName: AGVSystem.Models.MySqlPathTable.RemovePath

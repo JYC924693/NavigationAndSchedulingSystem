@@ -29,16 +29,16 @@ namespace AGVSystem.Models
             var builder = new MySqlConnectionStringBuilder
             {
                 UserID = "agv_system_owner",
-                Password = "6hJ2vT6%*63b$!^2j&of80PH37*hQN",
+                Password = "%6eueh5D3^ntHM$&V&0*DLj$#@2s$F",
                 Server = "localhost",
                 Database = "agv_system"
             };
 
             Connection = new MySqlConnection(builder.ConnectionString);
-            if (!Connection.Ping())
-            {
-                throw new MySqlConversionException("Ping测试失败！");
-            }
+            //if (!Connection.Ping())
+            //{
+            //    throw new MySqlConversionException("Ping测试失败！");
+            //}
         }
 
         public static MySqlConnection GetInstance()
@@ -449,7 +449,7 @@ namespace AGVSystem.Models
     public abstract class PathTable
     {
         public abstract Path GetPath(string name);
-        public abstract bool AddPath(string name);
+        public abstract bool AddPath(Path path);
         public abstract bool ChangePath(string name, Path newPath);
         public abstract bool ChangeIdSequence(string name, List<int> newIdSequence);
         public abstract bool ChangeAgvStateSequence(string name, List<AgvState> newAgvState);
@@ -462,15 +462,33 @@ namespace AGVSystem.Models
     public class MySqlPathTable : PathTable
     {
         private MySqlConnection _connection;
+        private List<string> _pathNames;
 
         public MySqlPathTable()
         {
             _connection = MySqlConnectionInstance.GetInstance();
+
+            _pathNames = new List<string>();
+            var cmd = new MySqlCommand("SELECT task_name FROM paths");
+
+            _connection.Open();
+
+            var reader = cmd.ExecuteReader();
+
+            while (reader.Read())
+            {
+                _pathNames.Add(reader.GetString("task_name"));
+            }
+
+            _connection.Close();
         }
         public override Path GetPath(string name)
         {
-            var cmd = new MySqlCommand("SELECT * FROM paths WHERE name = @name", _connection);
-            cmd.Parameters.AddWithValue("@name", name);
+            if (!_pathNames.Contains(name))
+                throw new ArgumentOutOfRangeException(nameof(name));
+
+            var cmd = new MySqlCommand("SELECT * FROM paths WHERE task_name = @task_name", _connection);
+            cmd.Parameters.AddWithValue("@task_name", name);
 
             _connection.Open();
             var reader = cmd.ExecuteReader();
@@ -491,42 +509,75 @@ namespace AGVSystem.Models
             return path;
         }
 
-        public override bool AddPath(string name)
+        public override bool AddPath(Path path)
         {
-            var cmd = new MySqlCommand("INSERT INTO paths (name) VALUES (@name)", _connection);
-            cmd.Parameters.AddWithValue("@name", name);
+            if (_pathNames.Contains(path.Name))
+            {
+                return false;
+            }
+
+            var cmd = new MySqlCommand("INSERT INTO paths (id_sequence, angle_sequence, mode_sequence, task_sequence, task_name) VALUES (@id_sequence, @angle_sequence, @mode_sequence, @task_sequence, @task_name)", _connection);
+            cmd.Parameters.AddWithValue("@id_sequence", JsonSerializer.Serialize(path.IdSequence));
+            cmd.Parameters.AddWithValue("@angle_sequence", path.AngleSequence);
+            cmd.Parameters.AddWithValue("@mode_sequence", path.MoveSequence);
+            cmd.Parameters.AddWithValue("@task_sequence", path.TaskSequence);
+            cmd.Parameters.AddWithValue("@task_name", path.Name);
 
             _connection.Open();
+
             var rowsAffected = cmd.ExecuteNonQuery();
+
             _connection.Close();
+
+            _pathNames.Add(path.Name);
 
             return rowsAffected > 0;
         }
 
         public override bool ChangePath(string name, Path newPath)
         {
-            var cmd = new MySqlCommand("UPDATE paths SET id_sequence = @idSequence, agv_state_sequence = @agvStateSequence, angle_sequence = @angleSequence, task_mode_sequence = @taskModeSequence WHERE name = @name", _connection);
-            cmd.Parameters.AddWithValue("@idSequence", JsonSerializer.Serialize(newPath.IdSequence));
-            cmd.Parameters.AddWithValue("@agvStateSequence", JsonSerializer.Serialize(newPath.MoveSequence));
-            cmd.Parameters.AddWithValue("@angleSequence", JsonSerializer.Serialize(newPath.AngleSequence));
-            cmd.Parameters.AddWithValue("@taskModeSequence", JsonSerializer.Serialize(newPath.TaskSequence));
-            cmd.Parameters.AddWithValue("@name", name);
+            if (!_pathNames.Contains(name))
+            {
+                return false;
+            }
+
+            var cmd = new MySqlCommand("UPDATE paths SET id_sequence = @id_sequence, angle_sequence = @angle_sequence, mode_sequence = @mode_sequence, task_sequence = @task_sequence, task_name = @new_task_name WHERE task_name = @task_name", _connection);
+            cmd.Parameters.AddWithValue("@id_sequence", JsonSerializer.Serialize(newPath.IdSequence));
+            cmd.Parameters.AddWithValue("@mode_sequence", JsonSerializer.Serialize(newPath.MoveSequence));
+            cmd.Parameters.AddWithValue("@angle_sequence", JsonSerializer.Serialize(newPath.AngleSequence));
+            cmd.Parameters.AddWithValue("@task_sequence", JsonSerializer.Serialize(newPath.TaskSequence));
+            cmd.Parameters.AddWithValue("@new_task_name", name);
 
             _connection.Open();
+
             var rowsAffected = cmd.ExecuteNonQuery();
+
             _connection.Close();
+
+            if (name != newPath.Name)
+            {
+                _pathNames.Remove(name);
+                _pathNames.Add(newPath.Name);
+            }
 
             return rowsAffected > 0;
         }
 
         public override bool ChangeIdSequence(string name, List<int> newIdSequence)
         {
-            var cmd = new MySqlCommand("UPDATE paths SET id_sequence = @newIdSequence WHERE name = @name", _connection);
+            if (!_pathNames.Contains(name))
+            {
+                return false;
+            }
+
+            var cmd = new MySqlCommand("UPDATE paths SET id_sequence = @newIdSequence WHERE task_name = @task_name", _connection);
             cmd.Parameters.AddWithValue("@newIdSequence", JsonSerializer.Serialize(newIdSequence));
-            cmd.Parameters.AddWithValue("@name", name);
+            cmd.Parameters.AddWithValue("@task_name", name);
 
             _connection.Open();
+
             var rowsAffected = cmd.ExecuteNonQuery();
+
             _connection.Close();
 
             return rowsAffected > 0;
@@ -534,12 +585,19 @@ namespace AGVSystem.Models
 
         public override bool ChangeAgvStateSequence(string name, List<AgvState> newAgvState)
         {
-            var cmd = new MySqlCommand("UPDATE paths SET agv_state_sequence = @newAgvStateSequence WHERE name = @name", _connection);
-            cmd.Parameters.AddWithValue("@newAgvStateSequence", JsonSerializer.Serialize(newAgvState));
-            cmd.Parameters.AddWithValue("@name", name);
+            if (!_pathNames.Contains(name))
+            {
+                return false;
+            }
+
+            var cmd = new MySqlCommand("UPDATE paths SET mode_sequence = @mode_sequence WHERE task_name = @task_name", _connection);
+            cmd.Parameters.AddWithValue("@mode_sequence", JsonSerializer.Serialize(newAgvState));
+            cmd.Parameters.AddWithValue("@task_name", name);
 
             _connection.Open();
+
             var rowsAffected = cmd.ExecuteNonQuery();
+
             _connection.Close();
 
             return rowsAffected > 0;
@@ -547,9 +605,14 @@ namespace AGVSystem.Models
 
         public override bool ChangeAngleSequence(string name, List<double> newAngleSequence)
         {
-            var cmd = new MySqlCommand("UPDATE paths SET angle_sequence = @newAngleSequence WHERE name = @name", _connection);
-            cmd.Parameters.AddWithValue("@newAngleSequence", JsonSerializer.Serialize(newAngleSequence));
-            cmd.Parameters.AddWithValue("@name", name);
+            if (!_pathNames.Contains(name))
+            {
+                return false;
+            }
+
+            var cmd = new MySqlCommand("UPDATE paths SET angle_sequence = @angle_sequence WHERE task_name = @task_name", _connection);
+            cmd.Parameters.AddWithValue("@angle_sequence", JsonSerializer.Serialize(newAngleSequence));
+            cmd.Parameters.AddWithValue("@task_name", name);
 
             _connection.Open();
             var rowsAffected = cmd.ExecuteNonQuery();
@@ -560,9 +623,14 @@ namespace AGVSystem.Models
 
         public override bool ChangeTaskModeSequence(string name, List<TaskMode> newTaskModeSequence)
         {
-            var cmd = new MySqlCommand("UPDATE paths SET task_mode_sequence = @newTaskModeSequence WHERE name = @name", _connection);
-            cmd.Parameters.AddWithValue("@newTaskModeSequence", JsonSerializer.Serialize(newTaskModeSequence));
-            cmd.Parameters.AddWithValue("@name", name);
+            if (!_pathNames.Contains(name))
+            {
+                return false;
+            }
+
+            var cmd = new MySqlCommand("UPDATE paths SET task_sequence = @task_sequence WHERE task_name = @task_name", _connection);
+            cmd.Parameters.AddWithValue("@task_sequence", JsonSerializer.Serialize(newTaskModeSequence));
+            cmd.Parameters.AddWithValue("@task_name", name);
 
             _connection.Open();
             var rowsAffected = cmd.ExecuteNonQuery();
@@ -573,36 +641,92 @@ namespace AGVSystem.Models
 
         public override bool ChangeTaskName(string name, string newName)
         {
-            var cmd = new MySqlCommand("UPDATE paths SET name = @newName WHERE name = @name", _connection);
-            cmd.Parameters.AddWithValue("@newName", newName);
-            cmd.Parameters.AddWithValue("@name", name);
+            if (!_pathNames.Contains(name) || name == newName)
+            {
+                return false;
+            }
+
+            var cmd = new MySqlCommand("UPDATE paths SET task_name = @new_task_name WHERE task_name = @task_name", _connection);
+            cmd.Parameters.AddWithValue("@new_task_name", newName);
+            cmd.Parameters.AddWithValue("@task_name", name);
 
             _connection.Open();
+
             var rowsAffected = cmd.ExecuteNonQuery();
+
             _connection.Close();
+
+            _pathNames.Remove(name);
+            _pathNames.Add(newName);
 
             return rowsAffected > 0;
         }
 
         public override bool RemovePath(string name)
         {
-            var cmd = new MySqlCommand("DELETE FROM paths WHERE name = @name", _connection);
-            cmd.Parameters.AddWithValue("@name", name);
+            if (!_pathNames.Contains(name))
+            {
+                return false;
+            }
+
+            var cmd = new MySqlCommand("DELETE FROM paths WHERE task_name = @task_name", _connection);
+            cmd.Parameters.AddWithValue("@task_name", name);
 
             _connection.Open();
+
             var rowsAffected = cmd.ExecuteNonQuery();
+
             _connection.Close();
+
+            _pathNames.Remove(name);
 
             return rowsAffected > 0;
         }
     }
-
+    
     public class Path
     {
-        public List<int> IdSequence;
-        public List<AgvState> MoveSequence;
-        public List<double> AngleSequence;
-        public List<TaskMode> TaskSequence;
-        public string Name;
+        public List<int> IdSequence { get; set; }
+        public List<AgvState> MoveSequence { get; set; }
+        public List<double> AngleSequence { get; set; }
+        public List<TaskMode> TaskSequence { get; set; }
+        public string Name { get; set; }
+
+        public static bool operator ==(Path left, Path right)
+        {
+            var isEqual = left.Name == right.Name;
+
+            if (isEqual)
+            {
+                isEqual = left.IdSequence.SequenceEqual(right.IdSequence);
+            }
+            
+            if (isEqual)
+            {
+                isEqual = left.MoveSequence.SequenceEqual(right.MoveSequence);
+            }
+
+            if (isEqual)
+            {
+                isEqual = left.AngleSequence.SequenceEqual(right.AngleSequence);
+            }
+
+            if (isEqual)
+            {
+                isEqual = left.TaskSequence.SequenceEqual(right.TaskSequence);
+            }
+
+            return isEqual;
+        }
+
+        public static bool operator !=(Path left, Path right)
+        {
+            return !(left == right);
+        }
+
+        public override string ToString()
+        {
+            return $"{{\n\tIdSequence:\t\t{JsonSerializer.Serialize(IdSequence)},\n\tMoveSequence:\t{JsonSerializer.Serialize(MoveSequence)},\n\tAngleSequence:\t{JsonSerializer.Serialize(AngleSequence)},\n\tTaskSequence:\t{JsonSerializer.Serialize(TaskSequence)},\n\tName:\t\t\t\"{Name}\"\n}}";
+        }
     }
 }

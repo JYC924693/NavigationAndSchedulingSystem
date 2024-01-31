@@ -1,0 +1,166 @@
+### YamlMime:ManagedReference
+items:
+- uid: AGVSystem.Models.AgvState
+  commentId: T:AGVSystem.Models.AgvState
+  id: AgvState
+  parent: AGVSystem.Models
+  children:
+  - AGVSystem.Models.AgvState.Backward
+  - AGVSystem.Models.AgvState.Forward
+  - AGVSystem.Models.AgvState.Left
+  - AGVSystem.Models.AgvState.Right
+  langs:
+  - csharp
+  - vb
+  name: AgvState
+  nameWithType: AgvState
+  fullName: AGVSystem.Models.AgvState
+  type: Enum
+  source:
+    remote:
+      path: AGVSystem/Models/IMap.cs
+      branch: mapMaintenance
+      repo: https://github.com/JYC924693/NavigationAndSchedulingSystem.git
+    id: AgvState
+    path: ../AGVSystem/Models/IMap.cs
+    startLine: 744
+  assemblies:
+  - AGVSystem
+  namespace: AGVSystem.Models
+  syntax:
+    content: public enum AgvState
+    content.vb: Public Enum AgvState
+- uid: AGVSystem.Models.AgvState.Left
+  commentId: F:AGVSystem.Models.AgvState.Left
+  id: Left
+  parent: AGVSystem.Models.AgvState
+  langs:
+  - csharp
+  - vb
+  name: Left
+  nameWithType: AgvState.Left
+  fullName: AGVSystem.Models.AgvState.Left
+  type: Field
+  source:
+    remote:
+      path: AGVSystem/Models/IMap.cs
+      branch: mapMaintenance
+      repo: https://github.com/JYC924693/NavigationAndSchedulingSystem.git
+    id: Left
+    path: ../AGVSystem/Models/IMap.cs
+    startLine: 746
+  assemblies:
+  - AGVSystem
+  namespace: AGVSystem.Models
+  syntax:
+    content: Left = -30
+    return:
+      type: AGVSystem.Models.AgvState
+- uid: AGVSystem.Models.AgvState.Backward
+  commentId: F:AGVSystem.Models.AgvState.Backward
+  id: Backward
+  parent: AGVSystem.Models.AgvState
+  langs:
+  - csharp
+  - vb
+  name: Backward
+  nameWithType: AgvState.Backward
+  fullName: AGVSystem.Models.AgvState.Backward
+  type: Field
+  source:
+    remote:
+      path: AGVSystem/Models/IMap.cs
+      branch: mapMaintenance
+      repo: https://github.com/JYC924693/NavigationAndSchedulingSystem.git
+    id: Backward
+    path: ../AGVSystem/Models/IMap.cs
+    startLine: 747
+  assemblies:
+  - AGVSystem
+  namespace: AGVSystem.Models
+  syntax:
+    content: Backward = -1
+    return:
+      type: AGVSystem.Models.AgvState
+- uid: AGVSystem.Models.AgvState.Forward
+  commentId: F:AGVSystem.Models.AgvState.Forward
+  id: Forward
+  parent: AGVSystem.Models.AgvState
+  langs:
+  - csharp
+  - vb
+  name: Forward
+  nameWithType: AgvState.Forward
+  fullName: AGVSystem.Models.AgvState.Forward
+  type: Field
+  source:
+    remote:
+      path: AGVSystem/Models/IMap.cs
+      branch: mapMaintenance
+      repo: https://github.com/JYC924693/NavigationAndSchedulingSystem.git
+    id: Forward
+    path: ../AGVSystem/Models/IMap.cs
+    startLine: 748
+  assemblies:
+  - AGVSystem
+  namespace: AGVSystem.Models
+  syntax:
+    content: Forward = 1
+    return:
+      type: AGVSystem.Models.AgvState
+- uid: AGVSystem.Models.AgvState.Right
+  commentId: F:AGVSystem.Models.AgvState.Right
+  id: Right
+  parent: AGVSystem.Models.AgvState
+  langs:
+  - csharp
+  - vb
+  name: Right
+  nameWithType: AgvState.Right
+  fullName: AGVSystem.Models.AgvState.Right
+  type: Field
+  source:
+    remote:
+      path: AGVSystem/Models/IMap.cs
+      branch: mapMaintenance
+      repo: https://github.com/JYC924693/NavigationAndSchedulingSystem.git
+    id: Right
+    path: ../AGVSystem/Models/IMap.cs
+    startLine: 749
+  assemblies:
+  - AGVSystem
+  namespace: AGVSystem.Models
+  syntax:
+    content: Right = 30
+    return:
+      type: AGVSystem.Models.AgvState
+references:
+- uid: AGVSystem.Models
+  commentId: N:AGVSystem.Models
+  href: AGVSystem.html
+  name: AGVSystem.Models
+  nameWithType: AGVSystem.Models
+  fullName: AGVSystem.Models
+  spec.csharp:
+  - uid: AGVSystem
+    name: AGVSystem
+    href: AGVSystem.html
+  - name: .
+  - uid: AGVSystem.Models
+    name: Models
+    href: AGVSystem.Models.html
+  spec.vb:
+  - uid: AGVSystem
+    name: AGVSystem
+    href: AGVSystem.html
+  - name: .
+  - uid: AGVSystem.Models
+    name: Models
+    href: AGVSystem.Models.html
+- uid: AGVSystem.Models.AgvState
+  commentId: T:AGVSystem.Models.AgvState
+  parent: AGVSystem.Models
+  href: AGVSystem.Models.AgvState.html
+  name: AgvState
+  nameWithType: AgvState
+  fullName: AGVSystem.Models.AgvState

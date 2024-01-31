@@ -1,32 +1,31 @@
 ### YamlMime:ManagedReference
 items:
-- uid: AGVSystem.Models.MapContext
-  commentId: T:AGVSystem.Models.MapContext
-  id: MapContext
+- uid: AGVSystem.Models.DataAccess
+  commentId: T:AGVSystem.Models.DataAccess
+  id: DataAccess
   parent: AGVSystem.Models
-  children:
-  - AGVSystem.Models.MapContext.GetInstance
+  children: []
   langs:
   - csharp
   - vb
-  name: MapContext
-  nameWithType: MapContext
-  fullName: AGVSystem.Models.MapContext
+  name: DataAccess
+  nameWithType: DataAccess
+  fullName: AGVSystem.Models.DataAccess
   type: Class
   source:
     remote:
-      path: AGVSystem/Models/IMap.cs
+      path: AGVSystem/Models/DataAccess.cs
       branch: mapMaintenance
       repo: https://github.com/JYC924693/NavigationAndSchedulingSystem.git
-    id: MapContext
-    path: ../AGVSystem/Models/IMap.cs
-    startLine: 6
+    id: DataAccess
+    path: ../AGVSystem/Models/DataAccess.cs
+    startLine: 10
   assemblies:
   - AGVSystem
   namespace: AGVSystem.Models
   syntax:
-    content: public static class MapContext
-    content.vb: Public Module MapContext
+    content: public class DataAccess
+    content.vb: Public Class DataAccess
   inheritance:
   - System.Object
   inheritedMembers:
@@ -37,34 +36,6 @@ items:
   - System.Object.MemberwiseClone
   - System.Object.ReferenceEquals(System.Object,System.Object)
   - System.Object.ToString
-- uid: AGVSystem.Models.MapContext.GetInstance
-  commentId: M:AGVSystem.Models.MapContext.GetInstance
-  id: GetInstance
-  parent: AGVSystem.Models.MapContext
-  langs:
-  - csharp
-  - vb
-  name: GetInstance()
-  nameWithType: MapContext.GetInstance()
-  fullName: AGVSystem.Models.MapContext.GetInstance()
-  type: Method
-  source:
-    remote:
-      path: AGVSystem/Models/IMap.cs
-      branch: mapMaintenance
-      repo: https://github.com/JYC924693/NavigationAndSchedulingSystem.git
-    id: GetInstance
-    path: ../AGVSystem/Models/IMap.cs
-    startLine: 10
-  assemblies:
-  - AGVSystem
-  namespace: AGVSystem.Models
-  syntax:
-    content: public static ConcreteMap GetInstance()
-    return:
-      type: AGVSystem.Models.ConcreteMap
-    content.vb: Public Shared Function GetInstance() As ConcreteMap
-  overload: AGVSystem.Models.MapContext.GetInstance*
 references:
 - uid: AGVSystem.Models
   commentId: N:AGVSystem.Models
@@ -325,16 +296,3 @@ references:
   name: System
   nameWithType: System
   fullName: System
-- uid: AGVSystem.Models.MapContext.GetInstance*
-  commentId: Overload:AGVSystem.Models.MapContext.GetInstance
-  href: AGVSystem.Models.MapContext.html#AGVSystem_Models_MapContext_GetInstance
-  name: GetInstance
-  nameWithType: MapContext.GetInstance
-  fullName: AGVSystem.Models.MapContext.GetInstance
-- uid: AGVSystem.Models.ConcreteMap
-  commentId: T:AGVSystem.Models.ConcreteMap
-  parent: AGVSystem.Models
-  href: AGVSystem.Models.ConcreteMap.html
-  name: ConcreteMap
-  nameWithType: ConcreteMap
-  fullName: AGVSystem.Models.ConcreteMap

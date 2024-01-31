@@ -1,5 +1,8 @@
 ﻿#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
 
+using System.Diagnostics.CodeAnalysis;
+using System.Reflection.Metadata.Ecma335;
+using System.Text.Json.Serialization;
 using static System.Net.WebRequestMethods;
 
 namespace AGVSystem.Models
@@ -628,14 +631,21 @@ namespace AGVSystem.Models
 
     //}
 
-    public class Vertex(int id, QRCode qr)
+    public class Vertex : IEquatable<Vertex>
     {
-        public int ID { get; set; } = id;
-        public QRCode QR { get; set; } = qr;
+        public int ID { get; set; }
+        public QRCode QR { get; set; }
+
+        [JsonConstructor]
+        public Vertex(int id, QRCode qr)
+        {
+            ID = id;
+            QR = qr;
+        }
 
         public Vertex(Vertex v) : this(v.ID, v.QR) { }
 
-        public Vertex(int id) : this(id, new QRCode()) { }
+        public Vertex(int id) : this(id, new QRCode(id)) { }
 
         public static bool operator ==(Vertex v1, Vertex v2)
         {
@@ -649,11 +659,26 @@ namespace AGVSystem.Models
 
         public override string ToString()
         {
-            return $"{id}:\n\tqr: {qr}";
+            return $"{{\n\tid:\t{ID}\n\tqr:\t{{\n\t\t\tID:\t\t{QR.ID}\n\t\t\tState:\t{QR.State}\n\t}}\n}}";
+        }
+
+        public override bool Equals([NotNullWhen(true)] object? obj)
+        {
+            return (ReferenceEquals(this, obj) || (obj is Vertex v && v == this));
+        }
+
+        public bool Equals(Vertex? other)
+        {
+            return other is not null && other == this;
+        }
+
+        public override int GetHashCode()
+        {
+            return HashCode.Combine(ID, QR);
         }
     }
 
-    public class Edge
+    public class Edge : IEquatable<Edge>
     {
         public Vertex From { get; set; }
         public Vertex To { get; set; }
@@ -666,7 +691,7 @@ namespace AGVSystem.Models
 
         public static bool operator !=(Edge e1, Edge e2)
         {
-            return !(e1 == e2);
+            return e1.From != e2.From || e1.To != e2.To || !e1.Weight.Equals(e2.Weight);
         }
 
         public Edge(int from, int to, double weight = 1d)
@@ -676,6 +701,7 @@ namespace AGVSystem.Models
             Weight = weight;
         }
 
+        [JsonConstructor]
         public Edge(Vertex from, Vertex to, double weight = 1d)
         {
             From = new Vertex(from);
@@ -699,13 +725,33 @@ namespace AGVSystem.Models
         {
             return $"{From.ID} -> {To.ID}: {Weight}";
         }
+
+        public bool Equals(Edge? other)
+        {
+            return other is not null && other == this;
+        }
+
+        public override bool Equals([NotNullWhen(true)] object? obj)
+        {
+            return (ReferenceEquals(this, obj) || (obj is Edge e && e == this));
+        }
+
+        public override int GetHashCode()
+        {
+            return HashCode.Combine(To, From);
+        }
     }
 
-    public class QRCode
+    public class QRCode : IEquatable<QRCode>
     {
         public QRCode()
         {
 
+        }
+
+        public QRCode(int id)
+        {
+            ID = id;
         }
 
         public QRCode(int id, QRState state)
@@ -717,10 +763,36 @@ namespace AGVSystem.Models
         public int ID { get; set; } = 0;
         public QRState State { get; set; } = QRState.SyntropyUnlock;
 
+        public static bool operator ==(QRCode left, QRCode right)
+        {
+            return left.ID == right.ID && left.State == right.State;
+        }
+
+        public static bool operator !=(QRCode left, QRCode right)
+        {
+            return left.ID != right.ID || left.State != right.State;
+        }
+
+        public override bool Equals([NotNullWhen(true)] object? obj)
+        {
+            return (ReferenceEquals(this, obj) || (obj is QRCode qr && qr == this));
+        }
+
+        public bool Equals(QRCode? other)
+        {
+            return other is not null && other == this;
+        }
+
+        public override int GetHashCode()
+        {
+            return HashCode.Combine(ID, State);
+        }
+
         public override string ToString()
         {
-            return $"id: {ID}, state: {State}";
+            return $"{{\n\tid:\t{ID},\n\tstate:\t{State}\n}}";
         }
+
     }
 
     public enum QRState

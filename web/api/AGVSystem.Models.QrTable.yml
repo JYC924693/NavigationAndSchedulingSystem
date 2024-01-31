@@ -1,0 +1,1027 @@
+### YamlMime:ManagedReference
+items:
+- uid: AGVSystem.Models.QrTable
+  commentId: T:AGVSystem.Models.QrTable
+  id: QrTable
+  parent: AGVSystem.Models
+  children:
+  - AGVSystem.Models.QrTable.AddVertex(AGVSystem.Models.Vertex)
+  - AGVSystem.Models.QrTable.ChangeEdge(System.Int32,System.Int32,AGVSystem.Models.Edge)
+  - AGVSystem.Models.QrTable.ChangeEdgeId(System.Int32,System.Int32,System.Int32,System.Int32)
+  - AGVSystem.Models.QrTable.ChangeVertex(System.Int32,AGVSystem.Models.Vertex)
+  - AGVSystem.Models.QrTable.ChangeVertexId(System.Int32,System.Int32)
+  - AGVSystem.Models.QrTable.ChangeVertexState(System.Int32,AGVSystem.Models.QRState)
+  - AGVSystem.Models.QrTable.ChangeWeight(System.Int32,System.Int32,System.Int32)
+  - AGVSystem.Models.QrTable.GetEdges
+  - AGVSystem.Models.QrTable.GetVertex(System.Int32)
+  - AGVSystem.Models.QrTable.GetVertices
+  - AGVSystem.Models.QrTable.GetWeight(System.Int32,System.Int32)
+  - AGVSystem.Models.QrTable.RemoveEdge(System.Int32,System.Int32)
+  - AGVSystem.Models.QrTable.RemoveVertex(System.Int32)
+  langs:
+  - csharp
+  - vb
+  name: QrTable
+  nameWithType: QrTable
+  fullName: AGVSystem.Models.QrTable
+  type: Class
+  source:
+    remote:
+      path: AGVSystem/Models/DataAccess.cs
+      branch: mapMaintenance
+      repo: https://github.com/JYC924693/NavigationAndSchedulingSystem.git
+    id: QrTable
+    path: ../AGVSystem/Models/DataAccess.cs
+    startLine: 49
+  assemblies:
+  - AGVSystem
+  namespace: AGVSystem.Models
+  syntax:
+    content: public abstract class QrTable
+    content.vb: Public MustInherit Class QrTable
+  inheritance:
+  - System.Object
+  derivedClasses:
+  - AGVSystem.Models.MySqlQrTable
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+- uid: AGVSystem.Models.QrTable.GetVertices
+  commentId: M:AGVSystem.Models.QrTable.GetVertices
+  id: GetVertices
+  parent: AGVSystem.Models.QrTable
+  langs:
+  - csharp
+  - vb
+  name: GetVertices()
+  nameWithType: QrTable.GetVertices()
+  fullName: AGVSystem.Models.QrTable.GetVertices()
+  type: Method
+  source:
+    remote:
+      path: AGVSystem/Models/DataAccess.cs
+      branch: mapMaintenance
+      repo: https://github.com/JYC924693/NavigationAndSchedulingSystem.git
+    id: GetVertices
+    path: ../AGVSystem/Models/DataAccess.cs
+    startLine: 51
+  assemblies:
+  - AGVSystem
+  namespace: AGVSystem.Models
+  syntax:
+    content: public abstract List<Vertex> GetVertices()
+    return:
+      type: System.Collections.Generic.List{AGVSystem.Models.Vertex}
+    content.vb: Public MustOverride Function GetVertices() As List(Of Vertex)
+  overload: AGVSystem.Models.QrTable.GetVertices*
+- uid: AGVSystem.Models.QrTable.GetVertex(System.Int32)
+  commentId: M:AGVSystem.Models.QrTable.GetVertex(System.Int32)
+  id: GetVertex(System.Int32)
+  parent: AGVSystem.Models.QrTable
+  langs:
+  - csharp
+  - vb
+  name: GetVertex(int)
+  nameWithType: QrTable.GetVertex(int)
+  fullName: AGVSystem.Models.QrTable.GetVertex(int)
+  type: Method
+  source:
+    remote:
+      path: AGVSystem/Models/DataAccess.cs
+      branch: mapMaintenance
+      repo: https://github.com/JYC924693/NavigationAndSchedulingSystem.git
+    id: GetVertex
+    path: ../AGVSystem/Models/DataAccess.cs
+    startLine: 52
+  assemblies:
+  - AGVSystem
+  namespace: AGVSystem.Models
+  syntax:
+    content: public abstract Vertex GetVertex(int id)
+    parameters:
+    - id: id
+      type: System.Int32
+    return:
+      type: AGVSystem.Models.Vertex
+    content.vb: Public MustOverride Function GetVertex(id As Integer) As Vertex
+  overload: AGVSystem.Models.QrTable.GetVertex*
+  nameWithType.vb: QrTable.GetVertex(Integer)
+  fullName.vb: AGVSystem.Models.QrTable.GetVertex(Integer)
+  name.vb: GetVertex(Integer)
+- uid: AGVSystem.Models.QrTable.GetEdges
+  commentId: M:AGVSystem.Models.QrTable.GetEdges
+  id: GetEdges
+  parent: AGVSystem.Models.QrTable
+  langs:
+  - csharp
+  - vb
+  name: GetEdges()
+  nameWithType: QrTable.GetEdges()
+  fullName: AGVSystem.Models.QrTable.GetEdges()
+  type: Method
+  source:
+    remote:
+      path: AGVSystem/Models/DataAccess.cs
+      branch: mapMaintenance
+      repo: https://github.com/JYC924693/NavigationAndSchedulingSystem.git
+    id: GetEdges
+    path: ../AGVSystem/Models/DataAccess.cs
+    startLine: 53
+  assemblies:
+  - AGVSystem
+  namespace: AGVSystem.Models
+  syntax:
+    content: public abstract List<Edge> GetEdges()
+    return:
+      type: System.Collections.Generic.List{AGVSystem.Models.Edge}
+    content.vb: Public MustOverride Function GetEdges() As List(Of Edge)
+  overload: AGVSystem.Models.QrTable.GetEdges*
+- uid: AGVSystem.Models.QrTable.GetWeight(System.Int32,System.Int32)
+  commentId: M:AGVSystem.Models.QrTable.GetWeight(System.Int32,System.Int32)
+  id: GetWeight(System.Int32,System.Int32)
+  parent: AGVSystem.Models.QrTable
+  langs:
+  - csharp
+  - vb
+  name: GetWeight(int, int)
+  nameWithType: QrTable.GetWeight(int, int)
+  fullName: AGVSystem.Models.QrTable.GetWeight(int, int)
+  type: Method
+  source:
+    remote:
+      path: AGVSystem/Models/DataAccess.cs
+      branch: mapMaintenance
+      repo: https://github.com/JYC924693/NavigationAndSchedulingSystem.git
+    id: GetWeight
+    path: ../AGVSystem/Models/DataAccess.cs
+    startLine: 54
+  assemblies:
+  - AGVSystem
+  namespace: AGVSystem.Models
+  syntax:
+    content: public abstract double GetWeight(int from, int to)
+    parameters:
+    - id: from
+      type: System.Int32
+    - id: to
+      type: System.Int32
+    return:
+      type: System.Double
+    content.vb: Public MustOverride Function GetWeight(from As Integer, [to] As Integer) As Double
+  overload: AGVSystem.Models.QrTable.GetWeight*
+  nameWithType.vb: QrTable.GetWeight(Integer, Integer)
+  fullName.vb: AGVSystem.Models.QrTable.GetWeight(Integer, Integer)
+  name.vb: GetWeight(Integer, Integer)
+- uid: AGVSystem.Models.QrTable.AddVertex(AGVSystem.Models.Vertex)
+  commentId: M:AGVSystem.Models.QrTable.AddVertex(AGVSystem.Models.Vertex)
+  id: AddVertex(AGVSystem.Models.Vertex)
+  parent: AGVSystem.Models.QrTable
+  langs:
+  - csharp
+  - vb
+  name: AddVertex(Vertex)
+  nameWithType: QrTable.AddVertex(Vertex)
+  fullName: AGVSystem.Models.QrTable.AddVertex(AGVSystem.Models.Vertex)
+  type: Method
+  source:
+    remote:
+      path: AGVSystem/Models/DataAccess.cs
+      branch: mapMaintenance
+      repo: https://github.com/JYC924693/NavigationAndSchedulingSystem.git
+    id: AddVertex
+    path: ../AGVSystem/Models/DataAccess.cs
+    startLine: 55
+  assemblies:
+  - AGVSystem
+  namespace: AGVSystem.Models
+  syntax:
+    content: public abstract bool AddVertex(Vertex vertex)
+    parameters:
+    - id: vertex
+      type: AGVSystem.Models.Vertex
+    return:
+      type: System.Boolean
+    content.vb: Public MustOverride Function AddVertex(vertex As Vertex) As Boolean
+  overload: AGVSystem.Models.QrTable.AddVertex*
+- uid: AGVSystem.Models.QrTable.ChangeVertex(System.Int32,AGVSystem.Models.Vertex)
+  commentId: M:AGVSystem.Models.QrTable.ChangeVertex(System.Int32,AGVSystem.Models.Vertex)
+  id: ChangeVertex(System.Int32,AGVSystem.Models.Vertex)
+  parent: AGVSystem.Models.QrTable
+  langs:
+  - csharp
+  - vb
+  name: ChangeVertex(int, Vertex)
+  nameWithType: QrTable.ChangeVertex(int, Vertex)
+  fullName: AGVSystem.Models.QrTable.ChangeVertex(int, AGVSystem.Models.Vertex)
+  type: Method
+  source:
+    remote:
+      path: AGVSystem/Models/DataAccess.cs
+      branch: mapMaintenance
+      repo: https://github.com/JYC924693/NavigationAndSchedulingSystem.git
+    id: ChangeVertex
+    path: ../AGVSystem/Models/DataAccess.cs
+    startLine: 56
+  assemblies:
+  - AGVSystem
+  namespace: AGVSystem.Models
+  syntax:
+    content: public abstract bool ChangeVertex(int id, Vertex newVertex)
+    parameters:
+    - id: id
+      type: System.Int32
+    - id: newVertex
+      type: AGVSystem.Models.Vertex
+    return:
+      type: System.Boolean
+    content.vb: Public MustOverride Function ChangeVertex(id As Integer, newVertex As Vertex) As Boolean
+  overload: AGVSystem.Models.QrTable.ChangeVertex*
+  nameWithType.vb: QrTable.ChangeVertex(Integer, Vertex)
+  fullName.vb: AGVSystem.Models.QrTable.ChangeVertex(Integer, AGVSystem.Models.Vertex)
+  name.vb: ChangeVertex(Integer, Vertex)
+- uid: AGVSystem.Models.QrTable.ChangeVertexState(System.Int32,AGVSystem.Models.QRState)
+  commentId: M:AGVSystem.Models.QrTable.ChangeVertexState(System.Int32,AGVSystem.Models.QRState)
+  id: ChangeVertexState(System.Int32,AGVSystem.Models.QRState)
+  parent: AGVSystem.Models.QrTable
+  langs:
+  - csharp
+  - vb
+  name: ChangeVertexState(int, QRState)
+  nameWithType: QrTable.ChangeVertexState(int, QRState)
+  fullName: AGVSystem.Models.QrTable.ChangeVertexState(int, AGVSystem.Models.QRState)
+  type: Method
+  source:
+    remote:
+      path: AGVSystem/Models/DataAccess.cs
+      branch: mapMaintenance
+      repo: https://github.com/JYC924693/NavigationAndSchedulingSystem.git
+    id: ChangeVertexState
+    path: ../AGVSystem/Models/DataAccess.cs
+    startLine: 57
+  assemblies:
+  - AGVSystem
+  namespace: AGVSystem.Models
+  syntax:
+    content: public abstract bool ChangeVertexState(int id, QRState state)
+    parameters:
+    - id: id
+      type: System.Int32
+    - id: state
+      type: AGVSystem.Models.QRState
+    return:
+      type: System.Boolean
+    content.vb: Public MustOverride Function ChangeVertexState(id As Integer, state As QRState) As Boolean
+  overload: AGVSystem.Models.QrTable.ChangeVertexState*
+  nameWithType.vb: QrTable.ChangeVertexState(Integer, QRState)
+  fullName.vb: AGVSystem.Models.QrTable.ChangeVertexState(Integer, AGVSystem.Models.QRState)
+  name.vb: ChangeVertexState(Integer, QRState)
+- uid: AGVSystem.Models.QrTable.ChangeVertexId(System.Int32,System.Int32)
+  commentId: M:AGVSystem.Models.QrTable.ChangeVertexId(System.Int32,System.Int32)
+  id: ChangeVertexId(System.Int32,System.Int32)
+  parent: AGVSystem.Models.QrTable
+  langs:
+  - csharp
+  - vb
+  name: ChangeVertexId(int, int)
+  nameWithType: QrTable.ChangeVertexId(int, int)
+  fullName: AGVSystem.Models.QrTable.ChangeVertexId(int, int)
+  type: Method
+  source:
+    remote:
+      path: AGVSystem/Models/DataAccess.cs
+      branch: mapMaintenance
+      repo: https://github.com/JYC924693/NavigationAndSchedulingSystem.git
+    id: ChangeVertexId
+    path: ../AGVSystem/Models/DataAccess.cs
+    startLine: 58
+  assemblies:
+  - AGVSystem
+  namespace: AGVSystem.Models
+  syntax:
+    content: public abstract bool ChangeVertexId(int id, int newId)
+    parameters:
+    - id: id
+      type: System.Int32
+    - id: newId
+      type: System.Int32
+    return:
+      type: System.Boolean
+    content.vb: Public MustOverride Function ChangeVertexId(id As Integer, newId As Integer) As Boolean
+  overload: AGVSystem.Models.QrTable.ChangeVertexId*
+  nameWithType.vb: QrTable.ChangeVertexId(Integer, Integer)
+  fullName.vb: AGVSystem.Models.QrTable.ChangeVertexId(Integer, Integer)
+  name.vb: ChangeVertexId(Integer, Integer)
+- uid: AGVSystem.Models.QrTable.ChangeEdge(System.Int32,System.Int32,AGVSystem.Models.Edge)
+  commentId: M:AGVSystem.Models.QrTable.ChangeEdge(System.Int32,System.Int32,AGVSystem.Models.Edge)
+  id: ChangeEdge(System.Int32,System.Int32,AGVSystem.Models.Edge)
+  parent: AGVSystem.Models.QrTable
+  langs:
+  - csharp
+  - vb
+  name: ChangeEdge(int, int, Edge)
+  nameWithType: QrTable.ChangeEdge(int, int, Edge)
+  fullName: AGVSystem.Models.QrTable.ChangeEdge(int, int, AGVSystem.Models.Edge)
+  type: Method
+  source:
+    remote:
+      path: AGVSystem/Models/DataAccess.cs
+      branch: mapMaintenance
+      repo: https://github.com/JYC924693/NavigationAndSchedulingSystem.git
+    id: ChangeEdge
+    path: ../AGVSystem/Models/DataAccess.cs
+    startLine: 59
+  assemblies:
+  - AGVSystem
+  namespace: AGVSystem.Models
+  syntax:
+    content: public abstract bool ChangeEdge(int from, int to, Edge newEdge)
+    parameters:
+    - id: from
+      type: System.Int32
+    - id: to
+      type: System.Int32
+    - id: newEdge
+      type: AGVSystem.Models.Edge
+    return:
+      type: System.Boolean
+    content.vb: Public MustOverride Function ChangeEdge(from As Integer, [to] As Integer, newEdge As Edge) As Boolean
+  overload: AGVSystem.Models.QrTable.ChangeEdge*
+  nameWithType.vb: QrTable.ChangeEdge(Integer, Integer, Edge)
+  fullName.vb: AGVSystem.Models.QrTable.ChangeEdge(Integer, Integer, AGVSystem.Models.Edge)
+  name.vb: ChangeEdge(Integer, Integer, Edge)
+- uid: AGVSystem.Models.QrTable.ChangeEdgeId(System.Int32,System.Int32,System.Int32,System.Int32)
+  commentId: M:AGVSystem.Models.QrTable.ChangeEdgeId(System.Int32,System.Int32,System.Int32,System.Int32)
+  id: ChangeEdgeId(System.Int32,System.Int32,System.Int32,System.Int32)
+  parent: AGVSystem.Models.QrTable
+  langs:
+  - csharp
+  - vb
+  name: ChangeEdgeId(int, int, int, int)
+  nameWithType: QrTable.ChangeEdgeId(int, int, int, int)
+  fullName: AGVSystem.Models.QrTable.ChangeEdgeId(int, int, int, int)
+  type: Method
+  source:
+    remote:
+      path: AGVSystem/Models/DataAccess.cs
+      branch: mapMaintenance
+      repo: https://github.com/JYC924693/NavigationAndSchedulingSystem.git
+    id: ChangeEdgeId
+    path: ../AGVSystem/Models/DataAccess.cs
+    startLine: 60
+  assemblies:
+  - AGVSystem
+  namespace: AGVSystem.Models
+  syntax:
+    content: public abstract bool ChangeEdgeId(int from, int to, int newFrom, int newTo)
+    parameters:
+    - id: from
+      type: System.Int32
+    - id: to
+      type: System.Int32
+    - id: newFrom
+      type: System.Int32
+    - id: newTo
+      type: System.Int32
+    return:
+      type: System.Boolean
+    content.vb: Public MustOverride Function ChangeEdgeId(from As Integer, [to] As Integer, newFrom As Integer, newTo As Integer) As Boolean
+  overload: AGVSystem.Models.QrTable.ChangeEdgeId*
+  nameWithType.vb: QrTable.ChangeEdgeId(Integer, Integer, Integer, Integer)
+  fullName.vb: AGVSystem.Models.QrTable.ChangeEdgeId(Integer, Integer, Integer, Integer)
+  name.vb: ChangeEdgeId(Integer, Integer, Integer, Integer)
+- uid: AGVSystem.Models.QrTable.ChangeWeight(System.Int32,System.Int32,System.Int32)
+  commentId: M:AGVSystem.Models.QrTable.ChangeWeight(System.Int32,System.Int32,System.Int32)
+  id: ChangeWeight(System.Int32,System.Int32,System.Int32)
+  parent: AGVSystem.Models.QrTable
+  langs:
+  - csharp
+  - vb
+  name: ChangeWeight(int, int, int)
+  nameWithType: QrTable.ChangeWeight(int, int, int)
+  fullName: AGVSystem.Models.QrTable.ChangeWeight(int, int, int)
+  type: Method
+  source:
+    remote:
+      path: AGVSystem/Models/DataAccess.cs
+      branch: mapMaintenance
+      repo: https://github.com/JYC924693/NavigationAndSchedulingSystem.git
+    id: ChangeWeight
+    path: ../AGVSystem/Models/DataAccess.cs
+    startLine: 61
+  assemblies:
+  - AGVSystem
+  namespace: AGVSystem.Models
+  syntax:
+    content: public abstract bool ChangeWeight(int from, int to, int weight)
+    parameters:
+    - id: from
+      type: System.Int32
+    - id: to
+      type: System.Int32
+    - id: weight
+      type: System.Int32
+    return:
+      type: System.Boolean
+    content.vb: Public MustOverride Function ChangeWeight(from As Integer, [to] As Integer, weight As Integer) As Boolean
+  overload: AGVSystem.Models.QrTable.ChangeWeight*
+  nameWithType.vb: QrTable.ChangeWeight(Integer, Integer, Integer)
+  fullName.vb: AGVSystem.Models.QrTable.ChangeWeight(Integer, Integer, Integer)
+  name.vb: ChangeWeight(Integer, Integer, Integer)
+- uid: AGVSystem.Models.QrTable.RemoveVertex(System.Int32)
+  commentId: M:AGVSystem.Models.QrTable.RemoveVertex(System.Int32)
+  id: RemoveVertex(System.Int32)
+  parent: AGVSystem.Models.QrTable
+  langs:
+  - csharp
+  - vb
+  name: RemoveVertex(int)
+  nameWithType: QrTable.RemoveVertex(int)
+  fullName: AGVSystem.Models.QrTable.RemoveVertex(int)
+  type: Method
+  source:
+    remote:
+      path: AGVSystem/Models/DataAccess.cs
+      branch: mapMaintenance
+      repo: https://github.com/JYC924693/NavigationAndSchedulingSystem.git
+    id: RemoveVertex
+    path: ../AGVSystem/Models/DataAccess.cs
+    startLine: 62
+  assemblies:
+  - AGVSystem
+  namespace: AGVSystem.Models
+  syntax:
+    content: public abstract bool RemoveVertex(int id)
+    parameters:
+    - id: id
+      type: System.Int32
+    return:
+      type: System.Boolean
+    content.vb: Public MustOverride Function RemoveVertex(id As Integer) As Boolean
+  overload: AGVSystem.Models.QrTable.RemoveVertex*
+  nameWithType.vb: QrTable.RemoveVertex(Integer)
+  fullName.vb: AGVSystem.Models.QrTable.RemoveVertex(Integer)
+  name.vb: RemoveVertex(Integer)
+- uid: AGVSystem.Models.QrTable.RemoveEdge(System.Int32,System.Int32)
+  commentId: M:AGVSystem.Models.QrTable.RemoveEdge(System.Int32,System.Int32)
+  id: RemoveEdge(System.Int32,System.Int32)
+  parent: AGVSystem.Models.QrTable
+  langs:
+  - csharp
+  - vb
+  name: RemoveEdge(int, int)
+  nameWithType: QrTable.RemoveEdge(int, int)
+  fullName: AGVSystem.Models.QrTable.RemoveEdge(int, int)
+  type: Method
+  source:
+    remote:
+      path: AGVSystem/Models/DataAccess.cs
+      branch: mapMaintenance
+      repo: https://github.com/JYC924693/NavigationAndSchedulingSystem.git
+    id: RemoveEdge
+    path: ../AGVSystem/Models/DataAccess.cs
+    startLine: 63
+  assemblies:
+  - AGVSystem
+  namespace: AGVSystem.Models
+  syntax:
+    content: public abstract bool RemoveEdge(int from, int to)
+    parameters:
+    - id: from
+      type: System.Int32
+    - id: to
+      type: System.Int32
+    return:
+      type: System.Boolean
+    content.vb: Public MustOverride Function RemoveEdge(from As Integer, [to] As Integer) As Boolean
+  overload: AGVSystem.Models.QrTable.RemoveEdge*
+  nameWithType.vb: QrTable.RemoveEdge(Integer, Integer)
+  fullName.vb: AGVSystem.Models.QrTable.RemoveEdge(Integer, Integer)
+  name.vb: RemoveEdge(Integer, Integer)
+references:
+- uid: AGVSystem.Models
+  commentId: N:AGVSystem.Models
+  href: AGVSystem.html
+  name: AGVSystem.Models
+  nameWithType: AGVSystem.Models
+  fullName: AGVSystem.Models
+  spec.csharp:
+  - uid: AGVSystem
+    name: AGVSystem
+    href: AGVSystem.html
+  - name: .
+  - uid: AGVSystem.Models
+    name: Models
+    href: AGVSystem.Models.html
+  spec.vb:
+  - uid: AGVSystem
+    name: AGVSystem
+    href: AGVSystem.html
+  - name: .
+  - uid: AGVSystem.Models
+    name: Models
+    href: AGVSystem.Models.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  name: MemberwiseClone()
+  nameWithType: object.MemberwiseClone()
+  fullName: object.MemberwiseClone()
+  nameWithType.vb: Object.MemberwiseClone()
+  fullName.vb: Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: AGVSystem.Models.QrTable.GetVertices*
+  commentId: Overload:AGVSystem.Models.QrTable.GetVertices
+  href: AGVSystem.Models.QrTable.html#AGVSystem_Models_QrTable_GetVertices
+  name: GetVertices
+  nameWithType: QrTable.GetVertices
+  fullName: AGVSystem.Models.QrTable.GetVertices
+- uid: System.Collections.Generic.List{AGVSystem.Models.Vertex}
+  commentId: T:System.Collections.Generic.List{AGVSystem.Models.Vertex}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.List`1
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  name: List<Vertex>
+  nameWithType: List<Vertex>
+  fullName: System.Collections.Generic.List<AGVSystem.Models.Vertex>
+  nameWithType.vb: List(Of Vertex)
+  fullName.vb: System.Collections.Generic.List(Of AGVSystem.Models.Vertex)
+  name.vb: List(Of Vertex)
+  spec.csharp:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: <
+  - uid: AGVSystem.Models.Vertex
+    name: Vertex
+    href: AGVSystem.Models.Vertex.html
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: AGVSystem.Models.Vertex
+    name: Vertex
+    href: AGVSystem.Models.Vertex.html
+  - name: )
+- uid: System.Collections.Generic.List`1
+  commentId: T:System.Collections.Generic.List`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  name: List<T>
+  nameWithType: List<T>
+  fullName: System.Collections.Generic.List<T>
+  nameWithType.vb: List(Of T)
+  fullName.vb: System.Collections.Generic.List(Of T)
+  name.vb: List(Of T)
+  spec.csharp:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: System.Collections.Generic
+  commentId: N:System.Collections.Generic
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Collections.Generic
+  nameWithType: System.Collections.Generic
+  fullName: System.Collections.Generic
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+- uid: AGVSystem.Models.QrTable.GetVertex*
+  commentId: Overload:AGVSystem.Models.QrTable.GetVertex
+  href: AGVSystem.Models.QrTable.html#AGVSystem_Models_QrTable_GetVertex_System_Int32_
+  name: GetVertex
+  nameWithType: QrTable.GetVertex
+  fullName: AGVSystem.Models.QrTable.GetVertex
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.int32
+  name: int
+  nameWithType: int
+  fullName: int
+  nameWithType.vb: Integer
+  fullName.vb: Integer
+  name.vb: Integer
+- uid: AGVSystem.Models.Vertex
+  commentId: T:AGVSystem.Models.Vertex
+  parent: AGVSystem.Models
+  href: AGVSystem.Models.Vertex.html
+  name: Vertex
+  nameWithType: Vertex
+  fullName: AGVSystem.Models.Vertex
+- uid: AGVSystem.Models.QrTable.GetEdges*
+  commentId: Overload:AGVSystem.Models.QrTable.GetEdges
+  href: AGVSystem.Models.QrTable.html#AGVSystem_Models_QrTable_GetEdges
+  name: GetEdges
+  nameWithType: QrTable.GetEdges
+  fullName: AGVSystem.Models.QrTable.GetEdges
+- uid: System.Collections.Generic.List{AGVSystem.Models.Edge}
+  commentId: T:System.Collections.Generic.List{AGVSystem.Models.Edge}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.List`1
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  name: List<Edge>
+  nameWithType: List<Edge>
+  fullName: System.Collections.Generic.List<AGVSystem.Models.Edge>
+  nameWithType.vb: List(Of Edge)
+  fullName.vb: System.Collections.Generic.List(Of AGVSystem.Models.Edge)
+  name.vb: List(Of Edge)
+  spec.csharp:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: <
+  - uid: AGVSystem.Models.Edge
+    name: Edge
+    href: AGVSystem.Models.Edge.html
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: AGVSystem.Models.Edge
+    name: Edge
+    href: AGVSystem.Models.Edge.html
+  - name: )
+- uid: AGVSystem.Models.QrTable.GetWeight*
+  commentId: Overload:AGVSystem.Models.QrTable.GetWeight
+  href: AGVSystem.Models.QrTable.html#AGVSystem_Models_QrTable_GetWeight_System_Int32_System_Int32_
+  name: GetWeight
+  nameWithType: QrTable.GetWeight
+  fullName: AGVSystem.Models.QrTable.GetWeight
+- uid: System.Double
+  commentId: T:System.Double
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.double
+  name: double
+  nameWithType: double
+  fullName: double
+  nameWithType.vb: Double
+  fullName.vb: Double
+  name.vb: Double
+- uid: AGVSystem.Models.QrTable.AddVertex*
+  commentId: Overload:AGVSystem.Models.QrTable.AddVertex
+  href: AGVSystem.Models.QrTable.html#AGVSystem_Models_QrTable_AddVertex_AGVSystem_Models_Vertex_
+  name: AddVertex
+  nameWithType: QrTable.AddVertex
+  fullName: AGVSystem.Models.QrTable.AddVertex
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.boolean
+  name: bool
+  nameWithType: bool
+  fullName: bool
+  nameWithType.vb: Boolean
+  fullName.vb: Boolean
+  name.vb: Boolean
+- uid: AGVSystem.Models.QrTable.ChangeVertex*
+  commentId: Overload:AGVSystem.Models.QrTable.ChangeVertex
+  href: AGVSystem.Models.QrTable.html#AGVSystem_Models_QrTable_ChangeVertex_System_Int32_AGVSystem_Models_Vertex_
+  name: ChangeVertex
+  nameWithType: QrTable.ChangeVertex
+  fullName: AGVSystem.Models.QrTable.ChangeVertex
+- uid: AGVSystem.Models.QrTable.ChangeVertexState*
+  commentId: Overload:AGVSystem.Models.QrTable.ChangeVertexState
+  href: AGVSystem.Models.QrTable.html#AGVSystem_Models_QrTable_ChangeVertexState_System_Int32_AGVSystem_Models_QRState_
+  name: ChangeVertexState
+  nameWithType: QrTable.ChangeVertexState
+  fullName: AGVSystem.Models.QrTable.ChangeVertexState
+- uid: AGVSystem.Models.QRState
+  commentId: T:AGVSystem.Models.QRState
+  parent: AGVSystem.Models
+  href: AGVSystem.Models.QRState.html
+  name: QRState
+  nameWithType: QRState
+  fullName: AGVSystem.Models.QRState
+- uid: AGVSystem.Models.QrTable.ChangeVertexId*
+  commentId: Overload:AGVSystem.Models.QrTable.ChangeVertexId
+  href: AGVSystem.Models.QrTable.html#AGVSystem_Models_QrTable_ChangeVertexId_System_Int32_System_Int32_
+  name: ChangeVertexId
+  nameWithType: QrTable.ChangeVertexId
+  fullName: AGVSystem.Models.QrTable.ChangeVertexId
+- uid: AGVSystem.Models.QrTable.ChangeEdge*
+  commentId: Overload:AGVSystem.Models.QrTable.ChangeEdge
+  href: AGVSystem.Models.QrTable.html#AGVSystem_Models_QrTable_ChangeEdge_System_Int32_System_Int32_AGVSystem_Models_Edge_
+  name: ChangeEdge
+  nameWithType: QrTable.ChangeEdge
+  fullName: AGVSystem.Models.QrTable.ChangeEdge
+- uid: AGVSystem.Models.Edge
+  commentId: T:AGVSystem.Models.Edge
+  parent: AGVSystem.Models
+  href: AGVSystem.Models.Edge.html
+  name: Edge
+  nameWithType: Edge
+  fullName: AGVSystem.Models.Edge
+- uid: AGVSystem.Models.QrTable.ChangeEdgeId*
+  commentId: Overload:AGVSystem.Models.QrTable.ChangeEdgeId
+  href: AGVSystem.Models.QrTable.html#AGVSystem_Models_QrTable_ChangeEdgeId_System_Int32_System_Int32_System_Int32_System_Int32_
+  name: ChangeEdgeId
+  nameWithType: QrTable.ChangeEdgeId
+  fullName: AGVSystem.Models.QrTable.ChangeEdgeId
+- uid: AGVSystem.Models.QrTable.ChangeWeight*
+  commentId: Overload:AGVSystem.Models.QrTable.ChangeWeight
+  href: AGVSystem.Models.QrTable.html#AGVSystem_Models_QrTable_ChangeWeight_System_Int32_System_Int32_System_Int32_
+  name: ChangeWeight
+  nameWithType: QrTable.ChangeWeight
+  fullName: AGVSystem.Models.QrTable.ChangeWeight
+- uid: AGVSystem.Models.QrTable.RemoveVertex*
+  commentId: Overload:AGVSystem.Models.QrTable.RemoveVertex
+  href: AGVSystem.Models.QrTable.html#AGVSystem_Models_QrTable_RemoveVertex_System_Int32_
+  name: RemoveVertex
+  nameWithType: QrTable.RemoveVertex
+  fullName: AGVSystem.Models.QrTable.RemoveVertex
+- uid: AGVSystem.Models.QrTable.RemoveEdge*
+  commentId: Overload:AGVSystem.Models.QrTable.RemoveEdge
+  href: AGVSystem.Models.QrTable.html#AGVSystem_Models_QrTable_RemoveEdge_System_Int32_System_Int32_
+  name: RemoveEdge
+  nameWithType: QrTable.RemoveEdge
+  fullName: AGVSystem.Models.QrTable.RemoveEdge

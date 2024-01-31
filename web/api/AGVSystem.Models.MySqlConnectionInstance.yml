@@ -1,32 +1,32 @@
 ### YamlMime:ManagedReference
 items:
-- uid: AGVSystem.Models.MapContext
-  commentId: T:AGVSystem.Models.MapContext
-  id: MapContext
+- uid: AGVSystem.Models.MySqlConnectionInstance
+  commentId: T:AGVSystem.Models.MySqlConnectionInstance
+  id: MySqlConnectionInstance
   parent: AGVSystem.Models
   children:
-  - AGVSystem.Models.MapContext.GetInstance
+  - AGVSystem.Models.MySqlConnectionInstance.GetInstance
   langs:
   - csharp
   - vb
-  name: MapContext
-  nameWithType: MapContext
-  fullName: AGVSystem.Models.MapContext
+  name: MySqlConnectionInstance
+  nameWithType: MySqlConnectionInstance
+  fullName: AGVSystem.Models.MySqlConnectionInstance
   type: Class
   source:
     remote:
-      path: AGVSystem/Models/IMap.cs
+      path: AGVSystem/Models/DataAccess.cs
       branch: mapMaintenance
       repo: https://github.com/JYC924693/NavigationAndSchedulingSystem.git
-    id: MapContext
-    path: ../AGVSystem/Models/IMap.cs
-    startLine: 6
+    id: MySqlConnectionInstance
+    path: ../AGVSystem/Models/DataAccess.cs
+    startLine: 22
   assemblies:
   - AGVSystem
   namespace: AGVSystem.Models
   syntax:
-    content: public static class MapContext
-    content.vb: Public Module MapContext
+    content: public static class MySqlConnectionInstance
+    content.vb: Public Module MySqlConnectionInstance
   inheritance:
   - System.Object
   inheritedMembers:
@@ -37,34 +37,34 @@ items:
   - System.Object.MemberwiseClone
   - System.Object.ReferenceEquals(System.Object,System.Object)
   - System.Object.ToString
-- uid: AGVSystem.Models.MapContext.GetInstance
-  commentId: M:AGVSystem.Models.MapContext.GetInstance
+- uid: AGVSystem.Models.MySqlConnectionInstance.GetInstance
+  commentId: M:AGVSystem.Models.MySqlConnectionInstance.GetInstance
   id: GetInstance
-  parent: AGVSystem.Models.MapContext
+  parent: AGVSystem.Models.MySqlConnectionInstance
   langs:
   - csharp
   - vb
   name: GetInstance()
-  nameWithType: MapContext.GetInstance()
-  fullName: AGVSystem.Models.MapContext.GetInstance()
+  nameWithType: MySqlConnectionInstance.GetInstance()
+  fullName: AGVSystem.Models.MySqlConnectionInstance.GetInstance()
   type: Method
   source:
     remote:
-      path: AGVSystem/Models/IMap.cs
+      path: AGVSystem/Models/DataAccess.cs
       branch: mapMaintenance
       repo: https://github.com/JYC924693/NavigationAndSchedulingSystem.git
     id: GetInstance
-    path: ../AGVSystem/Models/IMap.cs
-    startLine: 10
+    path: ../AGVSystem/Models/DataAccess.cs
+    startLine: 43
   assemblies:
   - AGVSystem
   namespace: AGVSystem.Models
   syntax:
-    content: public static ConcreteMap GetInstance()
+    content: public static MySqlConnection GetInstance()
     return:
-      type: AGVSystem.Models.ConcreteMap
-    content.vb: Public Shared Function GetInstance() As ConcreteMap
-  overload: AGVSystem.Models.MapContext.GetInstance*
+      type: MySql.Data.MySqlClient.MySqlConnection
+    content.vb: Public Shared Function GetInstance() As MySqlConnection
+  overload: AGVSystem.Models.MySqlConnectionInstance.GetInstance*
 references:
 - uid: AGVSystem.Models
   commentId: N:AGVSystem.Models
@@ -325,16 +325,46 @@ references:
   name: System
   nameWithType: System
   fullName: System
-- uid: AGVSystem.Models.MapContext.GetInstance*
-  commentId: Overload:AGVSystem.Models.MapContext.GetInstance
-  href: AGVSystem.Models.MapContext.html#AGVSystem_Models_MapContext_GetInstance
+- uid: AGVSystem.Models.MySqlConnectionInstance.GetInstance*
+  commentId: Overload:AGVSystem.Models.MySqlConnectionInstance.GetInstance
+  href: AGVSystem.Models.MySqlConnectionInstance.html#AGVSystem_Models_MySqlConnectionInstance_GetInstance
   name: GetInstance
-  nameWithType: MapContext.GetInstance
-  fullName: AGVSystem.Models.MapContext.GetInstance
-- uid: AGVSystem.Models.ConcreteMap
-  commentId: T:AGVSystem.Models.ConcreteMap
-  parent: AGVSystem.Models
-  href: AGVSystem.Models.ConcreteMap.html
-  name: ConcreteMap
-  nameWithType: ConcreteMap
-  fullName: AGVSystem.Models.ConcreteMap
+  nameWithType: MySqlConnectionInstance.GetInstance
+  fullName: AGVSystem.Models.MySqlConnectionInstance.GetInstance
+- uid: MySql.Data.MySqlClient.MySqlConnection
+  commentId: T:MySql.Data.MySqlClient.MySqlConnection
+  parent: MySql.Data.MySqlClient
+  isExternal: true
+  name: MySqlConnection
+  nameWithType: MySqlConnection
+  fullName: MySql.Data.MySqlClient.MySqlConnection
+- uid: MySql.Data.MySqlClient
+  commentId: N:MySql.Data.MySqlClient
+  isExternal: true
+  name: MySql.Data.MySqlClient
+  nameWithType: MySql.Data.MySqlClient
+  fullName: MySql.Data.MySqlClient
+  spec.csharp:
+  - uid: MySql
+    name: MySql
+    isExternal: true
+  - name: .
+  - uid: MySql.Data
+    name: Data
+    isExternal: true
+  - name: .
+  - uid: MySql.Data.MySqlClient
+    name: MySqlClient
+    isExternal: true
+  spec.vb:
+  - uid: MySql
+    name: MySql
+    isExternal: true
+  - name: .
+  - uid: MySql.Data
+    name: Data
+    isExternal: true
+  - name: .
+  - uid: MySql.Data.MySqlClient
+    name: MySqlClient
+    isExternal: true

@@ -1,0 +1,85 @@
+### YamlMime:ManagedReference
+items:
+- uid: AGVSystem.Models.TaskMode
+  commentId: T:AGVSystem.Models.TaskMode
+  id: TaskMode
+  parent: AGVSystem.Models
+  children:
+  - AGVSystem.Models.TaskMode.None
+  langs:
+  - csharp
+  - vb
+  name: TaskMode
+  nameWithType: TaskMode
+  fullName: AGVSystem.Models.TaskMode
+  type: Enum
+  source:
+    remote:
+      path: AGVSystem/Models/IMap.cs
+      branch: mapMaintenance
+      repo: https://github.com/JYC924693/NavigationAndSchedulingSystem.git
+    id: TaskMode
+    path: ../AGVSystem/Models/IMap.cs
+    startLine: 752
+  assemblies:
+  - AGVSystem
+  namespace: AGVSystem.Models
+  syntax:
+    content: public enum TaskMode
+    content.vb: Public Enum TaskMode
+- uid: AGVSystem.Models.TaskMode.None
+  commentId: F:AGVSystem.Models.TaskMode.None
+  id: None
+  parent: AGVSystem.Models.TaskMode
+  langs:
+  - csharp
+  - vb
+  name: None
+  nameWithType: TaskMode.None
+  fullName: AGVSystem.Models.TaskMode.None
+  type: Field
+  source:
+    remote:
+      path: AGVSystem/Models/IMap.cs
+      branch: mapMaintenance
+      repo: https://github.com/JYC924693/NavigationAndSchedulingSystem.git
+    id: None
+    path: ../AGVSystem/Models/IMap.cs
+    startLine: 754
+  assemblies:
+  - AGVSystem
+  namespace: AGVSystem.Models
+  syntax:
+    content: None = 0
+    return:
+      type: AGVSystem.Models.TaskMode
+references:
+- uid: AGVSystem.Models
+  commentId: N:AGVSystem.Models
+  href: AGVSystem.html
+  name: AGVSystem.Models
+  nameWithType: AGVSystem.Models
+  fullName: AGVSystem.Models
+  spec.csharp:
+  - uid: AGVSystem
+    name: AGVSystem
+    href: AGVSystem.html
+  - name: .
+  - uid: AGVSystem.Models
+    name: Models
+    href: AGVSystem.Models.html
+  spec.vb:
+  - uid: AGVSystem
+    name: AGVSystem
+    href: AGVSystem.html
+  - name: .
+  - uid: AGVSystem.Models
+    name: Models
+    href: AGVSystem.Models.html
+- uid: AGVSystem.Models.TaskMode
+  commentId: T:AGVSystem.Models.TaskMode
+  parent: AGVSystem.Models
+  href: AGVSystem.Models.TaskMode.html
+  name: TaskMode
+  nameWithType: TaskMode
+  fullName: AGVSystem.Models.TaskMode

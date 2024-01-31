@@ -33,7 +33,7 @@ items:
       repo: https://github.com/JYC924693/NavigationAndSchedulingSystem.git
     id: IMap
     path: ../AGVSystem/Models/IMap.cs
-    startLine: 14
+    startLine: 16
   assemblies:
   - AGVSystem
   namespace: AGVSystem.Models
@@ -58,7 +58,7 @@ items:
       repo: https://github.com/JYC924693/NavigationAndSchedulingSystem.git
     id: V
     path: ../AGVSystem/Models/IMap.cs
-    startLine: 16
+    startLine: 18
   assemblies:
   - AGVSystem
   namespace: AGVSystem.Models
@@ -87,7 +87,7 @@ items:
       repo: https://github.com/JYC924693/NavigationAndSchedulingSystem.git
     id: E
     path: ../AGVSystem/Models/IMap.cs
-    startLine: 17
+    startLine: 19
   assemblies:
   - AGVSystem
   namespace: AGVSystem.Models
@@ -116,7 +116,7 @@ items:
       repo: https://github.com/JYC924693/NavigationAndSchedulingSystem.git
     id: Vertices
     path: ../AGVSystem/Models/IMap.cs
-    startLine: 18
+    startLine: 20
   assemblies:
   - AGVSystem
   namespace: AGVSystem.Models
@@ -145,7 +145,7 @@ items:
       repo: https://github.com/JYC924693/NavigationAndSchedulingSystem.git
     id: Edges
     path: ../AGVSystem/Models/IMap.cs
-    startLine: 19
+    startLine: 21
   assemblies:
   - AGVSystem
   namespace: AGVSystem.Models
@@ -174,7 +174,7 @@ items:
       repo: https://github.com/JYC924693/NavigationAndSchedulingSystem.git
     id: BuildMap
     path: ../AGVSystem/Models/IMap.cs
-    startLine: 20
+    startLine: 22
   assemblies:
   - AGVSystem
   namespace: AGVSystem.Models
@@ -200,7 +200,7 @@ items:
       repo: https://github.com/JYC924693/NavigationAndSchedulingSystem.git
     id: GetVertex
     path: ../AGVSystem/Models/IMap.cs
-    startLine: 21
+    startLine: 23
   assemblies:
   - AGVSystem
   namespace: AGVSystem.Models
@@ -234,7 +234,7 @@ items:
       repo: https://github.com/JYC924693/NavigationAndSchedulingSystem.git
     id: GetAdjacencyVertices
     path: ../AGVSystem/Models/IMap.cs
-    startLine: 22
+    startLine: 24
   assemblies:
   - AGVSystem
   namespace: AGVSystem.Models
@@ -268,7 +268,7 @@ items:
       repo: https://github.com/JYC924693/NavigationAndSchedulingSystem.git
     id: AddVertex
     path: ../AGVSystem/Models/IMap.cs
-    startLine: 23
+    startLine: 25
   assemblies:
   - AGVSystem
   namespace: AGVSystem.Models
@@ -302,7 +302,7 @@ items:
       repo: https://github.com/JYC924693/NavigationAndSchedulingSystem.git
     id: InsertVertex
     path: ../AGVSystem/Models/IMap.cs
-    startLine: 24
+    startLine: 26
   assemblies:
   - AGVSystem
   namespace: AGVSystem.Models
@@ -336,7 +336,7 @@ items:
       repo: https://github.com/JYC924693/NavigationAndSchedulingSystem.git
     id: RemoveVertex
     path: ../AGVSystem/Models/IMap.cs
-    startLine: 25
+    startLine: 27
   assemblies:
   - AGVSystem
   namespace: AGVSystem.Models
@@ -370,7 +370,7 @@ items:
       repo: https://github.com/JYC924693/NavigationAndSchedulingSystem.git
     id: GetAdjacencyEdges
     path: ../AGVSystem/Models/IMap.cs
-    startLine: 26
+    startLine: 28
   assemblies:
   - AGVSystem
   namespace: AGVSystem.Models
@@ -404,7 +404,7 @@ items:
       repo: https://github.com/JYC924693/NavigationAndSchedulingSystem.git
     id: AddEdge
     path: ../AGVSystem/Models/IMap.cs
-    startLine: 27
+    startLine: 29
   assemblies:
   - AGVSystem
   namespace: AGVSystem.Models
@@ -435,7 +435,7 @@ items:
       repo: https://github.com/JYC924693/NavigationAndSchedulingSystem.git
     id: RemoveEdge
     path: ../AGVSystem/Models/IMap.cs
-    startLine: 28
+    startLine: 30
   assemblies:
   - AGVSystem
   namespace: AGVSystem.Models
@@ -466,7 +466,7 @@ items:
       repo: https://github.com/JYC924693/NavigationAndSchedulingSystem.git
     id: Clear
     path: ../AGVSystem/Models/IMap.cs
-    startLine: 29
+    startLine: 31
   assemblies:
   - AGVSystem
   namespace: AGVSystem.Models

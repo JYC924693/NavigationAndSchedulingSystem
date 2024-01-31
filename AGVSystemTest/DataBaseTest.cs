@@ -4,13 +4,16 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.Json.Serialization;
 using System.Threading.Tasks;
 using AGVSystem.Models;
+using JsonSerializer = System.Text.Json.JsonSerializer;
+using Path = AGVSystem.Models.Path;
 
 namespace AGVSystemTest
 {
     [TestClass]
-    public class DateBaseTest
+    public class QrTableTest
     {
         private QrTable _qrTable;
 
@@ -24,7 +27,6 @@ namespace AGVSystemTest
         [TestMethod]
         public void GetEdges_JudgeAllEdges_ReturnsALLEdges(List<Edge> expected)
         {
-
             var edges = _qrTable.GetEdges();
 
             var actual = expected.Count == edges.Count && expected.SequenceEqual(edges);
@@ -156,12 +158,161 @@ namespace AGVSystemTest
         }
 
         [TestMethod]
-        public void Test2()
+        public void AllOperation()
         {
-            var lst1 = new List<int> { 1, 2 };
-            var lst2 = new List<int> { 1, 2 };
 
-            Assert.IsTrue(lst1.SequenceEqual(lst2));
+        }
+    }
+
+    [TestClass]
+    public class PathTableTest
+    {
+        private PathTable _path;
+
+        [TestInitialize]
+        public void Initialize()
+        {
+            _path = new MySqlPathTable();
+        }
+
+        [TestMethod]
+        public void GetPath_ComparePath_ReturnsPath(string name, Path expected)
+        {
+            var path = _path.GetPath(name);
+
+            Assert.AreEqual(expected, path);
+        }
+
+        [TestMethod]
+        public void AddPath_TryGetAddedPathName_ReturnsPath(Path path)
+        {
+            var result = _path.AddPath(path);
+
+            if (result)
+            {
+                _path.GetPath(path.Name);
+            }
+
+            Assert.IsTrue(result);
+        }
+
+        [TestMethod]
+        public void ChangePath_CompareChangedPath_ReturnsTrue(string name, Path expected)
+        {
+            var result = _path.ChangePath(name, expected);
+
+            if (result)
+            {
+                var actual = _path.GetPath(name);
+                result = actual == expected;
+            }
+
+            Assert.IsTrue(result);
+        }
+
+        [TestMethod]
+        public void ChangeIdSequence_CompareChangedIdSequence_ReturnsTrue(string name, List<int> expected)
+        {
+            var result = _path.ChangeIdSequence(name, expected);
+
+            if (result)
+            {
+                var actual = _path.GetPath(name).IdSequence;
+                result = expected.SequenceEqual(actual);
+            }
+
+            Assert.IsTrue(result);
+        }
+
+        [TestMethod]
+        public void ChangeAvgStateSequence_CompareChangedAgvStateSequence_ReturnsTrue(string name, List<AgvState> expected)
+        {
+            var result = _path.ChangeAgvStateSequence(name, expected);
+
+            if (result)
+            {
+                var actual = _path.GetPath(name).MoveSequence;
+                result = expected.SequenceEqual(actual);
+            }
+
+            Assert.IsTrue(result);
+        }
+
+        [TestMethod]
+        public void ChangeAngleSequence_CompareChangedAngleSequence_ReturnsTrue(string name, List<double> expected)
+        {
+            var result = _path.ChangeAngleSequence(name, expected);
+
+            if (result)
+            {
+                var actual = _path.GetPath(name).AngleSequence;
+                result = expected.SequenceEqual(actual);
+            }
+
+            Assert.IsTrue(result);
+        }
+
+        [TestMethod]
+        public void ChangeTaskModeSequence_CompareChangedTaskModeSequence_ReturnsTrue(string name, List<TaskMode> expected)
+        {
+            var result = _path.ChangeTaskModeSequence(name, expected);
+
+            if (result)
+            {
+                var actual = _path.GetPath(name).TaskSequence;
+                result = expected.SequenceEqual(actual);
+            }
+
+            Assert.IsTrue(result);
+        }
+
+        [TestMethod]
+        public void ChangeTaskName_TryGetChangedPath_ReturnsTrue(string name, string expected)
+        {
+            var result = _path.ChangeTaskName(name, expected);
+
+            if (result)
+            {
+                _path.GetPath(name);
+            }
+
+            Assert.IsTrue(result);
+        }
+
+        [TestMethod]
+        public void RemovePath_TryGetRemovedPath_ReturnsException(string name)
+        {
+            _path.RemovePath(name);
+
+            Assert.ThrowsException<ArgumentOutOfRangeException>(() => _path.GetPath(name));
+        }
+    }
+
+    public class DataBaseFactory
+    {
+        public static List<Edge> GetEdgeFromFile(string path)
+        {
+            var edges = new List<Edge>();
+
+            var content = File.ReadAllLines(path);
+            
+
+            return edges;
+        }
+
+        public static List<Vertex> GetVertexFromFile(string path)
+        {
+            var vertices = new List<Vertex>();
+
+
+            return vertices;
+        }
+
+        public static List<Path> GetPathFromFile(string path)
+        {
+            var pathList = new List<Path>();
+
+            return pathList;
         }
     }
 }
