@@ -1,10 +1,11 @@
 ﻿using AGVSystem.Models;
+using System.Runtime.ConstrainedExecution;
 
 namespace AGVSystem.Path
 {
-    public class FloydAlgorithm
+    public class Floyd
     {
-        private static readonly int Inf = int.MaxValue;
+        private const int Inf = int.MaxValue;
 
         private List<List<double>> _distance = []; //最短路径距离矩阵
         private List<List<int>> _path = []; //最近邻矩阵
@@ -20,7 +21,7 @@ namespace AGVSystem.Path
 
         private int GetVerticesNum()
         {
-            int vertices_num = map.V;
+            var vertices_num = map.V;
             return vertices_num;
         }
 
@@ -34,23 +35,19 @@ namespace AGVSystem.Path
             return map.GetAdjacencyEdges(id);
         }
 
-        public void Floyd()
+        public void FloydRun()
         {
-            List<Vertex> vertices = new List<Vertex>();
+            var vertices_nums = GetVerticesNum();
+            var vertices = GetVertices();
             
-            int vertices_nums = GetVerticesNum();
-            vertices = GetVertices();
-
-            _distance = new List<List<double>>(vertices_nums);
-            _path = new List<List<int>>(vertices_nums);
-            for (int i = 0; i < vertices_nums; i++)
+            for (var i = 0; i < vertices_nums; i++)
             {
-                List<double> distance_row = new List<double>(vertices_nums);
-                List<int> path_row = new List<int>(vertices_nums);
-                for (int j = 0;j< vertices_nums; j++)
+                _distance.Add(new List<double>(vertices_nums));
+                _path.Add(new List<int>(vertices_nums));
+                for (var j = 0;j< vertices_nums; j++)
                 {
-                    _distance[i][j] = Inf;
-                    _path[i][j] = -1;
+                    _distance[i].Add(Inf);
+                    _path[i].Add(-1);
                 }
             }
 
@@ -63,14 +60,25 @@ namespace AGVSystem.Path
 
                 foreach(Vertex vert in adjacency_vertices)
                 {
-                    int index = vertices.IndexOf(vert);
-
-                    if(map.TryGetEdge(id, vert.ID, out var e_cur))
+                    int qrId = vert.ID;
+                    int index = -1;
+                    foreach (var ver in vertices)
                     {
-                        _distance[i][index] = e_cur.Weight;
-                        _path[i][index] = i;
+                        if (ver.ID == vert.ID)
+                        {
+                            index = vertices.IndexOf(ver);
+                        }
                     }
-                    
+
+                    //if(map.TryGetEdge(id, vert.ID, out var e_cur))
+                    //{
+                    //    _distance[i][index] = e_cur.Weight;
+                    //    _path[i][index] = i;
+                    //}
+                    Edge e_cur = map.GetEdge(id, vert.ID);
+                    _distance[i][index] = e_cur.Weight;
+                    _path[i][index] = i;
+
                 }
             }
 
@@ -100,6 +108,7 @@ namespace AGVSystem.Path
         /// <exception cref="ArgumentNullException"></exception>
         public Dictionary<int, List<int>> GetAllPaths(Dictionary<int, Tuple<int, int>> paths_id)
         {
+            FloydRun();
             Dictionary<int, List<int>> all_paths  = new Dictionary<int, List<int>>();
             if(paths_id == null || paths_id.Count == 0)
             {
@@ -112,8 +121,27 @@ namespace AGVSystem.Path
                 int path_start = start_end_pair.Item1;
                 int path_end = start_end_pair.Item2;
 
-                SignalPath(path_start, path_end);
+                var vertexTemp = GetVertices();
+                int pathStartIndex = 0;
+                int pathEndIndex = 0;
+                foreach (var vert in vertexTemp)
+                {
+                    if (path_start == vert.ID)
+                    {
+                        pathStartIndex = vertexTemp.IndexOf(vert);
+                    }
+                    if (path_end == vert.ID)
+                    {
+                        pathEndIndex = vertexTemp.IndexOf(vert);
+                    }
+                }
+                SignalPath(pathStartIndex, pathEndIndex);
                 List<int> path = signal_path_.Select(item=>item).ToList();
+                for (int i = 0; i < path.Count; i++)
+                {
+                    var index = path[i];
+                    path[i] = vertexTemp[index].ID;
+                }
                 all_paths[num] = path;
                 signal_path_.Clear();
             }
@@ -136,7 +164,7 @@ namespace AGVSystem.Path
             }
             else if (intermediateK == start) // 表示前节点等于出发点找到两者最短路径
             {
-                if (signal_path_.Count() == 0)
+                if (signal_path_.Count == 0)
                 {
                     signal_path_.Add(start);
                     signal_path_.Add(end);

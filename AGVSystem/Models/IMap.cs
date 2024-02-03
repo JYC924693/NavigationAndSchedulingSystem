@@ -56,7 +56,7 @@
             {
                 edge = GetEdge(from, to);
             }
-
+             
             return isExist;
         }
         public abstract Edge GetEdge(int from, int to);
