@@ -350,7 +350,7 @@ namespace AGVSystem.Models
 
         public override bool ChangeEdgeId(int from, int to, int newFrom, int newTo)
         {
-            if (!ContainEdge(from, to))
+            if (!ContainEdge(from, to) || ContainEdge(newFrom, newTo))
                 throw new ArgumentOutOfRangeException();
 
             var cmd = new MySqlCommand("UPDATE edges SET head = @newFrom, tail = @newTo WHERE head = @head AND tail = @tail", _connection);

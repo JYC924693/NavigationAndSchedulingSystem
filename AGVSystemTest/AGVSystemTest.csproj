@@ -32,4 +32,8 @@
     <ProjectReference Include="..\AGVSystem\AGVSystem.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="MapTestData\" />
+  </ItemGroup>
+
 </Project>

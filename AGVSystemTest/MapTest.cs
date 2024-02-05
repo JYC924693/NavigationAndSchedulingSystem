@@ -107,14 +107,24 @@ namespace AGVSystemTest
         }
 
         [TestMethod]
+        public void ChangeVertexId_JudgeByOldAndNewName_ReturnsBool()
+        {
+            var map = MapFactory.CreateMap(@"C:\Users\Lenovo\Documents\Code\C#\Project\NavigationAndSchedulingSystem\AGVSystemTest\CoreModuleTestData\CoreTestMap.txt");
+
+            Assert.IsTrue(map.ChangeVertexId(2, 11));
+
+            Assert.IsFalse(map.ContainVertex(2));
+            Assert.IsTrue(map.ContainVertex(11));
+        }
+
+        [TestMethod]
         public void InsertVertexes()
         {
             var sparseMap = MapFactory.CreateMap(MapFactory.SparseGraph1, MapFactory.Type.SparseGraph);
-            var subSparseNontrivialMap =
+            var subSparseNontrivialMap = 
                 MapFactory.CreateMap(MapFactory.SubSparse1_NontrivialGraph1, MapFactory.Type.NontrivialGraph);
             var subZeroMap = MapFactory.CreateMap(MapFactory.SubZeroGraph1, MapFactory.Type.ZeroGraph);
             var resultMap = MapFactory.CreateMap(MapFactory.SparseAndSubZeroGraph1, MapFactory.Type.SparseGraph);
-
 
             List<Edge> edges;
             List<Vertex> vertexes;
@@ -124,6 +134,7 @@ namespace AGVSystemTest
                 ((MapFactory.SubSparse2_NontrivialGraph1, MapFactory.Type.NontrivialGraph),(MapFactory.SubZeroGraph1, MapFactory.Type.ZeroGraph)),
                 ((MapFactory.SubSparse2_NontrivialGraph1, MapFactory.Type.NontrivialGraph),(MapFactory.SubSparse1_ZeroGraph1, MapFactory.Type.ZeroGraph)),
             };
+
             foreach (var (eItem, vItem) in testData)
             {
                 edges = MapFactory.CreateMap(eItem.Item1, eItem.Item2).Edges;
@@ -133,6 +144,7 @@ namespace AGVSystemTest
 
             edges = subSparseNontrivialMap.Edges;
             vertexes = subZeroMap.Vertices;
+
             for (var i = 0; i < vertexes.Count; i++)
             {
                 sparseMap.InsertVertex(vertexes[i], edges[i]);
@@ -177,7 +189,7 @@ namespace AGVSystemTest
                 sparseMap.RemoveVertex(vertex);
             }
             Assert.IsTrue(subSparseNontrivialMap.AreIsomorphic(sparseMap), "移除顶点方法有误！");
-
+           
             var emptyMap = MapFactory.CreateMap(MapFactory.Type.EmptyGraph);
             foreach (var vertex in subSparseNontrivialMap.Vertices)
             {
@@ -220,6 +232,7 @@ namespace AGVSystemTest
             }
 
             var subSparseNontrivialMap2 = MapFactory.CreateMap(MapFactory.SubSparse2_NontrivialGraph1, MapFactory.Type.NontrivialGraph);
+            
             foreach (var edge in subSparseNontrivialMap2.Edges)
             {
                 Assert.IsFalse(sparseMap.AddEdge(edge), "添加边方法有误！");
@@ -227,6 +240,7 @@ namespace AGVSystemTest
 
             var nontrivialMap = MapFactory.CreateMap(MapFactory.PartSparseVertexesAndDifferentEdgeGraph,
                 MapFactory.Type.NontrivialGraph);
+
             foreach (var edge in nontrivialMap.Edges)
             {
                 Assert.IsTrue(sparseMap.AddEdge(edge), "添加边方法有误！");
@@ -247,6 +261,7 @@ namespace AGVSystemTest
 
             var nontrivialVertexesMap = MapFactory.CreateMap(MapFactory.SubNontrivialZero1_WithDifferentEdgesGraph,
                 MapFactory.Type.NontrivialGraph);
+
             foreach (var edge in nontrivialVertexesMap.Edges)
             {
                 Assert.IsFalse(sparseMap.RemoveEdge(edge), "添加边方法有误！");
@@ -255,10 +270,12 @@ namespace AGVSystemTest
             var subSparseNontrivialMap2 =
                 MapFactory.CreateMap(MapFactory.SubSparse1_NontrivialGraph1, MapFactory.Type.NontrivialGraph);
             var subSparseZeroMap = MapFactory.CreateMap(MapFactory.Sparse1_ZeroGraph1, MapFactory.Type.ZeroGraph);
+
             foreach (var edge in subSparseNontrivialMap2.Edges)
             {
                 sparseMap.RemoveEdge(edge);
             }
+
             Assert.IsTrue(subSparseZeroMap.AreIsomorphic(sparseMap), "添加边方法有误！");
         }
 

@@ -2,6 +2,7 @@
 
 using System;
 using System.Collections.Generic;
+using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using System.Text;
 using System.Text.Json.Serialization;
@@ -160,7 +161,7 @@ namespace AGVSystemTest
         [TestMethod]
         public void AllOperation()
         {
-
+            
         }
     }
 
@@ -295,7 +296,6 @@ namespace AGVSystemTest
             var edges = new List<Edge>();
 
             var content = File.ReadAllLines(path);
-            
 
             return edges;
         }
@@ -313,6 +313,35 @@ namespace AGVSystemTest
             var pathList = new List<Path>();
 
             return pathList;
+        }
+    }
+
+    public class Example : IEquatable<Example>
+    {
+        public int Member;
+        public static bool operator ==(Example left, Example right)
+        {
+            return left.Member == right.Member;
+        }
+
+        public static bool operator !=(Example left, Example right)
+        {
+            return left.Member != right.Member;
+        }
+
+        public override bool Equals([NotNullWhen(true)] object? obj)
+        {
+            return GetType() != obj?.GetType() || Equals(obj);
+        }
+
+        public bool Equals(Example? other)
+        {
+            return other is not null && (ReferenceEquals(this, other) || other == this);
+        }
+
+        public override int GetHashCode()
+        {
+            return HashCode.Combine(Member);
         }
     }
 }

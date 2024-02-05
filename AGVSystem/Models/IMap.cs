@@ -86,22 +86,22 @@ namespace AGVSystem.Models
         public abstract Vertex GetVertex(int id);
         /// <param name="id">顶点ID</param>
         /// <inheritdoc cref="ContainVertex(Vertex)"/>
-        public bool ContainVertex(int id) => ContainVertex(new Vertex(id));
+        public abstract bool ContainVertex(int id);
         /// <summary>
         /// 判断此顶点是否在图中
         /// </summary>
         /// <param name="v">顶点</param>
         /// <returns>当顶点在图中，则返回<see langword="true"/>；否则返回<see langword="false"/></returns>
-        public abstract bool ContainVertex(Vertex v);
+        public bool ContainVertex(Vertex v) => ContainVertex(v.ID);
         /// <param name="id">待获取邻接点集合的ID</param>
         /// <inheritdoc cref="GetAdjacencyVertices(Vertex)"/>
-        public List<Vertex> GetAdjacencyVertices(int id) => GetAdjacencyVertices(new Vertex(id));
+        public abstract List<Vertex> GetAdjacencyVertices(int id);
         /// <summary>
         /// 获取指定顶点的邻接点集合
         /// </summary>
         /// <param name="vertex">待获取邻接点集合的顶点</param>
         /// <returns>对应顶点的邻接点集合</returns>
-        public abstract List<Vertex> GetAdjacencyVertices(Vertex vertex);
+        public List<Vertex> GetAdjacencyVertices(Vertex vertex) => GetAdjacencyVertices(vertex.ID);
         /// <param name="id">顶点ID</param>
         /// <inheritdoc cref="AddVertex(Vertex)"/>
         public bool AddVertex(int id) => AddVertex(new Vertex(id));
@@ -120,27 +120,34 @@ namespace AGVSystem.Models
         /// <param name="vertexes">顶点ID集合</param>
         /// <inheritdoc cref="AddVertices(System.Collections.Generic.List{AGVSystem.Models.Vertex})"/>
         public List<Vertex> AddVertices(List<int> vertexes) => AddVertices(vertexes.Select(id => new Vertex(id)).ToList());
+        /// <summary>
+        /// 修改顶点ID
+        /// </summary>
+        /// <param name="id">原顶点ID</param>
+        /// <param name="newId">新顶点ID</param>
+        /// <returns>修改成功，返回<see langword="true"/>；否则返回<see langword="false"/></returns>
+        public abstract bool ChangeVertexId(int id, int newId);
         public bool InsertVertex(int id, Edge edge) => InsertVertex(new Vertex(id), edge);
         public abstract bool InsertVertex(Vertex vertex, Edge edge);
         /// <param name="id">待移除顶点ID</param>
         /// <inheritdoc cref="RemoveVertex(Vertex)"/>
-        public bool RemoveVertex(int id) => RemoveVertex(new Vertex(id));
+        public bool RemoveVertex(int id) => RemoveVertices([id]).Count == 0;
         /// <summary>
         /// 将该顶点及其相邻边移除
         /// </summary>
         /// <param name="vertex">待移除顶点</param>
         /// <returns>图中存在该点则移除成功，返回<see langword="true"/>；否则为<see langword="false"/></returns>
-        public bool RemoveVertex(Vertex vertex) => RemoveVertices([vertex]).Count == 0;
+        public bool RemoveVertex(Vertex vertex) => RemoveVertex(vertex.ID);
         /// <summary>
         /// 移除顶点的集合及其相邻边的集合
         /// </summary>
         /// <param name="vertexes">待移除顶点集合</param>
         /// <returns>当图中不存在该点则该点移除失败，返回移除失败的点集</returns>
-        public abstract List<Vertex> RemoveVertices(List<Vertex> vertexes);
+        public abstract List<int> RemoveVertices(List<int> vertexes);
         /// <param name="from">边的起始点ID</param>
         /// <param name="to">边的终点ID</param>
         /// <param name="edge">获取的边</param>
-        /// <inheritdoc cref="TryGetEdge(in int, in int, in double, out Edge?)"/>
+        /// <inheritdoc cref="TryGetEdge(int, int, double, out Edge?)"/>
         public bool TryGetEdge(in int from, in int to, out Edge? edge) => TryGetEdge(from, to, 1, out edge);
         /// <summary>
         /// 尝试获取一条边，存在则将边赋值给参数<paramref name="edge"/>，不存在则<paramref name="edge"/>为<see langword="null"/>
@@ -150,24 +157,13 @@ namespace AGVSystem.Models
         /// <param name="weight">边的权重</param>
         /// <param name="edge">获取的边</param>
         /// <returns>存在边时返回<see langword="true"/>；否则返回<see langword="false"/></returns>
-        public bool TryGetEdge(in int from, in int to, in double weight, out Edge? edge)
+        public bool TryGetEdge(int from, int to, double weight, out Edge? edge)
         {
             var isExist = ContainEdge(from, to, weight);
             edge = null;
             if (isExist)
             {
                 edge = GetEdge(from, to);
-            }
-
-            try
-            {
-                GetVertex(12);
-
-            }
-            catch (Exception e)
-            {
-                Console.WriteLine(e);
-                //throw;
             }
 
             return isExist;
@@ -196,13 +192,13 @@ namespace AGVSystem.Models
         /// </summary>
         /// <param name="id">指定点的ID</param>
         /// <returns>返回图中边含有该点的所有边</returns>
-        public List<Edge> GetAdjacencyEdges(int id) => GetAdjacencyEdges(new Vertex(id));
+        public abstract List<Edge> GetAdjacencyEdges(int id);
         /// <summary>
         /// 获取指定点的邻接边集
         /// </summary>
         /// <param name="vertex">指定点</param>
         /// <returns>返回图中边含有该点的所有边</returns>
-        public abstract List<Edge> GetAdjacencyEdges(Vertex vertex);
+        public List<Edge> GetAdjacencyEdges(Vertex vertex) => GetAdjacencyEdges(vertex.ID);
         /// <param name="from">边的起始点ID</param>
         /// <param name="to">边的终点ID</param>
         /// <param name="weight">边的权重， 默认为1</param>
@@ -220,6 +216,15 @@ namespace AGVSystem.Models
         /// <param name="edges">待添加的边集</param>
         /// <returns>存在边的两个点，不存在该边则添加成功，返回的是未添加成功的边集</returns>
         public abstract List<Edge> AddEdges(List<Edge> edges);
+        /// <summary>
+        /// 更改边的ID
+        /// </summary>
+        /// <param name="from"></param>
+        /// <param name="to"></param>
+        /// <param name="newFrom"></param>
+        /// <param name="newTo"></param>
+        /// <returns></returns>
+        public abstract bool ChangeEdgeId(int from, int to, int newFrom, int newTo);
         /// <param name="from">边的起始点ID</param>
         /// <param name="to">边的终点ID</param>
         /// <param name="weight">边的权重， 默认为1</param>
@@ -293,7 +298,6 @@ namespace AGVSystem.Models
             {
                 _edgesDictionary[edgeIndex] = new Edge(edge);
             }
-            
         }
 
         public Graph(List<Vertex> vertices) : this()
@@ -338,11 +342,11 @@ namespace AGVSystem.Models
         public override bool AreIsomorphic(ConcreteMap concreteMap)
         {
             var map = concreteMap as Graph;
-            var isEqual = true;
+            var isEqual = false;
 
             // 判断顶点数和边数是否相等
             if (_verticesDictionary.Count != map?._verticesDictionary.Count ||
-                _adjacencyList.Count != map._adjacencyList.Count) return !isEqual;
+                _adjacencyList.Count != map._adjacencyList.Count) return isEqual;
 
             // 获取图的度数序列
             var degrees1 = GetDegrees();
@@ -372,7 +376,7 @@ namespace AGVSystem.Models
 
         private List<int> GetDegrees()
         {
-            return _adjacencyList.Values.Select(adjacencices => adjacencices.Count).ToList();
+            return _adjacencyList.Values.Select(adjacencies => adjacencies.Count).ToList();
         }
 
         public override int GetDegree(int id, bool isInDegree = true)
@@ -455,24 +459,56 @@ namespace AGVSystem.Models
             return vertex;
         }
 
-        public override bool ContainVertex(Vertex v)
+        public override bool ContainVertex(int id)
         {
-            return _verticesDictionary.ContainsKey(v.ID);
+            return _verticesDictionary.ContainsKey(id);
         }
 
-        public override List<Vertex> GetAdjacencyVertices(Vertex v)
+        public override List<Vertex> GetAdjacencyVertices(int id)
         {
-            if (!_verticesDictionary.ContainsKey(v.ID))
+            if (!_verticesDictionary.ContainsKey(id))
             {
-                throw new ArgumentOutOfRangeException(nameof(v));
+                throw new ArgumentOutOfRangeException(nameof(id));
             }
 
-            return _adjacencyList[v.ID].Select(vertexId => _verticesDictionary[vertexId]).ToList();
+            return _adjacencyList[id].Select(vertexId => _verticesDictionary[vertexId]).ToList();
         }
 
         public override List<Vertex> AddVertices(List<Vertex> vertexes)
         {
-            return vertexes.Where(vertex => !_verticesDictionary.TryAdd(vertex.ID, vertex)).ToList();
+            var nonExistVertices = new List<Vertex>();
+
+            foreach (var vertex in vertexes)
+            {
+                if (_verticesDictionary.TryAdd(vertex.ID, vertex))
+                {
+                    _adjacencyList.Add(vertex.ID, []);
+                }
+                else
+                {
+                    nonExistVertices.Add(vertex);
+                }
+            }
+
+            return nonExistVertices;
+        }
+
+        public override bool ChangeVertexId(int id, int newId)
+        {
+            if (!_verticesDictionary.ContainsKey(id) || _verticesDictionary.ContainsKey(newId))
+                return false;
+
+            foreach (var vertexId in _adjacencyList[id])
+            {
+                ReplaceAdjacencyVertex(vertexId, id, newId);
+            }
+
+            _adjacencyList[newId] = _adjacencyList[id];
+            _verticesDictionary[newId] = _verticesDictionary[id];
+            _adjacencyList.Remove(id);
+            _verticesDictionary.Remove(id);
+
+            return true;
         }
 
         public override bool InsertVertex(Vertex vertex, Edge edge)
@@ -506,22 +542,35 @@ namespace AGVSystem.Models
             return isInserted;
         }
 
-        private void ReplaceAdjacencyVertex(int vertexId, int vertexToBeReplaced, int replacementVertex)
+        private void ReplaceAdjacencyVertex(int id, int adjacencyIdToBeReplaced, int replacementAdjacencyId)
         {
-            _adjacencyList[vertexId].Remove(vertexToBeReplaced);
-            _adjacencyList[vertexId].Add(replacementVertex);
+            _adjacencyList[id].Remove(adjacencyIdToBeReplaced);
+            _adjacencyList[id].Add(replacementAdjacencyId);
+
+            var e = GetFromDict(id, adjacencyIdToBeReplaced);
+
+            if (id < adjacencyIdToBeReplaced)
+            {
+                e.To.ID = replacementAdjacencyId;
+            }
+            else
+            {
+                e.From.ID = replacementAdjacencyId;
+            }
+
+            RemoveEdgeFromDict(id, adjacencyIdToBeReplaced);
+            AddEdgeToDict(e);
         }
 
-        public override List<Vertex> RemoveVertices(List<Vertex> vertexes)
+        public override List<int> RemoveVertices(List<int> vertexes)
         {
-            var nonexistVertex = new List<Vertex>();
+            var nonExistVertex = new List<int>();
 
-            foreach (var vertex in vertexes)
+            foreach (var id in vertexes)
             {
-                var id = vertex.ID;
                 if (!_verticesDictionary.ContainsKey(id))
                 {
-                    nonexistVertex.Add(vertex);
+                    nonExistVertex.Add(id);
                     continue;
                 }
 
@@ -535,7 +584,7 @@ namespace AGVSystem.Models
                 _verticesDictionary.Remove(id);
             }
 
-            return nonexistVertex;
+            return nonExistVertex;
         }
 
         public override Edge GetEdge(int from, int to, double weight)
@@ -543,9 +592,8 @@ namespace AGVSystem.Models
             return _edgesDictionary[from < to  ? (from, to) : (to, from)];
         }
 
-        public override List<Edge> GetAdjacencyEdges(Vertex v)
+        public override List<Edge> GetAdjacencyEdges(int id)
         {
-            var id = v.ID;
             if (!_verticesDictionary.ContainsKey(id))
             {
                 throw new ArgumentOutOfRangeException(nameof(id));
@@ -579,6 +627,32 @@ namespace AGVSystem.Models
             }
 
             return existEdges;
+        }
+
+        private Edge GetFromDict(int from, int to)
+        {
+            return _edgesDictionary[from < to ? (from, to) : (to, from)];
+        }
+
+        public override bool ChangeEdgeId(int from, int to, int newFrom, int newTo)
+        {
+            if ((from == newFrom && to == newTo) || !ContainEdge(from, to) || ContainEdge(newFrom, newTo))
+            {
+                return false;
+            }
+
+            _adjacencyList[from].Remove(to);
+            _adjacencyList[to].Remove(from);
+            _adjacencyList[newFrom].Add(newTo);
+            _adjacencyList[newTo].Add(newFrom);
+
+            var e = GetFromDict(from, to);
+            e.From.ID = newFrom;
+            e.To.ID = newTo;
+            _edgesDictionary[newFrom < newTo ? (newFrom, newTo) : (newTo, newFrom)] = e;
+            RemoveEdgeFromDict(from, to);
+
+            return true;
         }
 
         public override List<Edge> RemoveEdges(List<Edge> edges)
@@ -633,13 +707,24 @@ namespace AGVSystem.Models
 
     public class Vertex : IEquatable<Vertex>
     {
-        public int ID { get; set; }
+        private int _id;
+
+        public int ID
+        {
+            get => _id;
+            set
+            {
+                QR.ID = value;
+                _id = value;
+            }
+        }
+
         public QRCode QR { get; set; }
 
         [JsonConstructor]
         public Vertex(int id, QRCode qr)
         {
-            ID = id;
+            _id = id;
             QR = qr;
         }
 
@@ -664,7 +749,7 @@ namespace AGVSystem.Models
 
         public override bool Equals([NotNullWhen(true)] object? obj)
         {
-            return (ReferenceEquals(this, obj) || (obj is Vertex v && v == this));
+            return ReferenceEquals(this, obj) || (obj is Vertex v && v == this);
         }
 
         public bool Equals(Vertex? other)
@@ -733,7 +818,7 @@ namespace AGVSystem.Models
 
         public override bool Equals([NotNullWhen(true)] object? obj)
         {
-            return (ReferenceEquals(this, obj) || (obj is Edge e && e == this));
+            return ReferenceEquals(this, obj) || (obj is Edge e && e == this);
         }
 
         public override int GetHashCode()
@@ -775,7 +860,7 @@ namespace AGVSystem.Models
 
         public override bool Equals([NotNullWhen(true)] object? obj)
         {
-            return (ReferenceEquals(this, obj) || (obj is QRCode qr && qr == this));
+            return ReferenceEquals(this, obj) || (obj is QRCode qr && qr == this);
         }
 
         public bool Equals(QRCode? other)
