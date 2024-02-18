@@ -37,6 +37,8 @@ namespace AGVSystem.Path
 
         public void FloydRun()
         {
+            _distance.Clear();
+            _path.Clear();
             var vertices_nums = GetVerticesNum();
             var vertices = GetVertices();
             
@@ -157,10 +159,17 @@ namespace AGVSystem.Path
 
         public void SignalPath(int start, int end)
         {
+            var vertices_nums = GetVerticesNum();
+            if (Math.Abs(start) > Math.Abs(vertices_nums) && Math.Abs(end) > Math.Abs(vertices_nums))
+            {
+                signal_path_ = new List<int>();
+                return;
+            }
             var intermediateK = _path[start][end];
             if (intermediateK == -1) // 表示两点之间没有路(-1应该作为设置参数)
             {
                 signal_path_ = new List<int>();
+                return;
             }
             else if (intermediateK == start) // 表示前节点等于出发点找到两者最短路径
             {
