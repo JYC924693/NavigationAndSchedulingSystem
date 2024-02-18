@@ -124,8 +124,8 @@ namespace AGVSystem.Path
                 int path_end = start_end_pair.Item2;
 
                 var vertexTemp = GetVertices();
-                int pathStartIndex = 0;
-                int pathEndIndex = 0;
+                int pathStartIndex = -1;
+                int pathEndIndex = -1;
                 foreach (var vert in vertexTemp)
                 {
                     if (path_start == vert.ID)
@@ -160,7 +160,7 @@ namespace AGVSystem.Path
         public void SignalPath(int start, int end)
         {
             var vertices_nums = GetVerticesNum();
-            if ((Math.Abs(start) > Math.Abs(vertices_nums)) || (Math.Abs(end) > Math.Abs(vertices_nums)))
+            if ((start > vertices_nums) || (end > vertices_nums) ||(start < 0) || (end < 0))
             {
                 signal_path_ = new List<int>();
                 return;
