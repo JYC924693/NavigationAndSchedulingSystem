@@ -160,7 +160,7 @@ namespace AGVSystem.Path
         public void SignalPath(int start, int end)
         {
             var vertices_nums = GetVerticesNum();
-            if (Math.Abs(start) > Math.Abs(vertices_nums) && Math.Abs(end) > Math.Abs(vertices_nums))
+            if ((Math.Abs(start) > Math.Abs(vertices_nums)) || (Math.Abs(end) > Math.Abs(vertices_nums)))
             {
                 signal_path_ = new List<int>();
                 return;
