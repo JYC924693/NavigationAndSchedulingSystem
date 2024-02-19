@@ -1,10 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using AGVSystem.Models;
+﻿using AGVSystem.Models;
 using AGVSystem.Path;
+using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace AGVSystemTest
 {
@@ -32,17 +28,53 @@ namespace AGVSystemTest
             }
         }
 
-        public static Dictionary<int, List<int>> ExpectResult
+        public static Dictionary<int, List<PathPoint>> ExpectResult
         {
             get
             {
 
-                var r = new Dictionary<int, List<int>>();
-                var path1 = new List<int>() { 17, 19, 24, 23 };
+                //var r = new Dictionary<int, List<int>>();
+                //var path1 = new List<int>() { 17, 19, 24, 23 };
+                //r.Add(1, path1);
+                //var path2 = new List<int>() { 17, 19, 24, 20 };
+                //r.Add(2, path2);
+                //var path3 = new List<int>() { 20, 24, 19, 17, 21 };
+                //r.Add(3, path3);
+
+                var r = new Dictionary<int, List<PathPoint>>();
+                var path1 = new List<PathPoint>();
+                PathPoint p1 = new PathPoint { codeID = 17, moveMOD = 1, angle = 0.0, missionID = 0, name = "17" };
+                PathPoint p2 = new PathPoint { codeID = 19, moveMOD = 1, angle = 0.0, missionID = 0, name = "19" };
+                PathPoint p3 = new PathPoint { codeID = 24, moveMOD = 1, angle = 0.0, missionID = 0, name = "24" };
+                PathPoint p4 = new PathPoint { codeID = 23, moveMOD = 1, angle = 0.0, missionID = 0, name = "23" };
+                path1.Add(p1);
+                path1.Add(p2);
+                path1.Add(p3);
+                path1.Add(p4);
                 r.Add(1, path1);
-                var path2 = new List<int>() { 17, 19, 24, 20 };
+
+                var path2 = new List<PathPoint>();
+                PathPoint p5 = new PathPoint { codeID = 17, moveMOD = 1, angle = 0.0, missionID = 0, name = "17" };
+                PathPoint p6 = new PathPoint { codeID = 19, moveMOD = 1, angle = 0.0, missionID = 0, name = "19" };
+                PathPoint p7 = new PathPoint { codeID = 24, moveMOD = 1, angle = 0.0, missionID = 0, name = "24" };
+                PathPoint p8 = new PathPoint { codeID = 20, moveMOD = 1, angle = 0.0, missionID = 0, name = "20" };
+                path2.Add(p5);
+                path2.Add(p6);
+                path2.Add(p7);
+                path2.Add(p8);
                 r.Add(2, path2);
-                var path3 = new List<int>() { 20, 24, 19, 17, 21 };
+
+                var path3 = new List<PathPoint>();
+                PathPoint p9 = new PathPoint { codeID = 20, moveMOD = 1, angle = 0.0, missionID = 0, name = "20" };
+                PathPoint p10 = new PathPoint { codeID = 24, moveMOD = 1, angle = 0.0, missionID = 0, name = "24" };
+                PathPoint p11 = new PathPoint { codeID = 19, moveMOD = 1, angle = 0.0, missionID = 0, name = "19" };
+                PathPoint p12 = new PathPoint { codeID = 17, moveMOD = 1, angle = 0.0, missionID = 0, name = "17" };
+                PathPoint p13 = new PathPoint { codeID = 21, moveMOD = 1, angle = 0.0, missionID = 0, name = "21" };
+                path3.Add(p9);
+                path3.Add(p10);
+                path3.Add(p11);
+                path3.Add(p12);
+                path3.Add(p13);
                 r.Add(3, path3);
                 return r;
             }
@@ -63,7 +95,7 @@ namespace AGVSystemTest
         [TestMethod]
         [DynamicData(nameof(AdditionData))]
         //public void AddIntegers_FromDynamicDataTest(ConcreteMap map)
-        public void AddIntegers_FromDynamicDataTest(ConcreteMap map,  Dictionary<int, Tuple<int, int>> pathID, Dictionary<int, List<int>> expected)
+        public void AddIntegers_FromDynamicDataTest(ConcreteMap map,  Dictionary<int, Tuple<int, int>> pathID, Dictionary<int, List<PathPoint>> expected)
         {
             var target = new Floyd();
             MapContext.GetInstance().BuildMap(map.Vertices, map.Edges);
@@ -72,13 +104,21 @@ namespace AGVSystemTest
 
             foreach (var id in actual.Keys)
             {
-                foreach (var data in actual[id])
+                //foreach (var data in actual[id])
+                for (int i = 0; i < actual[id].Count; i++)
                 {
-                    Console.WriteLine(data);
+                    var data = actual[id][i];
+                    Console.Write($"{data.codeID}\t");
+                    Console.Write($"{data.moveMOD}\t");
+                    Console.Write($"{data.angle}\t");
+                    Console.Write($"{data.missionID}\t");
+                    Console.Write($"{data.name}\t");
+                    Console.Write("\n");
+                    Assert.AreEqual(expected[id][i].codeID, data.codeID);
                 }
                 Console.Write("\n");
 
-                Assert.IsTrue(actual[id].SequenceEqual(expected[id]));
+                //Assert.IsTrue(actual[id].SequenceEqual(expected[id]));
             }
         }
 

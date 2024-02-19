@@ -1,5 +1,4 @@
 ﻿using AGVSystem.Models;
-using System.Runtime.ConstrainedExecution;
 
 namespace AGVSystem.Path
 {
@@ -17,6 +16,8 @@ namespace AGVSystem.Path
         private List<Vertex> GetVertices()
         {
             return map.Vertices;
+
+
         }
 
         private int GetVerticesNum()
@@ -108,49 +109,52 @@ namespace AGVSystem.Path
         /// <param name="paths_id">所有路径的起点、终点</param>
         /// <returns>所有路径</returns>
         /// <exception cref="ArgumentNullException"></exception>
-        public Dictionary<int, List<int>> GetAllPaths(Dictionary<int, Tuple<int, int>> paths_id)
+        public Dictionary<int, List<PathPoint>> GetAllPaths(Dictionary<int, Tuple<int, int>> paths_id)
         {
             FloydRun();
-            Dictionary<int, List<int>> all_paths  = new Dictionary<int, List<int>>();
+            Dictionary<int, List<PathPoint>> all_paths  = new Dictionary<int, List<PathPoint>>();
             if(paths_id == null || paths_id.Count == 0)
             {
                 throw new ArgumentNullException(nameof(paths_id), "the paths_id is null or empty.");
             }
             foreach (KeyValuePair<int, Tuple<int, int>> path_id in paths_id)
             {
-                int num = path_id.Key;
-                Tuple<int, int> start_end_pair = path_id.Value;
-                int path_start = start_end_pair.Item1;
-                int path_end = start_end_pair.Item2;
+                var num = path_id.Key;
+                var (pathStart, pathEnd) = path_id.Value;
 
                 var vertexTemp = GetVertices();
-                int pathStartIndex = -1;
-                int pathEndIndex = -1;
+                var pathStartIndex = -1; 
+                var pathEndIndex = -1;
                 foreach (var vert in vertexTemp)
                 {
-                    if (path_start == vert.ID)
+                    if (pathStart == vert.ID)
                     {
                         pathStartIndex = vertexTemp.IndexOf(vert);
                     }
-                    if (path_end == vert.ID)
+                    if (pathEnd == vert.ID)
                     {
                         pathEndIndex = vertexTemp.IndexOf(vert);
                     }
                 }
                 SignalPath(pathStartIndex, pathEndIndex);
                 List<int> path = signal_path_.Select(item=>item).ToList();
+                var pathPoint = new List<PathPoint>();
                 for (int i = 0; i < path.Count; i++)
                 {
-                    var index = path[i];
+                    var index = path[i];            
                     path[i] = vertexTemp[index].ID;
+                    PathPoint p1 = new PathPoint 
+                        { codeID = path[i], moveMOD = 1, angle = 0.0, missionID = 0, name = path[i].ToString() };
+                    pathPoint.Add(p1);
                 }
-                all_paths[num] = path;
+
+                all_paths[num] = pathPoint;                                            
                 signal_path_.Clear();
             }
             return all_paths;
         }
 
-        public List<int> GetPath(int start, int end)
+        public List<int> GetSignalPath(int start, int end)
         {
             SignalPath(start, end);
             var path = signal_path_.Select(item => item).ToList();
