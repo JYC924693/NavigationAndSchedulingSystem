@@ -36,6 +36,35 @@ namespace AGVSystem.Path
             return map.GetAdjacencyEdges(id);
         }
 
+        private List<PathPoint> AddModeAngleMissionInPath(List<int> path)
+        {
+            var pathTemp = new List<PathPoint>();
+            if (path.Count == 0)
+            {
+                try
+                {
+                    throw new Exception("Path is empty.");
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine("Caught  exception: " + ex.Message);
+                    return new List<PathPoint>();
+                }
+            }
+
+            var verticesTemp = GetVertices();
+            for (int i = 0; i < path.Count; i++)
+            {
+                var index = path[i];
+                path[i] = verticesTemp[index].ID;
+                PathPoint pp = new PathPoint
+                    { codeID = path[i], moveMOD = 1, angle = 0.0, missionID = 0, name = path[i].ToString() };
+                pathTemp.Add(pp);
+            }
+
+            return pathTemp;
+        }
+
         public void FloydRun()
         {
             _distance.Clear();
@@ -138,16 +167,7 @@ namespace AGVSystem.Path
                 }
                 SignalPath(pathStartIndex, pathEndIndex);
                 List<int> path = signal_path_.Select(item=>item).ToList();
-                var pathPoint = new List<PathPoint>();
-                for (int i = 0; i < path.Count; i++)
-                {
-                    var index = path[i];            
-                    path[i] = vertexTemp[index].ID;
-                    PathPoint p1 = new PathPoint 
-                        { codeID = path[i], moveMOD = 1, angle = 0.0, missionID = 0, name = path[i].ToString() };
-                    pathPoint.Add(p1);
-                }
-
+                var pathPoint = AddModeAngleMissionInPath(path);
                 all_paths[num] = pathPoint;                                            
                 signal_path_.Clear();
             }

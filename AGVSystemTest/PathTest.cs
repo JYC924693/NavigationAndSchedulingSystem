@@ -1,5 +1,6 @@
 ﻿using AGVSystem.Models;
 using AGVSystem.Path;
+using System.IO;
 using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace AGVSystemTest
@@ -136,5 +137,107 @@ namespace AGVSystemTest
                 Assert.IsTrue(a[id].SequenceEqual(b[id]));
             }
         }
+
+    }
+
+    [TestClass]
+    public class DijkstraTest
+    {
+        public static ConcreteMap Map
+        {
+            get
+            {
+                var map = MapFactory.CreateMap("D:\\J_7Code\\self_code\\NavigationAndSchedulingSystemQBD\\AGVSystemTest\\graph.txt", MapFactory.Type.SparseGraph);
+                return map;
+            }
+        }
+
+        public static int start
+        {
+            get
+            {
+                int s = 17;
+                return s;
+            }
+        }
+        public static int end
+        {
+            get
+            {
+                int e = 23;
+                return e;
+            }
+        }
+
+        public static List<PathPoint> ExpectResult
+        {
+            get
+            {
+
+                //var r = new Dictionary<int, List<int>>();
+                //var path1 = new List<int>() { 17, 19, 24, 23 };
+                //r.Add(1, path1);
+                //var path2 = new List<int>() { 17, 19, 24, 20 };
+                //r.Add(2, path2);
+                //var path3 = new List<int>() { 20, 24, 19, 17, 21 };
+                //r.Add(3, path3);
+
+                
+                var path1 = new List<PathPoint>();
+                PathPoint p1 = new PathPoint { codeID = 17, moveMOD = 1, angle = 0.0, missionID = 0, name = "17" };
+                PathPoint p2 = new PathPoint { codeID = 19, moveMOD = 1, angle = 0.0, missionID = 0, name = "19" };
+                PathPoint p3 = new PathPoint { codeID = 24, moveMOD = 1, angle = 0.0, missionID = 0, name = "24" };
+                PathPoint p4 = new PathPoint { codeID = 23, moveMOD = 1, angle = 0.0, missionID = 0, name = "23" };
+                path1.Add(p1);
+                path1.Add(p2);
+                path1.Add(p3);
+                path1.Add(p4);
+
+                return path1;
+            }
+        }
+
+        public static IEnumerable<object[]> AdditionData
+        {
+            get
+            {
+                return new[]
+                {
+                    new object[] { Map, start, end, ExpectResult },
+                    //new object[] { Map },
+                };
+            }
+        }
+
+        [TestMethod]
+        [DynamicData(nameof(AdditionData))]
+        public void TestDijkstra(ConcreteMap map, int start, int end, List<PathPoint> expected)
+        {
+            MapContext.GetInstance().BuildMap(map.Vertices, map.Edges);
+            var target = new Dijkstra();
+            var actual = target.GetPath(start, end);
+
+            //foreach (var data in actual[id])
+            for (int i = 0; i < actual.Count; i++)
+            {
+                var data = actual[i];
+                Console.Write($"{data.codeID}\t");
+                Console.Write($"{data.moveMOD}\t");
+                Console.Write($"{data.angle}\t");
+                Console.Write($"{data.missionID}\t");
+                Console.Write($"{data.name}\t");
+                Console.Write("\n");
+                Assert.AreEqual(expected[i].codeID, data.codeID);
+                Assert.AreEqual(expected[i].moveMOD, data.moveMOD);
+                Assert.AreEqual(expected[i].angle, data.angle);
+                Assert.AreEqual(expected[i].missionID, data.missionID);
+                Assert.AreEqual(expected[i].name, data.name);
+            }
+            Console.Write("\n");
+
+
+        }
+
+
     }
 }
