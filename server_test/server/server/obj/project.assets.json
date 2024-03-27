@@ -8,23 +8,23 @@
     "net8.0": []
   },
   "packageFolders": {
-    "C:\\Users\\QTZZ\\.nuget\\packages\\": {},
-    "D:\\SOFTWARE\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
+    "C:\\Users\\Jadis\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\SharedFiles\\10_DotNetPrj\\1_ADSconnection\\server_test\\server\\server\\server.csproj",
+      "projectUniqueName": "E:\\3_working\\1_ADSconnection\\server_test\\server\\server\\server.csproj",
       "projectName": "server",
-      "projectPath": "D:\\SharedFiles\\10_DotNetPrj\\1_ADSconnection\\server_test\\server\\server\\server.csproj",
-      "packagesPath": "C:\\Users\\QTZZ\\.nuget\\packages\\",
-      "outputPath": "D:\\SharedFiles\\10_DotNetPrj\\1_ADSconnection\\server_test\\server\\server\\obj\\",
+      "projectPath": "E:\\3_working\\1_ADSconnection\\server_test\\server\\server\\server.csproj",
+      "packagesPath": "C:\\Users\\Jadis\\.nuget\\packages\\",
+      "outputPath": "E:\\3_working\\1_ADSconnection\\server_test\\server\\server\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
-        "D:\\SOFTWARE\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\QTZZ\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Jadis\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],

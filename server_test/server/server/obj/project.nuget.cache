@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "lzc3jbsL8AWRewjI+Z4q/eUjmYVSWKmaryX4nzQaterkEySOmKNXFK4CFreFh7M0tuCm78ATPDKr54lico5FVg==",
+  "dgSpecHash": "DYN6FG9Wmn2lT19/YztL+auxRNHRRoUiZwbI4gcd/a7rqXMxyWbhOh8gTnceDtGrZ5zAYeObd0TLOurXG0LZCQ==",
   "success": true,
-  "projectFilePath": "D:\\SharedFiles\\10_DotNetPrj\\1_ADSconnection\\server_test\\server\\server\\server.csproj",
+  "projectFilePath": "E:\\3_working\\1_ADSconnection\\server_test\\server\\server\\server.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }

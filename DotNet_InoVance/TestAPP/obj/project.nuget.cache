@@ -1,8 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "kx1M9Shyrdp7xnpN1+hqQkKNG/VWvtTml6cF/LrUsgnOD30H/J+EsYBdI5s41ohnwVk4NfS7e3yZek9B2Lg8TQ==",
+  "dgSpecHash": "HLfZTIsAZdcBq7eLYvdDHok8pH3dyb9lmVy7YbB/T0DSaJJxCN0dY3zRl0iXGDV4PjHubrgrv3RBiYuKoc68Bw==",
   "success": true,
-  "projectFilePath": "\\\\DESKTOP-HE\\SharedFiles\\10_DotNetPrj\\1_ADSconnection\\DotNet_InoVance\\TestAPP\\TestAPP.csproj",
-  "expectedPackageFiles": [],
+  "projectFilePath": "E:\\3_working\\1_ADSconnection\\DotNet_InoVance\\TestAPP\\TestAPP.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Jadis\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\6.0.27\\microsoft.windowsdesktop.app.ref.6.0.27.nupkg.sha512",
+    "C:\\Users\\Jadis\\.nuget\\packages\\microsoft.netcore.app.ref\\6.0.27\\microsoft.netcore.app.ref.6.0.27.nupkg.sha512",
+    "C:\\Users\\Jadis\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\6.0.27\\microsoft.aspnetcore.app.ref.6.0.27.nupkg.sha512",
+    "C:\\Users\\Jadis\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\6.0.27\\microsoft.netcore.app.host.win-x64.6.0.27.nupkg.sha512"
+  ],
   "logs": []
 }

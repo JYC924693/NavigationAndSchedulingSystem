@@ -8,6 +8,6 @@ build_property.PlatformNeutralAssembly =
 build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = DotNet_InoVance
-build_property.ProjectDir = \\DESKTOP-HE\SharedFiles\10_DotNetPrj\1_ADSconnection\DotNet_InoVance\DotNet_InoVance\
+build_property.ProjectDir = E:\3_working\1_ADSconnection\DotNet_InoVance\DotNet_InoVance\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 

@@ -8,23 +8,23 @@
     "net6.0": []
   },
   "packageFolders": {
-    "C:\\Users\\QTZZ\\.nuget\\packages\\": {},
-    "D:\\SOFTWARE\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
+    "C:\\Users\\Jadis\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "\\\\DESKTOP-HE\\SharedFiles\\10_DotNetPrj\\1_ADSconnection\\DotNet_InoVance\\DotNet_InoVance\\DotNet_InoVance.csproj",
+      "projectUniqueName": "E:\\3_working\\1_ADSconnection\\DotNet_InoVance\\DotNet_InoVance\\DotNet_InoVance.csproj",
       "projectName": "DotNet_InoVance",
-      "projectPath": "\\\\DESKTOP-HE\\SharedFiles\\10_DotNetPrj\\1_ADSconnection\\DotNet_InoVance\\DotNet_InoVance\\DotNet_InoVance.csproj",
-      "packagesPath": "C:\\Users\\QTZZ\\.nuget\\packages\\",
-      "outputPath": "\\\\DESKTOP-HE\\SharedFiles\\10_DotNetPrj\\1_ADSconnection\\DotNet_InoVance\\DotNet_InoVance\\obj\\",
+      "projectPath": "E:\\3_working\\1_ADSconnection\\DotNet_InoVance\\DotNet_InoVance\\DotNet_InoVance.csproj",
+      "packagesPath": "C:\\Users\\Jadis\\.nuget\\packages\\",
+      "outputPath": "E:\\3_working\\1_ADSconnection\\DotNet_InoVance\\DotNet_InoVance\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
-        "D:\\SOFTWARE\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\QTZZ\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Jadis\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
@@ -66,6 +66,20 @@
         ],
         "assetTargetFallback": true,
         "warn": true,
+        "downloadDependencies": [
+          {
+            "name": "Microsoft.AspNetCore.App.Ref",
+            "version": "[6.0.27, 6.0.27]"
+          },
+          {
+            "name": "Microsoft.NETCore.App.Ref",
+            "version": "[6.0.27, 6.0.27]"
+          },
+          {
+            "name": "Microsoft.WindowsDesktop.App.Ref",
+            "version": "[6.0.27, 6.0.27]"
+          }
+        ],
         "frameworkReferences": {
           "Microsoft.NETCore.App": {
             "privateAssets": "all"

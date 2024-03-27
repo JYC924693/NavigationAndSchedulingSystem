@@ -25,7 +25,7 @@ namespace PLCcommunication
         static void Main(string[] args)
         {
             // dotnet_plc_lib connect = new dotnet_plc_lib();
-            string ipAddr = "192.168.0.29";
+            string ipAddr = "192.168.1.88";
             int port = 502;
 
             plc_connection connect = new plc_connection(ipAddr,port);
@@ -73,7 +73,7 @@ namespace PLCcommunication
             // List<PathPointStruct> PathPointList = new List<PathPointStruct> { pathStruct0, pathStruct1, pathStruct2 };
             List<PathPointStruct> PathPointList = new List<PathPointStruct>();
             PathPointList = connect.converter(path);
-            connect.write(PathPointList, 0000);
+            connect.write(PathPointList, 100);
 
 
 

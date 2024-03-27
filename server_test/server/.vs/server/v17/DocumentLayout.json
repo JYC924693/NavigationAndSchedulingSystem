@@ -1,17 +1,17 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "D:\\SharedFiles\\10_DotNetPrj\\1_ADSconnection\\server_test\\server\\",
+  "WorkspaceRootPath": "E:\\3_working\\1_ADSconnection\\server_test\\server\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{B2A7AF39-1FDE-4B90-8DD7-4B0C749231BA}|server\\server.csproj|d:\\sharedfiles\\10_dotnetprj\\1_adsconnection\\server_test\\server\\server\\tcpserver.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B2A7AF39-1FDE-4B90-8DD7-4B0C749231BA}|server\\server.csproj|solutionrelative:server\\tcpserver.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B2A7AF39-1FDE-4B90-8DD7-4B0C749231BA}|server\\server.csproj|d:\\sharedfiles\\10_dotnetprj\\1_adsconnection\\server_test\\server\\server\\program_1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{B2A7AF39-1FDE-4B90-8DD7-4B0C749231BA}|server\\server.csproj|e:\\3_working\\1_adsconnection\\server_test\\server\\server\\program_1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{B2A7AF39-1FDE-4B90-8DD7-4B0C749231BA}|server\\server.csproj|solutionrelative:server\\program_1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B2A7AF39-1FDE-4B90-8DD7-4B0C749231BA}|server\\server.csproj|D:\\SharedFiles\\10_DotNetPrj\\1_ADSconnection\\server_test\\server\\server\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{B2A7AF39-1FDE-4B90-8DD7-4B0C749231BA}|server\\server.csproj|e:\\3_working\\1_adsconnection\\server_test\\server\\server\\tcpserver.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B2A7AF39-1FDE-4B90-8DD7-4B0C749231BA}|server\\server.csproj|solutionrelative:server\\tcpserver.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B2A7AF39-1FDE-4B90-8DD7-4B0C749231BA}|server\\server.csproj|E:\\3_working\\1_ADSconnection\\server_test\\server\\server\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{B2A7AF39-1FDE-4B90-8DD7-4B0C749231BA}|server\\server.csproj|solutionrelative:server\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
@@ -26,13 +26,13 @@
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
               "Title": "program_1.cs",
-              "DocumentMoniker": "D:\\SharedFiles\\10_DotNetPrj\\1_ADSconnection\\server_test\\server\\server\\program_1.cs",
+              "DocumentMoniker": "E:\\3_working\\1_ADSconnection\\server_test\\server\\server\\program_1.cs",
               "RelativeDocumentMoniker": "server\\program_1.cs",
-              "ToolTip": "D:\\SharedFiles\\10_DotNetPrj\\1_ADSconnection\\server_test\\server\\server\\program_1.cs",
+              "ToolTip": "E:\\3_working\\1_ADSconnection\\server_test\\server\\server\\program_1.cs",
               "RelativeToolTip": "server\\program_1.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAAABAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAYAAAAtAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-03-22T03:27:52.522Z",
               "EditorCaption": ""
@@ -41,9 +41,9 @@
               "$type": "Document",
               "DocumentIndex": 2,
               "Title": "Program.cs",
-              "DocumentMoniker": "D:\\SharedFiles\\10_DotNetPrj\\1_ADSconnection\\server_test\\server\\server\\Program.cs",
+              "DocumentMoniker": "E:\\3_working\\1_ADSconnection\\server_test\\server\\server\\Program.cs",
               "RelativeDocumentMoniker": "server\\Program.cs",
-              "ToolTip": "D:\\SharedFiles\\10_DotNetPrj\\1_ADSconnection\\server_test\\server\\server\\Program.cs",
+              "ToolTip": "E:\\3_working\\1_ADSconnection\\server_test\\server\\server\\Program.cs",
               "RelativeToolTip": "server\\Program.cs",
               "ViewState": "AQIAAH4AAAAAAAAAAAAQwJAAAAAHAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -57,13 +57,13 @@
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "TcpServer.cs",
-              "DocumentMoniker": "D:\\SharedFiles\\10_DotNetPrj\\1_ADSconnection\\server_test\\server\\server\\TcpServer.cs",
+              "DocumentMoniker": "E:\\3_working\\1_ADSconnection\\server_test\\server\\server\\TcpServer.cs",
               "RelativeDocumentMoniker": "server\\TcpServer.cs",
-              "ToolTip": "D:\\SharedFiles\\10_DotNetPrj\\1_ADSconnection\\server_test\\server\\server\\TcpServer.cs",
+              "ToolTip": "E:\\3_working\\1_ADSconnection\\server_test\\server\\server\\TcpServer.cs",
               "RelativeToolTip": "server\\TcpServer.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAUwBIAAAATAAAA",
+              "ViewState": "AQIAABUAAAAAAAAAAAAlwCgAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-03-25T06:16:36.065Z",
               "EditorCaption": ""
