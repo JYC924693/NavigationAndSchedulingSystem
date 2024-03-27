@@ -3,12 +3,16 @@
   "WorkspaceRootPath": "C:\\Users\\QTZZ\\Documents\\GitHub\\NavigationAndSchedulingSystem\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{61893735-25B0-4074-A333-52C24D5451A9}|AGVSystem\\AGVSystem.csproj|c:\\users\\qtzz\\documents\\github\\navigationandschedulingsystem\\agvsystem\\traffic\\temp.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{61893735-25B0-4074-A333-52C24D5451A9}|AGVSystem\\AGVSystem.csproj|solutionrelative:agvsystem\\traffic\\temp.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{61893735-25B0-4074-A333-52C24D5451A9}|AGVSystem\\AGVSystem.csproj|c:\\users\\qtzz\\documents\\github\\navigationandschedulingsystem\\agvsystem\\agvsystem.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|",
+      "RelativeMoniker": "D:0:0:{61893735-25B0-4074-A333-52C24D5451A9}|AGVSystem\\AGVSystem.csproj|solutionrelative:agvsystem\\agvsystem.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{61893735-25B0-4074-A333-52C24D5451A9}|AGVSystem\\AGVSystem.csproj|c:\\users\\qtzz\\documents\\github\\navigationandschedulingsystem\\agvsystem\\traffic\\modbustcpclient.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{61893735-25B0-4074-A333-52C24D5451A9}|AGVSystem\\AGVSystem.csproj|solutionrelative:agvsystem\\traffic\\modbustcpclient.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{61893735-25B0-4074-A333-52C24D5451A9}|AGVSystem\\AGVSystem.csproj|c:\\users\\qtzz\\documents\\github\\navigationandschedulingsystem\\agvsystem\\agvsystem.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{61893735-25B0-4074-A333-52C24D5451A9}|AGVSystem\\AGVSystem.csproj|solutionrelative:agvsystem\\agvsystem.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{61893735-25B0-4074-A333-52C24D5451A9}|AGVSystem\\AGVSystem.csproj|c:\\users\\qtzz\\documents\\github\\navigationandschedulingsystem\\agvsystem\\vehicle_manager\\imap.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{61893735-25B0-4074-A333-52C24D5451A9}|AGVSystem\\AGVSystem.csproj|solutionrelative:agvsystem\\vehicle_manager\\imap.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -23,27 +27,39 @@
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "ModbusTCPClient.cs",
-              "DocumentMoniker": "C:\\Users\\QTZZ\\Documents\\GitHub\\NavigationAndSchedulingSystem\\AGVSystem\\Traffic\\ModbusTCPClient.cs",
-              "RelativeDocumentMoniker": "AGVSystem\\Traffic\\ModbusTCPClient.cs",
-              "ToolTip": "C:\\Users\\QTZZ\\Documents\\GitHub\\NavigationAndSchedulingSystem\\AGVSystem\\Traffic\\ModbusTCPClient.cs",
-              "RelativeToolTip": "AGVSystem\\Traffic\\ModbusTCPClient.cs",
-              "ViewState": "AQIAAG4AAAAAAAAAAAAswAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-17T05:54:05.076Z",
+              "Title": "AGVSystem",
+              "DocumentMoniker": "C:\\Users\\QTZZ\\Documents\\GitHub\\NavigationAndSchedulingSystem\\AGVSystem\\AGVSystem.csproj",
+              "RelativeDocumentMoniker": "AGVSystem\\AGVSystem.csproj",
+              "ToolTip": "C:\\Users\\QTZZ\\Documents\\GitHub\\NavigationAndSchedulingSystem\\AGVSystem\\AGVSystem.csproj*",
+              "RelativeToolTip": "AGVSystem\\AGVSystem.csproj*",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2024-03-27T06:24:33.123Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "temp.cs",
-              "DocumentMoniker": "C:\\Users\\QTZZ\\Documents\\GitHub\\NavigationAndSchedulingSystem\\AGVSystem\\Traffic\\temp.cs",
-              "RelativeDocumentMoniker": "AGVSystem\\Traffic\\temp.cs",
-              "ToolTip": "C:\\Users\\QTZZ\\Documents\\GitHub\\NavigationAndSchedulingSystem\\AGVSystem\\Traffic\\temp.cs",
-              "RelativeToolTip": "AGVSystem\\Traffic\\temp.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABIAAAABAAAA",
+              "Title": "AGVSystem",
+              "DocumentMoniker": "C:\\Users\\QTZZ\\Documents\\GitHub\\NavigationAndSchedulingSystem\\AGVSystem\\AGVSystem.csproj",
+              "RelativeDocumentMoniker": "AGVSystem\\AGVSystem.csproj",
+              "ToolTip": "C:\\Users\\QTZZ\\Documents\\GitHub\\NavigationAndSchedulingSystem\\AGVSystem\\AGVSystem.csproj",
+              "RelativeToolTip": "AGVSystem\\AGVSystem.csproj",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2024-03-27T06:24:27.95Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "IMap.cs",
+              "DocumentMoniker": "C:\\Users\\QTZZ\\Documents\\GitHub\\NavigationAndSchedulingSystem\\AGVSystem\\Vehicle_manager\\IMap.cs",
+              "RelativeDocumentMoniker": "AGVSystem\\Vehicle_manager\\IMap.cs",
+              "ToolTip": "C:\\Users\\QTZZ\\Documents\\GitHub\\NavigationAndSchedulingSystem\\AGVSystem\\Vehicle_manager\\IMap.cs",
+              "RelativeToolTip": "AGVSystem\\Vehicle_manager\\IMap.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAcAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-13T08:24:21.419Z",
+              "WhenOpened": "2024-03-27T06:19:46.142Z",
               "EditorCaption": ""
             }
           ]
