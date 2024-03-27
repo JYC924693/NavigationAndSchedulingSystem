@@ -1,0 +1,74 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "\\\\DESKTOP-HE\\SharedFiles\\10_DotNetPrj\\1_ADSconnection\\DotNet_InoVance\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{5E9D87EE-B202-4FD6-A8D3-0D1D3A1A88A9}|TestAPP\\TestAPP.csproj|\\\\desktop-he\\sharedfiles\\10_dotnetprj\\1_adsconnection\\dotnet_inovance\\testapp\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BF23FAD8-098F-4CD6-9C03-117A26E827B1}|DotNet_InoVance\\DotNet_InoVance.csproj|\\\\desktop-he\\sharedfiles\\10_dotnetprj\\1_adsconnection\\dotnet_inovance\\dotnet_inovance\\modbus_inovance.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BF23FAD8-098F-4CD6-9C03-117A26E827B1}|DotNet_InoVance\\DotNet_InoVance.csproj|\\\\desktop-he\\sharedfiles\\10_dotnetprj\\1_adsconnection\\dotnet_inovance\\dotnet_inovance\\path.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 128,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Path.cs",
+              "DocumentMoniker": "\\\\DESKTOP-HE\\SharedFiles\\10_DotNetPrj\\1_ADSconnection\\DotNet_InoVance\\DotNet_InoVance\\Path.cs",
+              "RelativeDocumentMoniker": "DotNet_InoVance\\Path.cs",
+              "ToolTip": "\\\\DESKTOP-HE\\SharedFiles\\10_DotNetPrj\\1_ADSconnection\\DotNet_InoVance\\DotNet_InoVance\\Path.cs",
+              "RelativeToolTip": "DotNet_InoVance\\Path.cs",
+              "ViewState": "AQIAAAMAAAAAAAAAAAAAABEAAAAFAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-26T01:42:20.179Z",
+              "EditorCaption": ""
+            }
+          ]
+        },
+        {
+          "DockedWidth": 272,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Program.cs",
+              "DocumentMoniker": "\\\\DESKTOP-HE\\SharedFiles\\10_DotNetPrj\\1_ADSconnection\\DotNet_InoVance\\TestAPP\\Program.cs",
+              "RelativeDocumentMoniker": "TestAPP\\Program.cs",
+              "ToolTip": "\\\\DESKTOP-HE\\SharedFiles\\10_DotNetPrj\\1_ADSconnection\\DotNet_InoVance\\TestAPP\\Program.cs",
+              "RelativeToolTip": "TestAPP\\Program.cs",
+              "ViewState": "AQIAAA4AAAAAAAAAAAAAwEsAAAAMAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-05T09:11:26.132Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "modbus_inovance.cs",
+              "DocumentMoniker": "\\\\DESKTOP-HE\\SharedFiles\\10_DotNetPrj\\1_ADSconnection\\DotNet_InoVance\\DotNet_InoVance\\modbus_inovance.cs",
+              "RelativeDocumentMoniker": "DotNet_InoVance\\modbus_inovance.cs",
+              "ToolTip": "\\\\DESKTOP-HE\\SharedFiles\\10_DotNetPrj\\1_ADSconnection\\DotNet_InoVance\\DotNet_InoVance\\modbus_inovance.cs",
+              "RelativeToolTip": "DotNet_InoVance\\modbus_inovance.cs",
+              "ViewState": "AQIAAC4AAAAAAAAAAAAkwEUAAAANAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-06T09:30:37.819Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

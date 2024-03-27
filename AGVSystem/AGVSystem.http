@@ -1,6 +1,0 @@
-@AGVSystem_HostAddress = http://localhost:5168
-
-GET {{AGVSystem_HostAddress}}/weatherforecast/
-Accept: application/json
-
-###

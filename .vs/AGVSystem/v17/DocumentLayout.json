@@ -1,0 +1,54 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\QTZZ\\Documents\\GitHub\\NavigationAndSchedulingSystem\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{61893735-25B0-4074-A333-52C24D5451A9}|AGVSystem\\AGVSystem.csproj|c:\\users\\qtzz\\documents\\github\\navigationandschedulingsystem\\agvsystem\\traffic\\temp.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{61893735-25B0-4074-A333-52C24D5451A9}|AGVSystem\\AGVSystem.csproj|solutionrelative:agvsystem\\traffic\\temp.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{61893735-25B0-4074-A333-52C24D5451A9}|AGVSystem\\AGVSystem.csproj|c:\\users\\qtzz\\documents\\github\\navigationandschedulingsystem\\agvsystem\\traffic\\modbustcpclient.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{61893735-25B0-4074-A333-52C24D5451A9}|AGVSystem\\AGVSystem.csproj|solutionrelative:agvsystem\\traffic\\modbustcpclient.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "ModbusTCPClient.cs",
+              "DocumentMoniker": "C:\\Users\\QTZZ\\Documents\\GitHub\\NavigationAndSchedulingSystem\\AGVSystem\\Traffic\\ModbusTCPClient.cs",
+              "RelativeDocumentMoniker": "AGVSystem\\Traffic\\ModbusTCPClient.cs",
+              "ToolTip": "C:\\Users\\QTZZ\\Documents\\GitHub\\NavigationAndSchedulingSystem\\AGVSystem\\Traffic\\ModbusTCPClient.cs",
+              "RelativeToolTip": "AGVSystem\\Traffic\\ModbusTCPClient.cs",
+              "ViewState": "AQIAAG4AAAAAAAAAAAAswAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-17T05:54:05.076Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "temp.cs",
+              "DocumentMoniker": "C:\\Users\\QTZZ\\Documents\\GitHub\\NavigationAndSchedulingSystem\\AGVSystem\\Traffic\\temp.cs",
+              "RelativeDocumentMoniker": "AGVSystem\\Traffic\\temp.cs",
+              "ToolTip": "C:\\Users\\QTZZ\\Documents\\GitHub\\NavigationAndSchedulingSystem\\AGVSystem\\Traffic\\temp.cs",
+              "RelativeToolTip": "AGVSystem\\Traffic\\temp.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABIAAAABAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-13T08:24:21.419Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
