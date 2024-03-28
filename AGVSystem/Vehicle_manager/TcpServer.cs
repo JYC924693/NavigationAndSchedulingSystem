@@ -141,17 +141,4 @@ namespace AGVSystem.vehicle_manager
         }
     }
 
-    class GetTools
-    {
-        internal int AgvId;
-
-        GetTools( int AgvId_ )
-        {
-            AgvId = AgvId_;
-        }
-
-
-    }
-
-
 }
