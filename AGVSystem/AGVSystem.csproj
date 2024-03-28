@@ -12,7 +12,9 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="vehicle_manager\" />
+    <Reference Include="HslCommunication">
+      <HintPath>bin\Debug\net8.0\HslCommunication.dll</HintPath>
+    </Reference>
   </ItemGroup>
 
 </Project>

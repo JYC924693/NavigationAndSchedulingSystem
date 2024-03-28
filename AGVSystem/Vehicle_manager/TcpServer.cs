@@ -15,7 +15,7 @@ namespace AGVSystem.vehicle_manager
 
 
 
-    class TcpServer
+    public class TcpServer
     {
         // TCP监听器
         private TcpListener listener;
@@ -110,7 +110,7 @@ namespace AGVSystem.vehicle_manager
                         break;
                 }
 
-                // agvinfo_ = agvinfo;
+
                 // 显示
                 //foreach (AgvInfo agvInfo in connectedClients)
                 //{
@@ -121,7 +121,7 @@ namespace AGVSystem.vehicle_manager
                 //    Console.WriteLine($"   Port: {agvInfo.Port}");
                 //    Console.WriteLine();
                 //}
-
+                Console.WriteLine($" 当前在线个数：{connectedClients.Count}");
 
                 // 复诵数据以确保收到（可以不复诵）
                 // byte[] response = Encoding.ASCII.GetBytes("Received data: " + dataReceived);
@@ -133,12 +133,19 @@ namespace AGVSystem.vehicle_manager
 
             // 在列表中移除断开连接的客户端
             connectedClients.Remove(agvinfo);
+            Console.WriteLine($" 当前在线个数：{connectedClients.Count}");
         }
 
         public void Stop()
         {
             listener.Stop();
         }
+
+        //public void ServerStart(string IpAddress, int port)
+        //{
+        //    TcpServer server = new TcpServer(IpAddress, port);
+        //    server.Start();
+        //}
     }
 
 }

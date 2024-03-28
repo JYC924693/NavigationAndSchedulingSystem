@@ -9,6 +9,7 @@
     <IsTestProject>true</IsTestProject>
     <GenerateDocumentationFile>True</GenerateDocumentationFile>
     <BaseOutputPath>bin\</BaseOutputPath>
+    
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
